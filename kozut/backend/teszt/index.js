@@ -61,7 +61,7 @@ app.delete("/torles/:id", (req, res) => {
 
 app.delete("/torles/", (req, res) => {
     const sql = "DELET * FROM 'regiok' WHERE Rid = 11;";
-    db.query(sql, [req.params.id],(err, result) => {
+    db.query(sql, [req.id],(err, result) => {
         if(err) return res.json(err);
         return res.json(result);
     });
