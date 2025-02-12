@@ -13,8 +13,8 @@ return new class extends Migration
     {
         Schema::create('rutin', function (Blueprint $table) {
             $table->id('rutin_id');
-            $table->unsignedBigInteger('product_id');
-            $table->unsignedBigInteger('user_id');
+            $table->foreignId('product_id')->constrained('product')->onDelete('cascade');
+            $table->foreignId('user_id')->constrained('users')->onDelete('cascade');
             $table->tinyInteger('rutin_type')->unsigned();
             $table->string('title', 50);
             $table->string('image', 50)->nullable();
@@ -23,9 +23,6 @@ return new class extends Migration
             $table->timestamp('modified_at')->useCurrent()->useCurrentOnUpdate();
             $table->tinyInteger('allergen')->unsigned();
 
-            // Foreign key constraints (optional)
-            // $table->foreign('product_id')->references('product_id')->on('products')->onDelete('cascade');
-            // $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
         });
     }
 

@@ -17,13 +17,11 @@ return new class extends Migration
             $table->string('title', 50);
             $table->string('image', 50)->nullable();
             $table->string('description', 700)->nullable();
-            $table->unsignedBigInteger('user_id');
+            $table->foreignId('user_id')->constrained('users')->onDelete('cascade');
             $table->timestamp('created_at')->useCurrent();
             $table->timestamp('modified_at')->useCurrent()->useCurrentOnUpdate();
             $table->tinyInteger('allergen')->unsigned();
 
-            // If there's a users table, consider this
-            // $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
         });
     }
 

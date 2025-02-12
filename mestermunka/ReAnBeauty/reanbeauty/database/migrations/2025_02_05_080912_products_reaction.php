@@ -13,16 +13,13 @@ return new class extends Migration
     {
         Schema::create('products_reaction', function (Blueprint $table) {
             $table->id('products_r_id');
-            $table->unsignedBigInteger('product_id');
-            $table->unsignedBigInteger('user_id');
+            $table->foreign('product_id')->constrained('product')->onDelete('cascade');
+            $table->foreignId('user_id')->constrained('users')->onDelete('cascade');
             $table->string('comment', 700)->nullable();
             $table->tinyInteger('like')->unsigned()->nullable();
             $table->timestamp('reacted_at')->useCurrent();
             $table->timestamp('modified_at')->useCurrent()->useCurrentOnUpdate();
-
-            // Foreign key constraints (optional)
-            $table->foreign('product_id')->references('product_id')->on('products')->onDelete('cascade');
-            $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
+            
         });
     }
 
