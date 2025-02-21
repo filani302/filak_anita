@@ -11,16 +11,16 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('products_reaction', function (Blueprint $table) {
-            $table->id('products_r_id');
-            $table->foreign('product_id')->constrained('product')->onDelete('cascade');
-            $table->foreignId('user_id')->constrained('users')->onDelete('cascade');
-            $table->string('comment', 700)->nullable();
-            $table->tinyInteger('like')->unsigned()->nullable();
-            $table->timestamp('reacted_at')->useCurrent();
-            $table->timestamp('modified_at')->useCurrent()->useCurrentOnUpdate();
+        //Schema::create('products_reaction', function (Blueprint $table) {
+        //   $table->id('products_r_id');
+        //    $table->foreignId('product_id')->constrained('product')->onDelete('cascade');
+        //    $table->foreignId('user_id')->constrained('users')->onDelete('cascade');
+        //    $table->string('comment', 700)->nullable();
+        //   $table->tinyInteger('like')->unsigned()->nullable();
+        //    $table->timestamp('reacted_at')->useCurrent();
+        //   $table->timestamp('modified_at')->useCurrent()->useCurrentOnUpdate();
             
-        });
+       // });
     }
 
     /**
