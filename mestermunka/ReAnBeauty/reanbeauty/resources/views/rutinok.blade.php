@@ -24,9 +24,6 @@
                     <li class="nav-item"><a class="nav-link text-light" href="{{ url('/termekek') }}">Termékek</a></li>
                     <li class="nav-item"><a class="nav-link text-light" href="{{ url('/rutinok') }}">Rutinok</a></li>
                     <li class="nav-item"><a class="nav-link text-light" href="{{ url('/profil') }}">Profil</a></li>
-                    <li class="nav-item"><a class="btn btn-custom ms-2" href="{{ url('/registration') }}">Csatlakozz most</a></li>
-                    <li class="nav-item"><a class="btn btn-custom ms-2" href="{{ url('/login') }}">Bejelentkezés</a></li>
-
                 </ul>
             </div>
         </div>
@@ -48,30 +45,7 @@
         </div>
     </div>
 
-    <div class="hero-section">
-        <div class="hero-content">
-            <h1>Fedezd fel a szépség valódi erejét a ReAnBeauty-val!</h1>
-            <p>Szépségápolás a legújabb trendek szerint. Tudd meg, hogyan érheted el a legjobb eredményeket!</p>
-            <button class="btn btn-custom" href="{{ url('/registration') }}">Csatlakozz most!</button>
-        </div>
-    </div>
-
-    <div class="container custom-block mt-5 p-4 text-center">
-        <img src="img/ReAnLogoo.png" alt="ReAnBeauty Logo">
-        <h2>ReAnBeauty</h2>
-        <p>Fedezd fel a szépség valódi erejét a ReAnBeauty-val!</p>
-        <ul class="list-unstyled">
-            <li>🌟 Bőrápolás, Hajápolás, Rutinok, Ihlet</li>
-            <li>💄 Legjobb arc- és hajápolási termékek.</li>
-            <li>💡 Tanuld meg a bevált szépségápolási rutinokat.</li>
-            <li>📸 Oszd meg saját tippjeidet és inspirálj másokat!</li>
-        </ul>
-    </div>
-
-    <footer class="bg-dark text-light text-center py-4 mt-5">
-        <p>Csatlakozz hozzánk és adj tippet másoknak!</p>
-        <p><a href="{{ url('/login') }}" class="text-light">Bejelentkezés</a> | <a href="{{ url('/registratio') }}" class="text-light">Regisztráció</a></p>
-        <p><a href="#" class="text-light">Facebook</a> | <a href="#" class="text-light">Instagram</a> | <a href="#" class="text-light">TikTok</a></p>
-    </footer>
+      
+        <a href="{{ url('/rutinfeltoltesek') }}">Rutint toltok</a>
 </body>
 </html>
