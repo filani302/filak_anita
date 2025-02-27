@@ -1,6 +1,10 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\UserController;
+use App\Http\Controllers\WelcomeController;
+use Illuminate\Support\Facades\File;
+use Illuminate\Support\Facades\Response;
 
 /*
 |--------------------------------------------------------------------------
@@ -21,6 +25,7 @@ Route::get('/custom-css', function () {
         abort(404);
     }
 });
+
 Route::get('/welcome', function () {
     return view('welcome');
 });
@@ -58,3 +63,9 @@ Route::get('/rutinfeltoltesek', function () {
 Route::get('/profil', function () {
     return view('profil');
 });
+
+Route::get('/registration', [UserController::class, 'create'])->name('registration');
+Route::post('/registration', [UserController::class, 'store'])->name('registration.store');
+Route::post('/register', [UserController::class, 'register']);
+Route::get('/welcome', [WelcomeController::class, 'index'])->name('welcome');
+
