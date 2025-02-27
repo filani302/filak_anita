@@ -5,9 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="{{ asset('css/app.css') }}">
-    <title>ReAnBeauty</title>
+    <title>ReAnBeauty főoldal</title>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
-    
+   
 </head>
 <body>
     <nav class="navbar navbar-expand-lg bg-dark shadow-sm">
@@ -24,14 +24,12 @@
                     <li class="nav-item"><a class="nav-link text-light" href="{{ url('/termekek') }}">Termékek</a></li>
                     <li class="nav-item"><a class="nav-link text-light" href="{{ url('/rutinok') }}">Rutinok</a></li>
                     <li class="nav-item"><a class="nav-link text-light" href="{{ url('/profil') }}">Profil</a></li>
-                    <li class="nav-item"><a class="btn btn-custom ms-2" href="{{ url('/registration') }}">Csatlakozz most</a></li>
-                    <li class="nav-item"><a class="btn btn-custom ms-2" href="{{ url('/login') }}">Bejelentkezés</a></li>
-
+ 
                 </ul>
             </div>
         </div>
     </nav>
-
+ 
     <div class="offcanvas offcanvas-end d-lg-none" tabindex="-1" id="offcanvasNav">
         <div class="offcanvas-header">
             <h5 class="offcanvas-title">Menü</h5>
@@ -39,23 +37,21 @@
         </div>
         <div class="offcanvas-body">
             <ul class="navbar-nav">
-                <li class="nav-item"><a class="nav-link" href="#">Főoldal</a></li>
-                <li class="nav-item"><a class="nav-link" href="#">Termékek</a></li>
-                <li class="nav-item"><a class="nav-link" href="#">Rutinok</a></li>
-                <li class="nav-item"><a class="nav-link" href="#">Profil</a></li>
-                <li class="nav-item"><a class="btn btn-dark w-100 mt-2" href="{{ url('/registration') }}">Csatlakozz most</a></li>
+                <li class="nav-item"><a class="nav-link" href="{{ url('/welcome') }}">Főoldal</a></li>
+                <li class="nav-item"><a class="nav-link" href="{{ url('/termekek') }}">Termékek</a></li>
+                <li class="nav-item"><a class="nav-link" href="{{ url('/rutinok') }}">Rutinok</a></li>
+                <li class="nav-item"><a class="nav-link" href="{{ url('/profil') }}">Profil</a></li>
             </ul>
         </div>
     </div>
-
+ 
     <div class="hero-section">
         <div class="hero-content">
             <h1>Fedezd fel a szépség valódi erejét a ReAnBeauty-val!</h1>
             <p>Szépségápolás a legújabb trendek szerint. Tudd meg, hogyan érheted el a legjobb eredményeket!</p>
-            <button class="btn btn-custom" href="{{ url('/registration') }}">Csatlakozz most!</button>
         </div>
     </div>
-
+ 
     <div class="container custom-block mt-5 p-4 text-center">
         <img src="img/ReAnLogoo.png" alt="ReAnBeauty Logo">
         <h2>ReAnBeauty</h2>
@@ -67,7 +63,7 @@
             <li>📸 Oszd meg saját tippjeidet és inspirálj másokat!</li>
         </ul>
     </div>
-
+ 
     <footer class="bg-dark text-light text-center py-4 mt-5">
         <p>Csatlakozz hozzánk és adj tippet másoknak!</p>
         <p><a href="{{ url('/login') }}" class="text-light">Bejelentkezés</a> | <a href="{{ url('/registratio') }}" class="text-light">Regisztráció</a></p>
@@ -75,3 +71,4 @@
     </footer>
 </body>
 </html>
+ 

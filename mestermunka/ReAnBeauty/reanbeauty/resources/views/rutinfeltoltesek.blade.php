@@ -42,13 +42,60 @@
             </ul>
         </div>
     </div>
-   
-    <h1>Rutint töltök </h1>
-
-    <div class="rutintoltes">
-        <textarea name="leirás" id=""leiras></textarea>
-    </div>
+    <div class="container mt-4">
+            <h2>Yay, we love dogs! Give us the basics about your pup.</h2>
+            <form>
+                <div class="mb-3">
+                    <label class="form-label">Name</label>
+                    <input type="text" class="form-control" placeholder="Pet’s name">
+                </div>
+                <div class="mb-3">
+                    <label class="form-label">Breed</label>
+                    <input type="text" class="form-control" placeholder="Pet’s breed">
+                </div>
+                <div class="mb-3">
+                    <label class="form-label">Birthday</label>
+                    <input type="date" class="form-control">
+                </div>
+                <div class="mb-3">
+                    <label class="form-label">Gender</label>
+                    <div class="d-flex gap-2">
+                        <input type="radio" class="btn-check" name="gender" id="female" checked>
+                        <label class="form-check-label" for="female">Female</label>
+                        <input type="radio" class="btn-check" name="gender" id="male">
+                        <label class="form-check-label" for="male">Male</label>
+                    </div>
+                </div>
+                <div class="mb-3">
+                    <label class="form-label">Spayed or Neutered</label>
+                    <div class="d-flex gap-2">
+                        <input type="radio" class="btn-check" name="spayed" id="yes">
+                        <label class="form-check-label" for="yes">Yes</label>
+                        <input type="radio" class="btn-check" name="spayed" id="no">
+                        <label class="form-check-label" for="no">No</label>
+                    </div>
+                </div>
+                <div class="mb-3">
+                    <label class="form-label">Weight</label>
+                    <div class="d-flex gap-2">
+                        <input type="radio" class="btn-check" name="weight" id="w1">
+                        <label class="form-check-label" for="w1">0-25 lbs</label>
+                        <input type="radio" class="btn-check" name="weight" id="w2">
+                        <label class="form-check-label" for="w2">25-50 lbs</label>
+                        <input type="radio" class="btn-check" name="weight" id="w3">
+                        <label class="form-check-label" for="w3">50-100 lbs</label>
+                        <input type="radio" class="btn-check" name="weight" id="w4">
+                        <label class="form-check-label" for="w4">100+ lbs</label>
+                    </div>
+                </div>
+                <div class="d-flex justify-content-between">
+                    <button type="button" class="btn btn-light">Back</button>
+                    <button type="submit" class="btn btn-custom">Next</button>
+                </div>
+            </form>
+        </div>
    
     
+
 </body>
 </html>

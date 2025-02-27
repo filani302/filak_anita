@@ -39,6 +39,9 @@ Route::get('/', function () {
 Route::get('/termekek', function () {
     return view('termekek');
 });
+Route::get('/termekfeltoltesek', function () {
+    return view('termekfeltoltesek');
+});
 
 Route::get('/login', function () {
     return view('login');

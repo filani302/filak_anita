@@ -47,14 +47,14 @@ body {
       display: none !important;
   }
 }
-
-
+ 
+ 
 .ReAnLogoo {
   width: 80px;
   height: 80px;
   border-radius: 50%;
 }
-
+ 
 .hero-section {
   background: url('/img/atetszoFokep.webp') center/cover no-repeat, linear-gradient(to bottom, rgba(0,0,0,0.6), rgba(255,255,255,0.1));
   min-height: 100vh;
@@ -68,25 +68,25 @@ body {
   position: relative;
   overflow: hidden;
 }
-
+ 
 /* Animációk */
 @keyframes fadeInUp {
   0% { opacity: 0; transform: translateY(30px); }
   100% { opacity: 1; transform: translateY(0); }
 }
-
+ 
 .hero-content {
   position: relative;
   animation: fadeInUp 1.2s ease-out;
   z-index: 2;
 }
-
+ 
 /* Hover hatások a képekhez */
 .ReAnFokep:hover {
   transform: scale(1.05);
   transition: transform 0.4s ease;
 }
-
+ 
 /* Gomb animáció */
 .btn-custom {
   border: 2px solid #fff;
@@ -94,13 +94,13 @@ body {
   background-color: transparent;
   transition: all 0.4s;
 }
-
+ 
 .btn-custom:hover {
   background-color: #fff;
   color: #333;
   transform: scale(1.1);
 }
-
+ 
 /* Testreszabott stílusok */
 .custom-block {
   max-width: 750px;
@@ -111,46 +111,99 @@ body {
   margin: auto;
   animation: fadeInUp 1s ease-out;
 }
-
+ 
 .custom-block img {
   width: 130px;
   height: 130px;
   object-fit: cover;
   border-radius: 50%;
 }
-
+ 
 .custom-block h2 {
   font-weight: 600;
   color: #333;
   font-size: 1.8rem;
 }
-
+ 
 .custom-block p {
   color: #777;
 }
-
+ 
 /* Reszponzív módosítások */
 @media (max-width: 767px) {
   .hero-section {
       padding: 2rem;
   }
-
+ 
   .custom-block {
       padding: 15px;
   }
 }
-
-
+ 
+ 
 .rutintoltes{
   width: 500px;
   height: 500px;
   background-color: darkcyan;
-  
+ 
 }
 .kephelye{
   width: 150px;
   height: 150px;
   background-color: red;
   border-radius: 85px;
-
+ 
 }
+
+
+/*termekek*/
+
+ .content-box {
+            border: 2px solid black;
+            padding: 20px;
+            margin: 20px auto;
+            max-width: 800px;
+            background-color: #f9f9f9;
+            height: 300px;
+        }
+        .image-placeholder {
+            width: 100%;
+            height: 600px;
+            background-color: yellow;
+            border: 2px solid black;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-weight: bold;
+        }
+        .icons {
+            display: flex;
+            justify-content: space-between;
+            padding: 10px 20px;
+            border-top: 2px solid black;
+        }
+        .icons i {
+            font-size: 24px;
+            cursor: pointer;
+        }
+
+        .col-md-4{
+          width: 200px;
+          height: 200px;
+          background-color: rgb(205, 50, 182);
+        }
+
+
+        /*like*/
+        
+
+
+
+
+
+        /*profiloldal*/
+
+        .card p-3 mb-3 shadow-sm{
+          width: 400px;
+        }
+        

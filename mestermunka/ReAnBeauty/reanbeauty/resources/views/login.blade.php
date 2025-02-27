@@ -19,15 +19,7 @@
             <button class="navbar-toggler d-lg-none" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNav">
                 <span class="navbar-toggler-icon bg-light"></span>
             </button>
-            <div class="collapse navbar-collapse d-none d-lg-block">
-                <ul class="navbar-nav ms-auto">
-                    <li class="nav-item"><a class="nav-link text-light" href="{{ url('/welcome') }}">Főoldal</a></li>
-                    <li class="nav-item"><a class="nav-link text-light" href="#">Termékek</a></li>
-                    <li class="nav-item"><a class="nav-link text-light" href="#">Rutinok</a></li>
-                    <li class="nav-item"><a class="nav-link text-light" href="#">Profil</a></li>
-                    <li class="nav-item"><a class="btn btn-custom ms-2" href="{{ url('/login') }}">Csatlakozz most</a></li>
-                </ul>
-            </div>
+            
         </div>
     </nav>
 
