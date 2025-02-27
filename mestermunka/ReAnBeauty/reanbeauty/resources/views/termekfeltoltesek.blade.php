@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="{{ asset('css/app.css') }}">
-    <title>ReAnBeauty Felhasználói profil</title>
+    <title>ReAnBeauty</title>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
     
 </head>
@@ -45,22 +45,46 @@
         </div>
     </div>
 
-    
-
     <div class="container mt-5">
-        <h2 class="text-center mb-4">Felhasználói profil</h2>
-        <hr>
-        <div class="row">
-            
-                
-                    <div class="card p-3 mb-3 shadow-sm">
-                        <p><strong>Név:</strong></p>
-                        <p><strong>Email:</strong></p>
-                        <p><strong>Telefon:</strong> </p>
-                   
-                </div>
-           
-        </div>
+        <h1 class="mb-4">Termék feltöltése</h1>
+
+        @if ($errors->any())
+            <div class="alert alert-danger">
+                <ul>
+                    @foreach ($errors->all() as $error)
+                        <li>{{ $error }}</li>
+                    @endforeach
+                </ul>
+            </div>
+        @endif
+
+            @csrf
+            <div class="mb-3">
+                <label for="title" class="form-label">Termék neve</label>
+                <input type="text" class="form-control" id="title" name="title" required>
+            </div>
+
+            <div class="mb-3">
+                <label for="product_type" class="form-label">Típus</label>
+                <select class="form-select" id="product_type" name="product_type" required>
+                    <option value="Kozmetikum">Kozmetikum</option>
+                    <option value="Bőrápolás">Bőrápolás</option>
+                    <option value="Egyéb">Egyéb</option>
+                </select>
+            </div>
+
+            <div class="mb-3">
+                <label for="description" class="form-label">Leírás</label>
+                <textarea class="form-control" id="description" name="description" rows="4" required></textarea>
+            </div>
+
+            <div class="mb-3">
+                <label for="image" class="form-label">Termékkép</label>
+                <input type="file" class="form-control" id="image" name="image">
+            </div>
+
+            <button type="submit" class="btn btn-primary">Feltöltés</button>
+        </form>
     </div>
       
 </body>
