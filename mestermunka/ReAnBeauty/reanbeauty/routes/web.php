@@ -61,3 +61,9 @@ Route::get('/rutinfeltoltesek', function () {
 Route::get('/profil', function () {
     return view('profil');
 });
+Route::get('/TudjmegTobbet', function () {
+    return view('TudjmegTobbet');
+});
+Route::get('/elfelejtettem', function () {
+    return view('elfelejtettem');
+});

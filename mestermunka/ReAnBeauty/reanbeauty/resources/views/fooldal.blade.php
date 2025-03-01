@@ -47,7 +47,7 @@
         <div class="hero-content">
             <h1 class="fw-bold">✨ Fedezd fel a szépség igazi erejét! ✨</h1>
             <p class="lead">Bőrápolás. Hajápolás. Rutinok. Inspiráció.</p>
-            <a href="index.html" class="btn btn-custom me-3">Tudj meg többet</a>
+            <a href="{{ url('/TudjmegTobbet') }}" class="btn btn-custom me-3">Tudj meg többet</a>
             <a href="{{ url('/registration') }}" class="btn btn-custom">Csatlakozz most</a>
         </div>
     </section>

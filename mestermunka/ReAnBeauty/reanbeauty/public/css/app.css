@@ -207,3 +207,66 @@ body {
           width: 400px;
         }
         
+
+
+        /*bejelentkezes*/
+
+        .login-body {
+          background: linear-gradient(to right, #f6ebed, #ffbdd8);
+          height: 100vh;
+      }
+      .login-kartya {
+          border-radius: 20px;
+          box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+          padding: 30px;
+      }
+      .login-input {
+          border-radius: 10px;
+      }
+      .login-gomb {
+          width: 100%;
+          border-radius: 10px;
+          background-color: #ffd8d8;
+          border: none;
+          color: rgb(1, 1, 1);
+      }
+      .login-gomb:hover {
+          background-color: #000000;
+          color: white;
+      }
+      .login-icon {
+          background: #161616;
+          color: white;
+          border-radius: 10px 0 0 10px;
+      }
+
+      /*elfelejtettem a jelszavam*/
+
+      .elfelejtettem-body {
+        background: linear-gradient(to right, #f6ebed, #ffbdd8);
+          height: 100vh;
+    }
+    .elfelejtettem-kartya {
+      border-radius: 20px;
+      box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+      padding: 30px;
+    }
+    .elfelejtettem-input {
+      border-radius: 10px;
+    }
+    .elfelejtettem-gomb {
+      width: 100%;
+      border-radius: 10px;
+      background-color: #ffd8d8;
+      border: none;
+      color: rgb(1, 1, 1);
+    }
+    .elfelejtettem-gomb:hover {
+      background-color: #000000;
+      color: white;
+    }
+    .elfelejtettem-icon {
+      background: #161616;
+      color: white;
+      border-radius: 10px 0 0 10px;
+    }
