@@ -63,12 +63,12 @@
                     @csrf
                     <div class="mb-3">
                         <label for="telefonszam" class="form-label">Telefonszám</label>
-                        <input type="telefonszam" class="form-control" id="telefonszam" name="telefonszam" required>
+                        <input type="text" class="form-control" id="telefonszam" name="phone_number" required>
                     </div>
 
                     <div class="mb-3">
                         <label for="felhasznalonev" class="form-label">Felhasználónév</label>
-                        <input type="felhasznalonev" class="form-control" id="felhasznalonev" name="felhasznalonev" required>
+                        <input type="text" class="form-control" id="felhasznalonev" name="username" required>
                     </div>
 
                     <div class="mb-3">
@@ -77,11 +77,11 @@
                     </div>
                     <div class="mb-3">
                         <label for="jelszo" class="form-label">Jelszó</label>
-                        <input type="jelszo" class="form-control" id="jelszo" name="jelszo" required>
+                        <input type="password" class="form-control" id="jelszo" name="password" required>
                     </div>
                     <div class="mb-3">
                         <label for="jelszo" class="form-label">Jelszó ismétlése</label>
-                        <input type="jelszo" class="form-control" id="jelszo" name="jelszo" required>
+                        <input type="password" class="form-control" id="jelszo_ismetles" name="password_confirmation" required>
                     </div>
                     <button type="submit" class="btn btn-primary bg-dark" >Regisztrálok!</button>
 

@@ -6,31 +6,30 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
-use Laravel\Sanctum\HasApiTokens;
+//use Laravel\Sanctum\HasApiTokens;
+use Illuminate\Database\Eloquent\Model;
 
-class User extends Authenticatable
+
+class Users extends Authenticatable
 {
     use  HasFactory;
+
     protected $table = 'users';
 
     protected $fillable = [
-        'username',
+        'username', // 'name' helyett ez van az adatbázisban
         'email',
         'phone_number',
         'password',
+        'role',
     ];
 
     protected $hidden = [
-        'user_id',
-        'role',
-        'email',
-        'phone_number',
         'password',
-        'created_at',
-        'modified_at'
     ];
 
     protected $casts = [
-        'email_verified_at' => 'datetime',
+        'created_at' => 'datetime',
+        'updated_at' => 'datetime',
     ];
 }

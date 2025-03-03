@@ -19,7 +19,7 @@ return new class extends Migration
             $table->string('phone_number', 12);
             $table->string('password', 150);
             $table->timestamp('created_at')->useCurrent();
-            $table->timestamp('modified_at')->useCurrent()->useCurrentOnUpdate();
+            $table->timestamp('updated_at')->useCurrent()->useCurrentOnUpdate();
         });
     }
 
