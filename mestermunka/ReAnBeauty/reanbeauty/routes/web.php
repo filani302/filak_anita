@@ -1,7 +1,12 @@
 <?php
-
+ 
 use Illuminate\Support\Facades\Route;
-
+use App\Http\Controllers\UserController;
+use App\Http\Controllers\WelcomeController;
+use App\Http\Controllers\LoginController;
+use Illuminate\Support\Facades\File;
+use Illuminate\Support\Facades\Response;
+ 
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -21,49 +26,63 @@ Route::get('/custom-css', function () {
         abort(404);
     }
 });
+ 
 Route::get('/welcome', function () {
     return view('welcome');
 });
-
+ 
 Route::get('/header', function () {
     return view('header');
 });
-
+ 
 Route::get('/footer', function () {
     return view('footer');
 });
 Route::get('/', function () {
     return view('fooldal');
 });
-
+ 
 Route::get('/termekek', function () {
     return view('termekek');
 });
 Route::get('/termekfeltoltesek', function () {
     return view('termekfeltoltesek');
 });
-
+ 
 Route::get('/login', function () {
     return view('login');
 });
-
+ 
 Route::get('/registration', function () {
     return view('registration');
 });
-
+ 
 Route::get('/rutinok', function () {
     return view('rutinok');
 });
-
+ 
 Route::get('/rutinfeltoltesek', function () {
     return view('rutinfeltoltesek');
 });
 Route::get('/profil', function () {
     return view('profil');
 });
-Route::get('/TudjmegTobbet', function () {
-    return view('TudjmegTobbet');
-});
+
 Route::get('/elfelejtettem', function () {
     return view('elfelejtettem');
 });
+
+Route::get('/TudjmegTobbet', function () {
+    return view('TudjmegTobbet');
+});
+ 
+ 
+ 
+Route::get('/registration', [UserController::class, 'create'])->name('registration');
+Route::post('/registration', [UserController::class, 'store'])->name('registration.store');
+Route::post('/register', [UserController::class, 'register']);
+Route::get('/welcome', [WelcomeController::class, 'index'])->name('welcome');
+ 
+Route::get('/login', [LoginController::class, 'showLoginForm'])->name('login');
+Route::post('/login', [LoginController::class, 'login'])->name('login.post');
+//Route::post('/logout', [LoginController::class, 'logout'])->name('logout');
