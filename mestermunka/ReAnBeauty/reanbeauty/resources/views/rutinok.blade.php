@@ -9,8 +9,8 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
     
 </head>
-<body>
-    <nav class="navbar navbar-expand-lg bg-dark shadow-sm">
+<body class="rutin-body"> <!-- Itt adtuk hozzá az osztályt -->
+<nav class="navbar navbar-expand-lg bg-dark shadow-sm">
         <div class="container">
             <a class="navbar-brand text-light fs-4" href="#">
                 <img src="/img/ReAnLogoo.png" class="ReAnLogoo" alt="Logo" width="50"> ReAnBeauty
@@ -45,7 +45,63 @@
         </div>
     </div>
 
-      
-        <a href="{{ url('/rutinfeltoltesek') }}">Rutint toltok</a>
+    <a href="{{ url('/rutinfeltoltesek') }}" class="btn btn-outline-light bg-dark text-light" >
+    Megosztom a rutinomat!
+    </a>
+
+  <center><h1>Rutinok</h1></center>  
+
+    <div class="container">
+    <!-- Nagy doboz -->
+    <div class="content-box">
+        <div class="row">
+            <!-- Bal oldal: szövegek -->
+            <div class="col-md-8">
+                <p><strong>Cím vagy termék neve</strong></p>
+                <p>Termékeírás
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. 
+                    Maiores placeat quam neque hic impedit distinctio beatae 
+                    magnam incidunt at nemo numquam eveniet necessitatibus aliquam 
+                    dolores perspiciatis, dolore consectetur quidem dolorum?</p>
+                </p>
+            </div>
+            <!-- Jobb oldal: Kép helye -->
+            <div class="col-md-4">
+            <img src="kephelye.jpg" alt=""> 
+            <p>kép</p>         
+         </div>
+         <!-- Ikonok (Kedvelés, Kedvencek, Komment) -->
+    
+        <i class="fas fa-heart">like</i>  <!-- Kedvelés -->
+        <i class="fas fa-star"></i>   <!-- Kedvencek -->
+        <i class="fas fa-comment"></i> <!-- Komment -->      
+    </div>
+    </div>
+
+    <div class="content-box">
+        <div class="row">
+            <!-- Bal oldal: szövegek -->
+            <div class="col-md-8">
+                <p><strong>Cím vagy termék neve</strong></p>
+                <p>Termékleírás
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. 
+                    Maiores placeat quam neque hic impedit distinctio beatae 
+                    magnam incidunt at nemo numquam eveniet necessitatibus aliquam 
+                    dolores perspiciatis, dolore consectetur quidem dolorum?</p>
+                </p>
+            </div>
+            <!-- Jobb oldal: Kép helye -->
+            <div class="col-md-4">
+            <img src="kephelye.jpg" alt="">  
+            <p>kép</p>        
+         </div>
+         <!-- Ikonok (Kedvelés, Kedvencek, Komment) -->
+    
+        <i class="fas fa-heart">like</i>  <!-- Kedvelés -->
+        <i class="fas fa-star"></i>   <!-- Kedvencek -->
+        <i class="fas fa-comment"></i> <!-- Komment -->      
+    </div>
+    </div>
+</div>
 </body>
-</html>
+</head>

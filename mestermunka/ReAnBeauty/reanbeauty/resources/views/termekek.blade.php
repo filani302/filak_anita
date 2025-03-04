@@ -44,7 +44,12 @@
             </ul>
         </div>
     </div>
-    <h1>Termékek</h1>
+    
+    <a href="{{ url('/termekfeltoltesek') }}" class="btn btn-outline-light bg-dark text-light" >
+    Megosztom kedvenc termékemet!
+    </a>
+
+    <center><h1>Termékek</h1></center>
     <div class="container">
     <!-- Nagy doboz -->
     <div class="content-box">
@@ -61,7 +66,7 @@
             </div>
             <!-- Jobb oldal: Kép helye -->
             <div class="col-md-4">
-            <img src="kephelye.jpg" alt=""> 
+            <img src="kephelye" alt=""> 
             <p>kép</p>         
          </div>
          <!-- Ikonok (Kedvelés, Kedvencek, Komment) -->

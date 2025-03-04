@@ -140,19 +140,46 @@ body {
   }
 }
  
+/*Rutinfeltoltesek*/
  
-.rutintoltes{
-  width: 500px;
-  height: 500px;
-  background-color: darkcyan;
- 
+.rutinfeltoltesek-body {
+  background: linear-gradient(to right, #f6ebed, #ffbdd8);
+  font-family: 'Arial', sans-serif;
 }
-.kephelye{
-  width: 150px;
-  height: 150px;
-  background-color: red;
-  border-radius: 85px;
- 
+.form-container {
+  max-width: 600px;
+  background: white;
+  padding: 30px;
+  border-radius: 15px;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+}
+.form-control {
+  border-radius: 10px;
+  transition: all 0.3s ease-in-out;
+}
+.form-control:focus {
+  box-shadow: 0 0 10px rgba(253, 125, 249, 0.3);
+  border-color: #e23ee2;
+}
+.btn-custom {
+  background-color: #d900ff;
+  color: white;
+  border-radius: 10px;
+  font-size: 18px;
+  transition: 0.3s;
+}
+.btn-custom:hover {
+  background-color: #b3006b;
+}
+.upload-box {
+  border: 2px dashed #f0efef;
+  padding: 20px;
+  text-align: center;
+  border-radius: 10px;
+  cursor: pointer;
+}
+.upload-box:hover {
+  background-color: #f8f9fa;
 }
 
 
@@ -270,3 +297,30 @@ body {
       color: white;
       border-radius: 10px 0 0 10px;
     }
+
+    /*Rutin*/
+
+    .rutin-body {
+      background: linear-gradient(to right, #f6ebed, #ffbdd8);
+      font-family: Arial, sans-serif;
+  }
+  .rutin-container {
+    max-width: 1000px;
+    margin: auto;
+    padding-top: 30px;
+}
+.rutin-card {
+    border-radius: 15px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+}
+.rutin-card img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+.rutin-title {
+    font-size: 20px;
+    font-weight: bold;
+    color: #007bff;
+}
