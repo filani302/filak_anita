@@ -12,14 +12,14 @@ return new class extends Migration
     public function up(): void
     {
        Schema::create('users', function (Blueprint $table) {
-           $table->id('user_id'); // Egyedi ID (primary key)
-           $table->string('username', 50);
+            $table->id(); // Egyedi ID (primary key)
+            $table->string('username', 50);
             $table->integer('role'); // Szerepkör(3)
-          $table->string('email', 250)->unique();
-          $table->string('phone_number', 12);
-         $table->string('password', 150);
+            $table->string('email', 250)->unique();
+            $table->string('phone_number', 12);
+            $table->string('password', 150);
             $table->timestamp('created_at')->useCurrent();
-           $table->timestamp('updated_at')->useCurrent()->useCurrentOnUpdate();
+            $table->timestamp('updated_at')->useCurrent()->useCurrentOnUpdate();
        });
     }
 

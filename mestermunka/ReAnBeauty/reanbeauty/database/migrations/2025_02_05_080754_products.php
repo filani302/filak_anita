@@ -12,7 +12,7 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('products', function (Blueprint $table) {
-            $table->id('product_id');
+            $table->id();
             $table->tinyInteger('product_type')->unsigned();
             $table->string('title', 50);
             $table->string('image', 50)->nullable();
@@ -26,6 +26,7 @@ return new class extends Migration
     }
 
     /**
+     * 
      * Reverse the migrations.
      */
     public function down(): void
