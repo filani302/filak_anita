@@ -11,14 +11,14 @@ return new class extends Migration
      */
     public function up(): void
     {
-       // Schema::create('favourites', function (Blueprint $table) {
-           // $table->id('fav_id');
-           // $table->foreignId('rutin_id')->constrained('rutin')->onDelete('cascade');
-           // $table->foreignId('product_id')->constrained('products')->onDelete('cascade');
-           // $table->foreignId('user_id')->constrained('users')->onDelete('cascade');
-           // $table->timestamp('created_at')->useCurrent();
+        Schema::create('favourites', function (Blueprint $table) {
+            $table->id('fav_id');
+            $table->foreignId('rutin_id')->constrained('rutin')->onDelete('cascade');
+            $table->foreignId('product_id')->constrained('products')->onDelete('cascade');
+            $table->foreignId('user_id')->constrained('users')->onDelete('cascade');
+            $table->timestamp('created_at')->useCurrent();
             
-       // });
+        });
     }
 
     /**

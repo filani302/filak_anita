@@ -162,14 +162,14 @@ body {
   border-color: #e23ee2;
 }
 .btn-custom {
-  background-color: #d900ff;
+  background-color: #000000;
   color: white;
   border-radius: 10px;
   font-size: 18px;
   transition: 0.3s;
 }
 .btn-custom:hover {
-  background-color: #b3006b;
+  background-color: #df8bbd;
 }
 .upload-box {
   border: 2px dashed #f0efef;
