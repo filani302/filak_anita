@@ -14,7 +14,7 @@
         .card:hover { transform: scale(1.05); transition: 0.3s ease-in-out; }
     </style>
 </head>
-<body>
+<body class="TudjmegTobbet-body">
     <nav class="navbar navbar-expand-lg bg-dark shadow-sm">
         <div class="container">
             <a class="navbar-brand text-light fs-4" href="#">
@@ -55,16 +55,18 @@
                     <li><strong>Interakció a közösséggel</strong> – Likeold a posztokat, kommentelj, és beszélgess másokkal a kedvenc termékeitekről.</li>
                     <li><strong>Egyszerű és átlátható felület</strong> – Gyors és könnyen kezelhető platform mindenki számára.</li>
                 </ul>
+                <div class="text-center mt-4 fade-in">
+            <a href="{{ url('/registration') }}" class="btn btn-primary btn-lg bg-dark">Csatlakozz most!</a>
+        </div>
+
             </div>
             <div class="col-md-6 text-center fade-in">
                 <div class="card shadow-lg p-3 rounded">
-                    <img src="/img/ReAnFokep.png" class="img-fluid rounded" alt="Beauty Community">
+                    <img src="/img/ReAnBeauty-tudjtobbetkep.jpg" class="img-fluid rounded" alt="Beauty Community">
                 </div>
             </div>
         </div>
-        <div class="text-center mt-4 fade-in">
-            <a href="{{ url('/registration') }}" class="btn btn-primary btn-lg">Csatlakozz most!</a>
-        </div>
+        
     </div>
 
     <script>

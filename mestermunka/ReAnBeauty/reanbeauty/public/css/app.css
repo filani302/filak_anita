@@ -185,6 +185,10 @@ body {
 
 /*termekek*/
 
+.termekek-body{
+  background: linear-gradient(to right, #f6ebed, #ffbdd8);
+}
+
  .content-box {
             border: 2px solid black;
             padding: 20px;
@@ -323,4 +327,12 @@ body {
     font-size: 20px;
     font-weight: bold;
     color: #007bff;
+}
+
+.TudjmegTobbet-body{
+  background: linear-gradient(to right, #f6ebed, #ffbdd8);
+}
+
+.profil-body{
+  background: linear-gradient(to right, #f6ebed, #ffbdd8);
 }
