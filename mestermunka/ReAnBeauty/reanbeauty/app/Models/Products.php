@@ -24,4 +24,9 @@ class Products extends Model
         'created_at',
         'modified_at'
     ];
+
+    public function allergens()
+{
+    return $this->belongsToMany(Allergen::class, 'conection', 'product_id', 'allergen_id');
+}
 }

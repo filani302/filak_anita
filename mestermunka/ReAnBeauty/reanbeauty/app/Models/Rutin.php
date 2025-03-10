@@ -25,4 +25,10 @@ class Rutin extends Model
         'created_at',
         'modified_at'
     ];
+
+    public function allergens()
+    {
+    return $this->belongsToMany(Allergen::class, 'conection', 'rutin_id', 'allergen_id');
+    }   
+    
 }

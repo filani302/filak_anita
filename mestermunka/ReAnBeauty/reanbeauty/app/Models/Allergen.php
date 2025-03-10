@@ -9,4 +9,16 @@ class Allergen extends Model
 {
     use HasFactory;
     protected $table = 'allergen';
+
+    protected $fillable = ['name', 'db'];
+
+    public function products()
+    {
+        return $this->belongsToMany(Products::class, 'conection', 'allergen_id', 'product_id');
+    }
+
+    public function rutins()
+    {
+        return $this->belongsToMany(Rutin::class, 'conection', 'allergen_id', 'rutin_id');
+    }
 }

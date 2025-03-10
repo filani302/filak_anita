@@ -3,7 +3,10 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Models\Products;
+public function allergens()
+{
+    return $this->belongsToMany(Allergen::class, 'conection', 'rutin_id', 'allergen_id');
+}
 
 class ProductFormController extends Controller
 {
