@@ -10,6 +10,7 @@ class Allergen extends Model
     use HasFactory;
     protected $table = 'allergen';
 
+    public $timestamps = false;
     protected $fillable = ['name', 'db'];
 
     public function products()

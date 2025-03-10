@@ -72,9 +72,9 @@
             <div class="mb-3">
                 <label for="product_type" class="form-label fw-bold">Típus</label>
                 <select class="form-select" id="product_type" name="product_type" required>
-                    <option value="Kozmetikum">Kozmetikum</option>
-                    <option value="Bőrápolás">Bőrápolás</option>
-                    <option value="Egyéb">Egyéb</option>
+                    <option value="0">Kozmetikum</option>
+                    <option value="1">Bőrápolás</option>
+                    <option value="2">Egyéb</option>
                 </select>
             </div>
 
