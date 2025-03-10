@@ -29,6 +29,14 @@
             </div>
         </div>
     </nav>
+
+    <section class="hero-section2">
+        <div class="hero-content">
+            <h1 class="fw-bold">✨ Oszd meg aktuális termékedről a véleményed ✨</h1>
+            <p class="lead">Bőrápolás. Hajápolás. Rutinok. Inspiráció.</p>
+            <a href="{{ url('/termekfeltoltesek') }}" class="btn btn-custom me-3">Megosztom a termékem</a>
+        </div>
+    </section>
  
     <div class="offcanvas offcanvas-end d-lg-none" tabindex="-1" id="offcanvasNav">
         <div class="offcanvas-header">
@@ -45,9 +53,7 @@
         </div>
     </div>
     
-    <a href="{{ url('/termekfeltoltesek') }}" class="btn btn-outline-light bg-dark text-light" >
-    Megosztom kedvenc termékemet!
-    </a>
+    
 
     <center><h1>Termékek</h1></center>
     <div class="container">

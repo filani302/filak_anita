@@ -8,7 +8,7 @@
     <title>ReAnBeauty - Rutin feltöltések</title>
     
 </head>
-<body class="rutinfeltoltesek-body">
+<body class="feltoltesek-body">
     <nav class="navbar navbar-expand-lg bg-dark shadow-sm">
         <div class="container">
             <a class="navbar-brand text-light fs-4" href="#">
@@ -31,19 +31,27 @@
     <div class="container d-flex justify-content-center align-items-center min-vh-100">
     <div class="form-container">
         <h2 class="text-center text-dark mb-4">Oszd meg jól bevált rutinodat!</h2>
-        <form>
+
+        <form action="{{ url('rutinfeltoltesek') }}" method="POST">
             <div class="mb-3">
                 <label class="form-label fw-bold">Termék neve <i class="fas fa-tag"></i></label>
                 <input type="text" class="form-control shadow-sm" placeholder="Adja meg a termék nevét">
+            </div>
+            <div class="mb-3">
+                <label for="allergen" class="form-label">Allergen</label>
+                <br>
+                <input type="checkbox" name="allergens[]" value="0"> Illatanyagok<br>
+                <input type="checkbox" name="allergens[]" value="1"> Tartósítószerek<br>
+                <input type="checkbox" name="allergens[]" value="2"> Emulgeálószerek<br>
+                <input type="checkbox" name="allergens[]" value="3"> Növényi kivonatok és illóolajok<br>
             </div>
             <div class="mb-3">
                 <label class="form-label fw-bold">Leírás <i class="fas fa-pencil-alt"></i></label>
                 <textarea class="form-control shadow-sm" rows="4" placeholder="Adj leírást, hogyan használod termékedet."></textarea>
             </div>
             <div class="mb-3">
-                <label class="form-label fw-bold">Kép URL <i class="fas fa-link"></i></label>
-                <input type="url" class="form-control shadow-sm" id="image-url" placeholder="Illessz be egy kép URL-t">
-                <img id="image-preview" class="image-preview">
+                <label for="image" class="form-label">Termékkép</label>
+                <input type="file" class="form-control" id="image" name="image">
             </div>
             <button type="submit" class="btn btn-custom bg-dark w-100 fw-bold">Beküldés <i class="fas fa-paper-plane"></i></button>
         </form>

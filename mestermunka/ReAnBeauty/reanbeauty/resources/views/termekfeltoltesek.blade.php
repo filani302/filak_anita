@@ -9,7 +9,7 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
     
 </head>
-<body>
+<body class="feltoltesek-body">
     <nav class="navbar navbar-expand-lg bg-dark shadow-sm">
         <div class="container">
             <a class="navbar-brand text-light fs-4" href="#">
@@ -46,7 +46,7 @@
     </div>
 
     <div class="container mt-5">
-        <h1 class="mb-4">Termék feltöltése</h1>
+        
 
         @if ($errors->any())
             <div class="alert alert-danger">
@@ -59,13 +59,18 @@
         @endif
 
             @csrf
+
+        <div class="container d-flex justify-content-center align-items-center min-vh-100">
+        <div class="form-container">
+        <h2 class="text-center text-dark mb-4">Oszd meg jól bevált termékeidet!</h2>
+        <form action="{{ url('termekfeltoltesek') }}" method="POST">  
             <div class="mb-3">
-                <label for="title" class="form-label">Termék neve</label>
-                <input type="text" class="form-control" id="title" name="title" required>
+                <label for="title" class="form-label fw-bold">Termék neve</label>
+                <input type="text"  class="form-control shadow-sm"  id="title" name="title" required>
             </div>
 
             <div class="mb-3">
-                <label for="product_type" class="form-label">Típus</label>
+                <label for="product_type" class="form-label fw-bold">Típus</label>
                 <select class="form-select" id="product_type" name="product_type" required>
                     <option value="Kozmetikum">Kozmetikum</option>
                     <option value="Bőrápolás">Bőrápolás</option>
@@ -74,17 +79,28 @@
             </div>
 
             <div class="mb-3">
-                <label for="description" class="form-label">Leírás</label>
-                <textarea class="form-control" id="description" name="description" rows="4" required></textarea>
+                <label for="allergen" class="form-label fw-bold">Allergen</label>
+                <br>
+                <input type="checkbox" name="allergens[]" value="0"> Illatanyagok<br>
+                <input type="checkbox" name="allergens[]" value="1"> Tartósítószerek<br>
+                <input type="checkbox" name="allergens[]" value="2"> Emulgeálószerek<br>
+                <input type="checkbox" name="allergens[]" value="3"> Növényi kivonatok és illóolajok<br>
             </div>
 
             <div class="mb-3">
-                <label for="image" class="form-label">Termékkép</label>
+                <label for="description" class="form-label fw-bold">Leírás</label>
+                <textarea class="form-control shadow-sm" id="description" name="description" rows="4" required></textarea>
+            </div>
+
+            <div class="mb-3">
+                <label for="image" class="form-label fw-bold">Termékkép</label>
                 <input type="file" class="form-control" id="image" name="image">
             </div>
 
-            <button type="submit" class="btn btn-primary">Feltöltés</button>
+            <button type="submit" class="btn btn-custom bg-dark w-100 fw-bold">Beküldés <i class="fas fa-paper-plane"></i></button>
         </form>
+        </div>
+        </div>
     </div>
       
 </body>
