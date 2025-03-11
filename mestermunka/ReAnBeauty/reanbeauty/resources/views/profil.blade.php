@@ -6,13 +6,12 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="{{ asset('css/app.css') }}">
     <title>ReAnBeauty Felhasználói profil</title>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
-    
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>   
 </head>
 <body class="profil-body">
     <nav class="navbar navbar-expand-lg bg-dark shadow-sm">
         <div class="container">
-            <a class="navbar-brand text-light fs-4" href="#">
+            <a class="navbar-brand text-light fs-4" href="{{ url('/welcome') }}">
                 <img src="/img/ReAnLogoo.png" class="ReAnLogoo" alt="Logo" width="50"> ReAnBeauty
             </a>
             <button class="navbar-toggler d-lg-none" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNav">
@@ -25,12 +24,10 @@
                     <li class="nav-item"><a class="nav-link text-light" href="{{ url('/rutinok') }}">Rutinok</a></li>
                     <li class="nav-item"><a class="nav-link text-light" href="{{ url('/profil') }}">Profil</a></li>
                     <li class="nav-item"><a class="nav-link text-light" href="{{ url('/login') }}">Kijelentkezés</a></li>
-
                 </ul>
-            </div>
-        </div>
+            </div>           
+        </div>       
     </nav>
-
     <div class="offcanvas offcanvas-end d-lg-none" tabindex="-1" id="offcanvasNav">
         <div class="offcanvas-header">
             <h5 class="offcanvas-title">Menü</h5>
@@ -38,10 +35,10 @@
         </div>
         <div class="offcanvas-body">
             <ul class="navbar-nav">
-                <li class="nav-item"><a class="nav-link" href="#">Főoldal</a></li>
-                <li class="nav-item"><a class="nav-link" href="#">Termékek</a></li>
-                <li class="nav-item"><a class="nav-link" href="#">Rutinok</a></li>
-                <li class="nav-item"><a class="nav-link" href="#">Profil</a></li>
+            <li class="nav-item"><a class="nav-link" href="{{ url('/welcome') }}">Főoldal</a></li>
+                <li class="nav-item"><a class="nav-link" href="{{ url('/termekek') }}">Termékek</a></li>
+                <li class="nav-item"><a class="nav-link" href="{{ url('/rutinok') }}">Rutinok</a></li>
+                <li class="nav-item"><a class="nav-link" href="{{ url('/profil') }}">Profil</a></li>
             </ul>
         </div>
     </div>
@@ -70,7 +67,7 @@
                     <input type="text" class="form-control  bg-transparent" id="phone" name="phone" value="{{ old('phone', $user->phone_number) }}">
                 </div>
 
-                <button type="submit" class="btn btn-primary">Mentés</button>
+                <button type="submit" class="btn btn-primary bg-dark">Mentés</button>
             </form>
         </div>
     </div>
@@ -82,5 +79,7 @@
 </form>
 
       
+
+
 </body>
 </html>

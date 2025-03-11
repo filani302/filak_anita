@@ -11,7 +11,7 @@
 <body class="feltoltesek-body">
     <nav class="navbar navbar-expand-lg bg-dark shadow-sm">
         <div class="container">
-            <a class="navbar-brand text-light fs-4" href="#">
+            <a class="navbar-brand text-light fs-4" href="{{ url('/welcome') }}">
                 <img src="/img/ReAnLogoo.png" class="ReAnLogoo" alt="Logo" width="50"> ReAnBeauty
             </a>
             <button class="navbar-toggler d-lg-none" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNav">
@@ -34,7 +34,7 @@
 
         <form action="{{ url('rutinfeltoltesek') }}" method="POST">
             <div class="mb-3">
-                <label class="form-label fw-bold">Termék neve <i class="fas fa-tag"></i></label>
+                <label class="form-label fw-bold">Termékek neve <i class="fas fa-tag"></i></label>
                 <input type="text" class="form-control shadow-sm" placeholder="Adja meg a termék nevét">
             </div>
             <div class="mb-3">
@@ -49,6 +49,7 @@
                 <label class="form-label fw-bold">Leírás <i class="fas fa-pencil-alt"></i></label>
                 <textarea class="form-control shadow-sm" rows="4" placeholder="Adj leírást, hogyan használod termékedet."></textarea>
             </div>
+            
             <div class="mb-3">
                 <label for="image" class="form-label">Termékkép</label>
                 <input type="file" class="form-control" id="image" name="image">

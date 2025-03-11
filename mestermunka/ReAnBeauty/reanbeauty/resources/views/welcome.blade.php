@@ -12,7 +12,7 @@
 <body>
     <nav class="navbar navbar-expand-lg bg-dark shadow-sm">
         <div class="container">
-            <a class="navbar-brand text-light fs-4" href="#">
+            <a class="navbar-brand text-light fs-4" href="{{ url('/welcome') }}">
                 <img src="/img/ReAnLogoo.png" class="ReAnLogoo" alt="Logo" width="50"> ReAnBeauty
             </a>
             <button class="navbar-toggler d-lg-none" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNav">
@@ -23,11 +23,11 @@
                     <li class="nav-item"><a class="nav-link text-light" href="{{ url('/welcome') }}">Főoldal</a></li>
                     <li class="nav-item"><a class="nav-link text-light" href="{{ url('/termekek') }}">Termékek</a></li>
                     <li class="nav-item"><a class="nav-link text-light" href="{{ url('/rutinok') }}">Rutinok</a></li>
-                    <li class="nav-item"><a class="nav-link text-light" href="{{ url('/profil') }}">Profil</a></li>
- 
+                    <li class="nav-item"><a class="nav-link text-light" href="{{ url('/profil') }}">Profil</a></li> 
                 </ul>
             </div>
         </div>
+        
     </nav>
  
     <div class="offcanvas offcanvas-end d-lg-none" tabindex="-1" id="offcanvasNav">

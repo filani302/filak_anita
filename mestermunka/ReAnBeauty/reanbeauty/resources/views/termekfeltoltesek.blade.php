@@ -5,14 +5,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="{{ asset('css/app.css') }}">
-    <title>ReAnBeauty - Termék feltöltések</title>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <title>ReAnBeauty - Termek feltöltések</title>
     
 </head>
 <body class="feltoltesek-body">
     <nav class="navbar navbar-expand-lg bg-dark shadow-sm">
         <div class="container">
-            <a class="navbar-brand text-light fs-4" href="#">
+            <a class="navbar-brand text-light fs-4" href="{{ url('/welcome') }}">
                 <img src="/img/ReAnLogoo.png" class="ReAnLogoo" alt="Logo" width="50"> ReAnBeauty
             </a>
             <button class="navbar-toggler d-lg-none" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNav">
@@ -68,7 +67,6 @@
                 <label for="title" class="form-label fw-bold">Termék neve</label>
                 <input type="text"  class="form-control shadow-sm"  id="title" name="title" required>
             </div>
-
             <div class="mb-3">
                 <label for="product_type" class="form-label fw-bold">Típus</label>
                 <select class="form-select" id="product_type" name="product_type" required>
@@ -77,7 +75,6 @@
                     <option value=2>Egyéb</option>
                 </select>
             </div>
-
             <div class="mb-3">
                 <label for="allergen" class="form-label fw-bold">Allergen</label>
                 <br>
@@ -86,7 +83,7 @@
                 <input type="checkbox" name="allergens[]" value=2> Emulgeálószerek<br>
                 <input type="checkbox" name="allergens[]" value=3> Növényi kivonatok és illóolajok<br>
             </div>
-
+            
             <div class="mb-3">
                 <label for="description" class="form-label fw-bold">Leírás</label>
                 <textarea class="form-control shadow-sm" id="description" name="description" rows="4" required></textarea>
@@ -102,6 +99,21 @@
         </div>
         </div>
     </div>
-      
+</div>
+
+<script>
+    document.getElementById("image-url").addEventListener("input", function() {
+        const url = this.value;
+        const imgPreview = document.getElementById("image-preview");
+
+        if (url) {
+            imgPreview.src = url;
+            imgPreview.style.display = "block";
+        } else {
+            imgPreview.style.display = "none";
+        }
+    });
+</script>
+
 </body>
 </html>
