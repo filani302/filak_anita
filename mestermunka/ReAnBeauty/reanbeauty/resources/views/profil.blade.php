@@ -50,24 +50,24 @@
     <h2 class="text-center mb-4">Felhasználói profil</h2>
     <hr>
     <div class="row">
-        <div class="card p-4 mb-3 shadow-sm">
+        <div class="card p-2 mb-3 shadow-sm text-dark  bg-transparent">
             <form>
                 @csrf
                 @method('PUT')
 
                 <div class="mb-3">
                     <label for="name" class="form-label"><strong>Név:</strong></label>
-                    <input type="text" class="form-control" id="name" name="name" value="">
+                    <input type="text" class="form-control  bg-transparent" id="name" name="name" value="">
                 </div>
 
                 <div class="mb-3">
                     <label for="email" class="form-label"><strong>Email:</strong></label>
-                    <input type="email" class="form-control" id="email" name="email" value="" disabled>
+                    <input type="email" class="form-control  bg-transparent" id="email" name="email" value="">
                 </div>
 
                 <div class="mb-3">
                     <label for="phone" class="form-label"><strong>Telefon:</strong></label>
-                    <input type="text" class="form-control" id="phone" name="phone" value="">
+                    <input type="text" class="form-control  bg-transparent" id="phone" name="phone" value="">
                 </div>
 
                 <button type="submit" class="btn btn-primary">Mentés</button>
