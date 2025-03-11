@@ -6,6 +6,7 @@ use App\Http\Controllers\WelcomeController;
 use App\Http\Controllers\LoginController;
 use Illuminate\Support\Facades\File;
 use Illuminate\Support\Facades\Response;
+use App\Http\Controllers\ProductFormController;
  
 /*
 |--------------------------------------------------------------------------
@@ -86,3 +87,8 @@ Route::get('/welcome', [WelcomeController::class, 'index'])->name('welcome');
 Route::get('/login', [LoginController::class, 'showLoginForm'])->name('login');
 Route::post('/login', [LoginController::class, 'login'])->name('login.post');
 //Route::post('/logout', [LoginController::class, 'logout'])->name('logout');
+
+
+
+
+Route::post('/termekfeltoltesek', [ProductFormController::class, 'store'])->name('product.store');

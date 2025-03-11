@@ -45,9 +45,15 @@
         </div>
     </div>
 
-    <a href="{{ url('/rutinfeltoltesek') }}" class="btn btn-outline-light bg-dark text-light" >
-    Megosztom a rutinomat!
-    </a>
+    <section class="hero-section2">
+        <div class="hero-content">
+            <h1 class="fw-bold">✨ Oszd meg aktuális rutinodról a véleményed ✨</h1>
+            <p class="lead">Bőrápolás. Hajápolás. Rutinok. Inspiráció.</p>
+            <a href="{{ url('/rutinfeltoltesek') }}" class="btn btn-custom me-3">Megosztom a rutinom</a>
+        </div>
+    </section>
+
+    
 
   <center><h1>Rutinok</h1></center>  
 

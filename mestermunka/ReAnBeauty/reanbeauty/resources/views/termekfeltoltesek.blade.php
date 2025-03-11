@@ -8,7 +8,7 @@
     <title>ReAnBeauty - Termek feltöltések</title>
     
 </head>
-<body class="rutinfeltoltesek-body">
+<body class="feltoltesek-body">
     <nav class="navbar navbar-expand-lg bg-dark shadow-sm">
         <div class="container">
             <a class="navbar-brand text-light fs-4" href="#">
@@ -28,34 +28,76 @@
         </div>
     </nav>
 
-    <div class="container d-flex justify-content-center align-items-center min-vh-100">
-    <div class="form-container">
-        <h2 class="text-center text-dark mb-4">Oszd meg kedvenc termékedet!</h2>
-        <form>
+    <div class="offcanvas offcanvas-end d-lg-none" tabindex="-1" id="offcanvasNav">
+        <div class="offcanvas-header">
+            <h5 class="offcanvas-title">Menü</h5>
+            <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas"></button>
+        </div>
+        <div class="offcanvas-body">
+            <ul class="navbar-nav">
+                <li class="nav-item"><a class="nav-link" href="#">Főoldal</a></li>
+                <li class="nav-item"><a class="nav-link" href="#">Termékek</a></li>
+                <li class="nav-item"><a class="nav-link" href="#">Rutinok</a></li>
+                <li class="nav-item"><a class="nav-link" href="#">Profil</a></li>
+                <li class="nav-item"><a class="btn btn-dark w-100 mt-2" href="{{ url('/registration') }}">Csatlakozz most</a></li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="container mt-5">
+        
+
+        @if ($errors->any())
+            <div class="alert alert-danger">
+                <ul>
+                    @foreach ($errors->all() as $error)
+                        <li>{{ $error }}</li>
+                    @endforeach
+                </ul>
+            </div>
+        @endif
+
+            @csrf
+
+        <div class="container d-flex justify-content-center align-items-center min-vh-100">
+        <div class="form-container">
+        <h2 class="text-center text-dark mb-4">Oszd meg jól bevált termékeidet!</h2>
+        <form action="{{ url('termekfeltoltesek') }}" method="POST">  
             <div class="mb-3">
-                <label class="form-label fw-bold">Termék neve <i class="fas fa-tag"></i></label>
-                <input type="text" class="form-control shadow-sm" placeholder="Adja meg a termék nevét">
+                <label for="title" class="form-label fw-bold">Termék neve</label>
+                <input type="text"  class="form-control shadow-sm"  id="title" name="title" required>
             </div>
             <div class="mb-3">
-                <label for="product_type" class="form-label">Típus</label>
+                <label for="product_type" class="form-label fw-bold">Típus</label>
                 <select class="form-select" id="product_type" name="product_type" required>
-                    <option value="Kozmetikum">Kozmetikum</option>
-                    <option value="Bőrápolás">Bőrápolás</option>
-                    <option value="Egyéb">Egyéb</option>
+                    <option value=0>Kozmetikum</option>
+                    <option value=1>Bőrápolás</option>
+                    <option value=2>Egyéb</option>
                 </select>
             </div>
             <div class="mb-3">
-                <label class="form-label fw-bold">Leírás <i class="fas fa-pencil-alt"></i></label>
-                <textarea class="form-control shadow-sm" rows="4" placeholder="Adj leírást, hogyan használod termékedet."></textarea>
+                <label for="allergen" class="form-label fw-bold">Allergen</label>
+                <br>
+                <input type="checkbox" name="allergens[]" value=0> Illatanyagok<br>
+                <input type="checkbox" name="allergens[]" value=1> Tartósítószerek<br>
+                <input type="checkbox" name="allergens[]" value=2> Emulgeálószerek<br>
+                <input type="checkbox" name="allergens[]" value=3> Növényi kivonatok és illóolajok<br>
             </div>
             
             <div class="mb-3">
-                <label class="form-label fw-bold">Kép URL <i class="fas fa-link"></i></label>
-                <input type="url" class="form-control shadow-sm" id="image-url" placeholder="Illessz be egy kép URL-t">
-                <img id="image-preview" class="image-preview">
+                <label for="description" class="form-label fw-bold">Leírás</label>
+                <textarea class="form-control shadow-sm" id="description" name="description" rows="4" required></textarea>
             </div>
+
+            <div class="mb-3">
+                <label for="image" class="form-label fw-bold">Termékkép</label>
+                <input type="file" class="form-control" id="image" name="image">
+            </div>
+
             <button type="submit" class="btn btn-custom bg-dark w-100 fw-bold">Beküldés <i class="fas fa-paper-plane"></i></button>
         </form>
+        </div>
+        </div>
     </div>
 </div>
 

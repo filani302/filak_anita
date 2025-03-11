@@ -142,7 +142,7 @@ body {
  
 /*Rutinfeltoltesek*/
  
-.rutinfeltoltesek-body {
+.feltoltesek-body {
   background: linear-gradient(to right, #f6ebed, #ffbdd8);
   font-family: 'Arial', sans-serif;
 }
@@ -188,6 +188,24 @@ body {
 .termekek-body{
   background: linear-gradient(to right, #f6ebed, #ffbdd8);
 }
+
+
+.hero-section2 {
+  background: url('/img/viragos.webp') center/cover no-repeat, linear-gradient(to bottom, rgba(0,0,0,0.6), rgba(255,255,255,0.1));
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  color: white;
+  padding: 3rem 1rem;
+  position: relative;
+  overflow: hidden;
+}
+
+
+
 
  .content-box {
             border: 2px solid black;
@@ -236,8 +254,23 @@ body {
 
         .card p-3 mb-3 shadow-sm{
           width: 400px;
+         
+          
         }
+        .profil-body{
+          background: linear-gradient(to right, #f6ebed, #ffbdd8);
+          background: url('/img/profilHatter.webp') center/cover no-repeat, linear-gradient(to bottom, rgba(0,0,0,0.6), rgba(255,255,255,0.1));
         
+        }
+
+        .form-control{
+          width: 40%;
+          border-color:rgba(241, 80, 128, 0.225);
+          border-width: 4px;
+          color: #333;
+        }
+
+
 
 
         /*bejelentkezes*/
@@ -333,6 +366,3 @@ body {
   background: linear-gradient(to right, #f6ebed, #ffbdd8);
 }
 
-.profil-body{
-  background: linear-gradient(to right, #f6ebed, #ffbdd8);
-}

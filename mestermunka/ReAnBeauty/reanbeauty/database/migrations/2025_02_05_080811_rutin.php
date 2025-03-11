@@ -17,7 +17,7 @@ return new class extends Migration
          $table->foreignId('user_id')->constrained('users')->onDelete('cascade');         
            $table->tinyInteger('rutin_type')->unsigned();
            $table->string('title', 50);
-           $table->string('image', 50)->nullable();
+           $table->string('image', 700)->nullable();
            $table->string('description', 2500)->nullable();
            $table->timestamp('created_at')->useCurrent();
            $table->timestamp('modified_at')->useCurrent()->useCurrentOnUpdate();
