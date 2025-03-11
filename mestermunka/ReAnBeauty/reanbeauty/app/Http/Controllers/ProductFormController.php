@@ -23,7 +23,7 @@ class ProductFormController extends Controller
 
         // Kép feltöltés és mentés
         if ($request->hasFile('image')) {
-            $imagePath = $request->file('image')->store('products');
+            $imagePath = $request->file('image')->store('products , public/upload');
         } 
         else {
             $imagePath = null;
