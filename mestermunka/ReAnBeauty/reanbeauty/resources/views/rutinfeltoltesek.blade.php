@@ -33,13 +33,22 @@
         <h2 class="text-center text-dark mb-4">Oszd meg jól bevált rutinodat!</h2>
         <form>
             <div class="mb-3">
-                <label class="form-label fw-bold">Termék neve <i class="fas fa-tag"></i></label>
+                <label class="form-label fw-bold">Termékek neve <i class="fas fa-tag"></i></label>
                 <input type="text" class="form-control shadow-sm" placeholder="Adja meg a termék nevét">
+            </div>
+            <div class="mb-3">
+                <label for="product_type" class="form-label">Típus</label>
+                <select class="form-select" id="product_type" name="product_type" required>
+                    <option value="Kozmetikum">Kozmetikum</option>
+                    <option value="Bőrápolás">Bőrápolás</option>
+                    <option value="Egyéb">Egyéb</option>
+                </select>
             </div>
             <div class="mb-3">
                 <label class="form-label fw-bold">Leírás <i class="fas fa-pencil-alt"></i></label>
                 <textarea class="form-control shadow-sm" rows="4" placeholder="Adj leírást, hogyan használod termékedet."></textarea>
             </div>
+            
             <div class="mb-3">
                 <label class="form-label fw-bold">Kép URL <i class="fas fa-link"></i></label>
                 <input type="url" class="form-control shadow-sm" id="image-url" placeholder="Illessz be egy kép URL-t">

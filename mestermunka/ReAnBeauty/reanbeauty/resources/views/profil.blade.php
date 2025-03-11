@@ -6,8 +6,7 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="{{ asset('css/app.css') }}">
     <title>ReAnBeauty Felhasználói profil</title>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
-    
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>   
 </head>
 <body class="profil-body">
     <nav class="navbar navbar-expand-lg bg-dark shadow-sm">
@@ -25,12 +24,10 @@
                     <li class="nav-item"><a class="nav-link text-light" href="{{ url('/rutinok') }}">Rutinok</a></li>
                     <li class="nav-item"><a class="nav-link text-light" href="{{ url('/profil') }}">Profil</a></li>
                     <li class="nav-item"><a class="nav-link text-light" href="{{ url('/login') }}">Kijelentkezés</a></li>
-
                 </ul>
-            </div>
-        </div>
+            </div>           
+        </div>       
     </nav>
-
     <div class="offcanvas offcanvas-end d-lg-none" tabindex="-1" id="offcanvasNav">
         <div class="offcanvas-header">
             <h5 class="offcanvas-title">Menü</h5>
@@ -46,31 +43,19 @@
             </ul>
         </div>
     </div>
-
-    
-
     <div class="container mt-5">
         <h2 class="text-center mb-4">Felhasználói profil</h2>
         <hr>
-        <div class="row">
-            
-                
+        <div class="row">                          
                     <div class="card p-3 mb-3 shadow-sm">
                         <p><strong>Név:</strong></p>
                         <p><strong>Email:</strong></p>
-                        <p><strong>Telefon:</strong> </p>
-                   
-                </div>
-           
+                        <p><strong>Telefon:</strong> </p>                  
+                </div>          
         </div>
     </div>
-
-
-
-
     <a href="{{ url('/login') }}" class="btn btn-outline-light bg-danger text-light" >
     Kijelentkezés
-    </a>
-      
+    </a>    
 </body>
 </html>

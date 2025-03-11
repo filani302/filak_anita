@@ -5,11 +5,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="{{ asset('css/app.css') }}">
-    <title>ReAnBeauty - Termék feltöltések</title>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <title>ReAnBeauty - Termek feltöltések</title>
     
 </head>
-<body>
+<body class="rutinfeltoltesek-body">
     <nav class="navbar navbar-expand-lg bg-dark shadow-sm">
         <div class="container">
             <a class="navbar-brand text-light fs-4" href="#">
@@ -29,41 +28,14 @@
         </div>
     </nav>
 
-    <div class="offcanvas offcanvas-end d-lg-none" tabindex="-1" id="offcanvasNav">
-        <div class="offcanvas-header">
-            <h5 class="offcanvas-title">Menü</h5>
-            <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas"></button>
-        </div>
-        <div class="offcanvas-body">
-            <ul class="navbar-nav">
-                <li class="nav-item"><a class="nav-link" href="#">Főoldal</a></li>
-                <li class="nav-item"><a class="nav-link" href="#">Termékek</a></li>
-                <li class="nav-item"><a class="nav-link" href="#">Rutinok</a></li>
-                <li class="nav-item"><a class="nav-link" href="#">Profil</a></li>
-                <li class="nav-item"><a class="btn btn-dark w-100 mt-2" href="{{ url('/registration') }}">Csatlakozz most</a></li>
-            </ul>
-        </div>
-    </div>
-
-    <div class="container mt-5">
-        <h1 class="mb-4">Termék feltöltése</h1>
-
-        @if ($errors->any())
-            <div class="alert alert-danger">
-                <ul>
-                    @foreach ($errors->all() as $error)
-                        <li>{{ $error }}</li>
-                    @endforeach
-                </ul>
-            </div>
-        @endif
-
-            @csrf
+    <div class="container d-flex justify-content-center align-items-center min-vh-100">
+    <div class="form-container">
+        <h2 class="text-center text-dark mb-4">Oszd meg kedvenc termékedet!</h2>
+        <form>
             <div class="mb-3">
-                <label for="title" class="form-label">Termék neve</label>
-                <input type="text" class="form-control" id="title" name="title" required>
+                <label class="form-label fw-bold">Termék neve <i class="fas fa-tag"></i></label>
+                <input type="text" class="form-control shadow-sm" placeholder="Adja meg a termék nevét">
             </div>
-
             <div class="mb-3">
                 <label for="product_type" class="form-label">Típus</label>
                 <select class="form-select" id="product_type" name="product_type" required>
@@ -72,20 +44,34 @@
                     <option value="Egyéb">Egyéb</option>
                 </select>
             </div>
-
             <div class="mb-3">
-                <label for="description" class="form-label">Leírás</label>
-                <textarea class="form-control" id="description" name="description" rows="4" required></textarea>
+                <label class="form-label fw-bold">Leírás <i class="fas fa-pencil-alt"></i></label>
+                <textarea class="form-control shadow-sm" rows="4" placeholder="Adj leírást, hogyan használod termékedet."></textarea>
             </div>
-
+            
             <div class="mb-3">
-                <label for="image" class="form-label">Termékkép</label>
-                <input type="file" class="form-control" id="image" name="image">
+                <label class="form-label fw-bold">Kép URL <i class="fas fa-link"></i></label>
+                <input type="url" class="form-control shadow-sm" id="image-url" placeholder="Illessz be egy kép URL-t">
+                <img id="image-preview" class="image-preview">
             </div>
-
-            <button type="submit" class="btn btn-primary">Feltöltés</button>
+            <button type="submit" class="btn btn-custom bg-dark w-100 fw-bold">Beküldés <i class="fas fa-paper-plane"></i></button>
         </form>
     </div>
-      
+</div>
+
+<script>
+    document.getElementById("image-url").addEventListener("input", function() {
+        const url = this.value;
+        const imgPreview = document.getElementById("image-preview");
+
+        if (url) {
+            imgPreview.src = url;
+            imgPreview.style.display = "block";
+        } else {
+            imgPreview.style.display = "none";
+        }
+    });
+</script>
+
 </body>
 </html>
