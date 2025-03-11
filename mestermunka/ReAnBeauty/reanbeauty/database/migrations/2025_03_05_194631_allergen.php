@@ -13,8 +13,10 @@ return new class extends Migration
     {
         Schema::create('allergen', function (Blueprint $table) {
             $table->id();
-            $table->string('name')->unique();
+            $table->integer('allergen');
             $table->integer('db');
+            $table->timestamp('created_at')->useCurrent();
+            $table->timestamp('updated_at')->useCurrent()->useCurrentOnUpdate();
         });
     }
 

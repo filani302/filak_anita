@@ -42,35 +42,45 @@
                 <li class="nav-item"><a class="nav-link" href="#">Termékek</a></li>
                 <li class="nav-item"><a class="nav-link" href="#">Rutinok</a></li>
                 <li class="nav-item"><a class="nav-link" href="#">Profil</a></li>
-                <li class="nav-item"><a class="btn btn-dark w-100 mt-2" href="{{ url('/registration') }}">Csatlakozz most</a></li>
             </ul>
         </div>
     </div>
 
-    
-
     <div class="container mt-5">
-        <h2 class="text-center mb-4">Felhasználói profil</h2>
-        <hr>
-        <div class="row">
-            
-                
-                    <div class="card p-3 mb-3 shadow-sm">
-                        <p><strong>Név:</strong></p>
-                        <p><strong>Email:</strong></p>
-                        <p><strong>Telefon:</strong> </p>
-                   
+    <h2 class="text-center mb-4">Felhasználói profil</h2>
+    <hr>
+    <div class="row">
+        <div class="card p-4 mb-3 shadow-sm">
+            <form>
+                @csrf
+                @method('PUT')
+
+                <div class="mb-3">
+                    <label for="name" class="form-label"><strong>Név:</strong></label>
+                    <input type="text" class="form-control" id="name" name="name" value="">
                 </div>
-           
+
+                <div class="mb-3">
+                    <label for="email" class="form-label"><strong>Email:</strong></label>
+                    <input type="email" class="form-control" id="email" name="email" value="" disabled>
+                </div>
+
+                <div class="mb-3">
+                    <label for="phone" class="form-label"><strong>Telefon:</strong></label>
+                    <input type="text" class="form-control" id="phone" name="phone" value="">
+                </div>
+
+                <button type="submit" class="btn btn-primary">Mentés</button>
+            </form>
         </div>
     </div>
+</div>
 
+<form>
+    @csrf
+    <button type="submit" class="btn btn-outline-light bg-danger text-light mt-3">Kijelentkezés</button>
+</form>
 
-
-
-    <a href="{{ url('/login') }}" class="btn btn-outline-light bg-danger text-light" >
-    Kijelentkezés
-    </a>
       
 </body>
 </html>

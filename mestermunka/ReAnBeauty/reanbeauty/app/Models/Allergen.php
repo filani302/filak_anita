@@ -10,8 +10,13 @@ class Allergen extends Model
     use HasFactory;
     protected $table = 'allergen';
 
-    public $timestamps = false;
+    
     protected $fillable = ['name', 'db'];
+
+    protected $casts = [
+        'created_at' => 'datetime',
+        'updated_at' => 'datetime',
+    ];
 
     public function products()
     {

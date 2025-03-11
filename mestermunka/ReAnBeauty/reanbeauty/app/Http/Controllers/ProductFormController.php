@@ -17,14 +17,15 @@ class ProductFormController extends Controller
             'title' => 'required|string|max:50',
             'product_type' => 'required|integer',
             'description' => 'required|string|max:700',
-            'image' => 'nullable|image|mimes:jpeg,png,jpg,gif',
+            'image' => 'nullable|image|mimes:jpeg,png,jpg',
             'allergens' => 'nullable|integer',
         ]);
 
         // Kép feltöltés és mentés
         if ($request->hasFile('image')) {
-            $imagePath = $request->file('image')->store('products', 'public');
-        } else {
+            $imagePath = $request->file('image')->store('products');
+        } 
+        else {
             $imagePath = null;
         }
 

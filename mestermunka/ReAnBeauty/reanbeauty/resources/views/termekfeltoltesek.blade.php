@@ -72,19 +72,19 @@
             <div class="mb-3">
                 <label for="product_type" class="form-label fw-bold">Típus</label>
                 <select class="form-select" id="product_type" name="product_type" required>
-                    <option value="0">Kozmetikum</option>
-                    <option value="1">Bőrápolás</option>
-                    <option value="2">Egyéb</option>
+                    <option value=0>Kozmetikum</option>
+                    <option value=1>Bőrápolás</option>
+                    <option value=2>Egyéb</option>
                 </select>
             </div>
 
             <div class="mb-3">
                 <label for="allergen" class="form-label fw-bold">Allergen</label>
                 <br>
-                <input type="checkbox" name="allergens[]" value="0"> Illatanyagok<br>
-                <input type="checkbox" name="allergens[]" value="1"> Tartósítószerek<br>
-                <input type="checkbox" name="allergens[]" value="2"> Emulgeálószerek<br>
-                <input type="checkbox" name="allergens[]" value="3"> Növényi kivonatok és illóolajok<br>
+                <input type="checkbox" name="allergens[]" value=0> Illatanyagok<br>
+                <input type="checkbox" name="allergens[]" value=1> Tartósítószerek<br>
+                <input type="checkbox" name="allergens[]" value=2> Emulgeálószerek<br>
+                <input type="checkbox" name="allergens[]" value=3> Növényi kivonatok és illóolajok<br>
             </div>
 
             <div class="mb-3">
