@@ -48,7 +48,7 @@
     <hr>
     <div class="row">
         <div class="card p-2 mb-3 shadow-sm text-dark  bg-transparent">
-            <form>
+            <form  action="{{ route('profil.update') }}" method="POST">
                 @csrf
                 @method('PUT')
 

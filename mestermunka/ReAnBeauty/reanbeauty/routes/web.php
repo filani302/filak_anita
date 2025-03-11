@@ -95,3 +95,4 @@ Route::post('/login', [LoginController::class, 'login'])->name('login.post');
 Route::post('/termekfeltoltesek', [ProductFormController::class, 'store'])->name('product.store');
 
 Route::get('/profil', [ProfilController::class, 'showProfile'])->middleware('auth');
+Route::put('/profil/update', [ProfilController::class, 'updateProfile'])->name('profil.update');

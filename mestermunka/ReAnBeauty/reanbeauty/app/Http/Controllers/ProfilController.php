@@ -16,4 +16,23 @@ public function showProfile()
     return view('profil', compact('user'));
 }
 
+public function updateProfile(Request $request)
+{
+    $request->validate([
+        'name' => 'required|string|max:255',
+        'email' => 'required|email|unique:users,email,' . Auth::id(),
+    ]);
+
+    $user = Auth::user(); // Lekéri a bejelentkezett felhasználót
+
+    $user->update([
+        'username' => $request->name,
+        'email' => $request->email,
+        'phone_number' => $request->phone,
+    ]);
+
+    return redirect()->back()->with('success', 'Profil frissítve!');
+}
+
+
 }
