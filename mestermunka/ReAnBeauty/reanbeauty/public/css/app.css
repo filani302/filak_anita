@@ -189,6 +189,21 @@ body {
   background: linear-gradient(to right, #f6ebed, #ffbdd8);
 }
 
+.termek-card{
+  
+  position: absolute;
+  top: 170%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  height: auto;
+  
+    
+  
+  
+ 
+
+}
+
 
 .hero-section2 {
   background: url('/img/viragos.webp') center/cover no-repeat, linear-gradient(to bottom, rgba(0,0,0,0.6), rgba(255,255,255,0.1));
@@ -203,44 +218,6 @@ body {
   position: relative;
   overflow: hidden;
 }
-
-
-
-
- .content-box {
-            border: 2px solid black;
-            padding: 20px;
-            margin: 20px auto;
-            max-width: 800px;
-            background-color: #f9f9f9;
-            height: 300px;
-        }
-        .image-placeholder {
-            width: 100%;
-            height: 600px;
-            background-color: yellow;
-            border: 2px solid black;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            font-weight: bold;
-        }
-        .icons {
-            display: flex;
-            justify-content: space-between;
-            padding: 10px 20px;
-            border-top: 2px solid black;
-        }
-        .icons i {
-            font-size: 24px;
-            cursor: pointer;
-        }
-
-        .col-md-4{
-          width: 200px;
-          height: 200px;
-          background-color: rgb(205, 50, 182);
-        }
 
 
         /*like*/
@@ -366,3 +343,14 @@ body {
   background: linear-gradient(to right, #f6ebed, #ffbdd8);
 }
 
+#oszd-meg{
+  text-shadow: 3px 3px 6px rgba(59, 17, 213, 0.93);
+
+}
+
+/*kedvencek*/
+
+#kuka{
+  float: right;
+  
+}

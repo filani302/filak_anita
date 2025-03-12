@@ -48,8 +48,8 @@
 
     <section class="hero-section2">
         <div class="hero-content">
-            <h1 class="fw-bold">✨ Oszd meg aktuális rutinodról a véleményed ✨</h1>
-            <p class="lead">Bőrápolás. Hajápolás. Rutinok. Inspiráció.</p>
+            <h1 id="oszd-meg" class="fw-bolder">✨ Oszd meg aktuális rutinodról a véleményed ✨</h1>
+            <p class="lead text-dark ">Bőrápolás. Hajápolás. Rutinok. Inspiráció.</p>
             <a href="{{ url('/rutinfeltoltesek') }}" class="btn btn-custom me-3">Megosztom a rutinom</a>
         </div>
     </section>

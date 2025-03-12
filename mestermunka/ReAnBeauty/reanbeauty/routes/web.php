@@ -78,6 +78,9 @@ Route::get('/TudjmegTobbet', function () {
     return view('TudjmegTobbet');
 });
  
+Route::get('/kedvencek', function () {
+    return view('kedvencek');
+});
  
  
 Route::get('/registration', [UserController::class, 'create'])->name('registration');
