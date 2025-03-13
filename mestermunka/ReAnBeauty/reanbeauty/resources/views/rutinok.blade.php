@@ -54,65 +54,67 @@
         </div>
     </section>
 
-    <form  class="mb-4">
+<form action="">
+<form class="mb-4">
     <div class="accordion" id="filterAccordion">
-        
-        <!-- Termék Típus -->
-        <div class="accordion-item">
+
+        <!-- Rutin Típus -->
+        <div class="accordion-item border border-pink">
             <h2 class="accordion-header" id="headingOne">
-                <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne">
+                <button class="accordion-button text-white" style="background-color: #ff85a2;" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne">
                     Rutin Típus
                 </button>
             </h2>
             <div id="collapseOne" class="accordion-collapse collapse show">
-                <div class="accordion-body">
+                <div class="accordion-body bg-light">
                     <div class="form-check">
-                        <input class="form-check-input" type="checkbox" name="type[]" value="arckrém" 
-                        <label class="form-check-label">Hajápolási rutin</label>
+                        <input class="form-check-input" type="checkbox" name="type[]" value="hajapolas">
+                        <label class="form-check-label text-pink">Hajápolási rutin</label>
                     </div>
                     <div class="form-check">
-                        <input class="form-check-input" type="checkbox" name="type[]" value="sampon" 
-                            
-                        <label class="form-check-label">Arcápolási rutin</label>
+                        <input class="form-check-input" type="checkbox" name="type[]" value="arcapolas">
+                        <label class="form-check-label text-pink">Arcápolási rutin</label>
                     </div>
                 </div>
             </div>
         </div>
 
-        <form  class="mb-4">
-    <div class="accordion" id="filterAccordion">
-        
-        <!-- Termék Típus -->
-        <div class="accordion-item">
-            <h2 class="accordion-header" id="headingOne">
-                <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne">
-                    Allergenek
+        <!-- Allergének -->
+        <div class="accordion-item border border-pink mt-2">
+            <h2 class="accordion-header" id="headingTwo">
+                <button class="accordion-button text-white" style="background-color: #ff85a2;" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo">
+                    Allergének
                 </button>
             </h2>
-            <div id="collapseOne" class="accordion-collapse collapse show">
-                <div class="accordion-body">
+            <div id="collapseTwo" class="accordion-collapse collapse show">
+                <div class="accordion-body bg-light">
                     <div class="form-check">
-                        <input class="form-check-input" type="checkbox" name="type[]" value="arckrém" 
-                        <label class="form-check-label">Illatanyagok</label>
+                        <input class="form-check-input" type="checkbox" name="allergen[]" value="illatanyagok">
+                        <label class="form-check-label text-pink">Illatanyagok</label>
                     </div>
                     <div class="form-check">
-                        <input class="form-check-input" type="checkbox" name="type[]" value="sampon" 
-                            
-                        <label class="form-check-label">Tartósítószerek</label>
+                        <input class="form-check-input" type="checkbox" name="allergen[]" value="tartositoszerek">
+                        <label class="form-check-label text-pink">Tartósítószerek</label>
                     </div>
                     <div class="form-check">
-                        <input class="form-check-input" type="checkbox" name="type[]" value="hidratáló" 
-                            
-                        <label class="form-check-label">Emulgeálószerek</label>
+                        <input class="form-check-input" type="checkbox" name="allergen[]" value="emulgealoszerek">
+                        <label class="form-check-label text-pink">Emulgeálószerek</label>
                     </div>
                     <div class="form-check">
-                        <input class="form-check-input" type="checkbox" name="type[]" value="sampon" 
-                            
-                        <label class="form-check-label">Növényi kivonatok és illóolajok</label>
+                        <input class="form-check-input" type="checkbox" name="allergen[]" value="novenyi_kivonatok">
+                        <label class="form-check-label text-pink">Növényi kivonatok és illóolajok</label>
                     </div>
                 </div>
             </div>
         </div>
+
+    </div>
+</form>
+<button>Szűrés</button>
+
+
+</form>
+
 
 
   <center><h1>Rutinok</h1></center>  
