@@ -115,57 +115,15 @@
 
 
     <center><h1>Termékek</h1></center>
-    <div class="container">
-    <!-- Nagy doboz -->
-    <div class="content-box">
-        <div class="row">
-            <!-- Bal oldal: szövegek -->
-            <div class="col-md-8">
-                <p><strong>Cím vagy termék neve</strong></p>
-                <p>Termékeírás
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. 
-                    Maiores placeat quam neque hic impedit distinctio beatae 
-                    magnam incidunt at nemo numquam eveniet necessitatibus aliquam 
-                    dolores perspiciatis, dolore consectetur quidem dolorum?</p>
-                </p>
-            </div>
-            <!-- Jobb oldal: Kép helye -->
-            <div class="col-md-4">
-            <img src="kephelye" alt=""> 
-            <p>kép</p>         
-         </div>
-         <!-- Ikonok (Kedvelés, Kedvencek, Komment) -->
-    
-        <i class="fas fa-heart">like</i>  <!-- Kedvelés -->
-        <i class="fas fa-star"></i>   <!-- Kedvencek -->
-        <i class="fas fa-comment"></i> <!-- Komment -->      
-    </div>
-    </div>
+    <div class="termek-card">
+    <div class="card" style="width: 30rem;">
+  <img src="/img/ReAnLogoo.png" class="card-img-top" alt="...">
+  <div class="card-body">
+    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+  </div>
+</div>
 
-    <div class="content-box">
-        <div class="row">
-            <!-- Bal oldal: szövegek -->
-            <div class="col-md-8">
-                <p><strong>Cím vagy termék neve</strong></p>
-                <p>Termékleírás
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. 
-                    Maiores placeat quam neque hic impedit distinctio beatae 
-                    magnam incidunt at nemo numquam eveniet necessitatibus aliquam 
-                    dolores perspiciatis, dolore consectetur quidem dolorum?</p>
-                </p>
-            </div>
-            <!-- Jobb oldal: Kép helye -->
-            <div class="col-md-4">
-            <img src="kephelye.jpg" alt="">  
-            <p>kép</p>        
-         </div>
-         <!-- Ikonok (Kedvelés, Kedvencek, Komment) -->
-    
-        <i class="fas fa-heart">like</i>  <!-- Kedvelés -->
-        <i class="fas fa-star"></i>   <!-- Kedvencek -->
-        <i class="fas fa-comment"></i> <!-- Komment -->      
-    </div>
-    </div>
+
 </div>
 </body>
 </head>
