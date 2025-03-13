@@ -23,7 +23,9 @@
                     <li class="nav-item"><a class="nav-link text-light" href="{{ url('/termekek') }}">Termékek</a></li>
                     <li class="nav-item"><a class="nav-link text-light" href="{{ url('/rutinok') }}">Rutinok</a></li>
                     <li class="nav-item"><a class="nav-link text-light" href="{{ url('/profil') }}">Profil</a></li>
-                    <li class="nav-item"><a class="nav-link text-light" href="{{ url('/login') }}">Kijelentkezés</a></li>
+                    <form  action="{{ route('logout') }}" method="POST">
+                    <li class="nav-item"><a class="nav-link text-light" href="{{ url('/') }}">Kijelentkezés</a></li>
+                    </form>
                 </ul>
             </div>           
         </div>       
@@ -73,7 +75,7 @@
     </div>
 </div>
 
-<form>
+<form  action="{{ route('logout') }}" method="POST">
     @csrf
     <button type="submit" class="btn btn-outline-light bg-danger text-light mt-3">Kijelentkezés</button>
 </form>
