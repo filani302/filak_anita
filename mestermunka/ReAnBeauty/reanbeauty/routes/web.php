@@ -99,3 +99,4 @@ Route::post('/termekfeltoltesek', [ProductFormController::class, 'store'])->name
 
 Route::get('/profil', [ProfilController::class, 'showProfile'])->middleware('auth');
 Route::put('/profil/update', [ProfilController::class, 'updateProfile'])->name('profil.update');
+Route::post('/profil/logout', [ProfilController::class, 'logout'])->name('logout');

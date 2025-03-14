@@ -31,8 +31,13 @@ public function updateProfile(Request $request)
         'phone_number' => $request->phone,
     ]);
 
-    return redirect()->back()->with('success', 'Profil frissítve!');
+    
 }
 
+public function logout()
+{
+    Auth::logout();
+    return redirect('/'); 
+}
 
 }
