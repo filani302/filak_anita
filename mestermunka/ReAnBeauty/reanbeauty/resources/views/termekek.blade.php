@@ -48,13 +48,32 @@
 
     
 
-<form class="mb-4">
+
+
+
+
+    <!-- Hero szekció -->
+    <section class="hero-section2 text-center py-5">
+        <div class="container">
+            <h1 class="fw-bold">✨ Oszd meg a véleményed a termékekről ✨</h1>
+            <p class="lead">Bőrápolás. Hajápolás. Rutinok. Inspiráció.</p>
+            <a href="{{ url('/termekfeltoltesek') }}" class="btn btn-custom me-3">Megosztom a termékem</a>
+        </div>
+    </section>
+
+    <!-- Termékek listája -->
+    <div class="container my-5">
+        <h1 class="text-center mb-4">Termékek</h1>
+        <hr>
+
+
+        <form class="mb-4">
     <div class="accordion" id="filterAccordion">
 
         <!-- Rutin Típus -->
         <div class="accordion-item border border-pink">
             <h2 class="accordion-header" id="headingOne">
-                <button class="accordion-button text-white" style="background-color: #ff85a2;" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne">
+                <button class="accordion-button text-white " style="background-color: #ff85a2;" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne">
                     Termék Típus
                 </button>
             </h2>
@@ -73,9 +92,9 @@
         </div>
 
         <!-- Allergének -->
-        <div class="accordion-item border border-pink mt-2">
+        <div class="accordion-item border border-pink mt-2 ">
             <h2 class="accordion-header" id="headingTwo">
-                <button class="accordion-button text-white" style="background-color: #ff85a2;" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo">
+                <button class="accordion-button text-white " style="background-color: #ff85a2;" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo">
                     Allergének
                 </button>
             </h2>
@@ -97,7 +116,9 @@
                         <input class="form-check-input" type="checkbox" name="allergen[]" value="novenyi_kivonatok">
                         <label class="form-check-label text-pink">Növényi kivonatok és illóolajok</label>
                     </div>
-                </div>
+                    <br>
+                    <button type="button" class=" btn btn-outline-dark">Szűrés</button>
+                    </div>
             </div>
         </div>
 
@@ -107,18 +128,8 @@
 
 
 
-    <!-- Hero szekció -->
-    <section class="hero-section2 text-center py-5">
-        <div class="container">
-            <h1 class="fw-bold">✨ Oszd meg a véleményed a termékekről ✨</h1>
-            <p class="lead">Bőrápolás. Hajápolás. Rutinok. Inspiráció.</p>
-            <a href="{{ url('/termekfeltoltesek') }}" class="btn btn-custom me-3">Megosztom a termékem</a>
-        </div>
-    </section>
 
-    <!-- Termékek listája -->
-    <div class="container my-5">
-        <h1 class="text-center mb-4">Termékek</h1>
+
 
         <!-- Termék 1 -->
         <div class="content-box p-4 shadow-sm rounded bg-light mb-4">
@@ -181,6 +192,14 @@
 
     <!-- FontAwesome ikonokhoz -->
     <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+
+
+    <footer class="bg-dark text-light text-center py-4 mt-5">
+        <p>Csatlakozz hozzánk és adj tippet másoknak!</p>
+        <p><a href="{{ url('/login') }}" class="text-light">Bejelentkezés</a> | <a href="{{ url('/registration') }}" class="text-light">Regisztráció</a></p>
+        <p>Kövess minket itt is!</p>
+        <p><a href="#" class="text-light">Facebook</a> | <a href="#" class="text-light">Instagram</a> | <a href="#" class="text-light">TikTok</a></p>
+    </footer>
 
 </body>
 </html>
