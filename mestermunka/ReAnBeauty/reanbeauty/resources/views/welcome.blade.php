@@ -7,7 +7,6 @@
     <link rel="stylesheet" href="{{ asset('css/app.css') }}">
     <title>ReAnBeauty - főoldal</title>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
-   
 </head>
 <body>
     <nav class="navbar navbar-expand-lg bg-dark shadow-sm">
@@ -27,9 +26,8 @@
                 </ul>
             </div>
         </div>
-        
     </nav>
- 
+
     <div class="offcanvas offcanvas-end d-lg-none" tabindex="-1" id="offcanvasNav">
         <div class="offcanvas-header">
             <h5 class="offcanvas-title">Menü</h5>
@@ -44,14 +42,36 @@
             </ul>
         </div>
     </div>
- 
+
     <div class="hero-section">
         <div class="hero-content">
             <h1>Fedezd fel a szépség valódi erejét a ReAnBeauty-val!</h1>
             <p>Szépségápolás a legújabb trendek szerint. Tudd meg, hogyan érheted el a legjobb eredményeket!</p>
         </div>
     </div>
- 
+
+    <!-- Kép lapozgató (automatikusan vált) -->
+    <div id="termekCarousel" class="carousel slide mx-auto my-4" data-bs-ride="carousel" data-bs-interval="2000" style="width: 90%; height: auto;">
+        <div class="carousel-inner">
+            <div class="carousel-item active">
+                <img src="/img/viragos.webp" class="d-block w-100 rounded" alt="Termék 1">
+            </div>
+            <div class="carousel-item">
+                <img src="/img/skinFokep.jpeg" class="d-block w-100 rounded" alt="Termék 2">
+            </div>
+            <div class="carousel-item">
+                <img src="/img/skinFokep.jpeg" class="d-block w-100 rounded" alt="Termék 3">
+            </div>
+        </div>
+        <!-- Navigációs gombok -->
+        <button class="carousel-control-prev" type="button" data-bs-target="#termekCarousel" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#termekCarousel" data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        </button>
+    </div>
+
     <div class="container custom-block mt-5 p-4 text-center">
         <img src="img/ReAnLogoo.png" alt="ReAnBeauty Logo">
         <h2>ReAnBeauty</h2>
@@ -63,12 +83,12 @@
             <li>📸 Oszd meg saját tippjeidet és inspirálj másokat!</li>
         </ul>
     </div>
- 
+
     <footer class="bg-dark text-light text-center py-4 mt-5">
         <p>Csatlakozz hozzánk és adj tippet másoknak!</p>
         <p><a href="{{ url('/login') }}" class="text-light">Bejelentkezés</a> | <a href="{{ url('/registration') }}" class="text-light">Regisztráció</a></p>
+        <p>Kövess minket itt is!</p>
         <p><a href="#" class="text-light">Facebook</a> | <a href="#" class="text-light">Instagram</a> | <a href="#" class="text-light">TikTok</a></p>
     </footer>
 </body>
 </html>
- 
