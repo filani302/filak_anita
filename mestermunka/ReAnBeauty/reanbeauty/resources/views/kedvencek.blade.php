@@ -78,14 +78,18 @@
       <div class="card-body">
         <h5 class="card-title">Termék neve</h5>
         <p class="card-text">Termékről szóló leírás</p>
-        <i id="kuka" class="fa-solid fa-trash"></i>
+        <i id="kuka" class="fa-solid fa-trash" ></i>
 
       </div>
     </div>
   </div>
 </div>
 
+  <script>
 
+   
+
+  </script>
 
 
     </body>

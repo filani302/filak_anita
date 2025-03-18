@@ -40,12 +40,11 @@
                 <input type="text" class="form-control shadow-sm" placeholder="Adja meg a termék nevét">
             </div>
             <div class="mb-3">
-                <label for="allergen" class="form-label">Allergen</label>
+                <label for="allergen" class="form-label fw-bold">Allergén (Tölts fel egy képet a termék hátuljáról, ahol jól látható a térmék összetevői!)</label>
                 <br>
-                <input type="checkbox" name="allergens[]" value="0"> Illatanyagok<br>
-                <input type="checkbox" name="allergens[]" value="1"> Tartósítószerek<br>
-                <input type="checkbox" name="allergens[]" value="2"> Emulgeálószerek<br>
-                <input type="checkbox" name="allergens[]" value="3"> Növényi kivonatok és illóolajok<br>
+
+                <div class="mb-3">
+                <input type="file" class="form-control" id="image" name="image">
             </div>
             <div class="mb-3">
                 <label class="form-label fw-bold">Leírás <i class="fas fa-pencil-alt"></i></label>
@@ -53,7 +52,7 @@
             </div>
             
             <div class="mb-3">
-                <label for="image" class="form-label">Termékkép</label>
+                <label for="image" class="form-label">Termék képek(Töltsd fel termékeidről egy képet!)</label>
                 <input type="file" class="form-control" id="image" name="image">
             </div>
             <button type="submit" class="btn btn-custom bg-dark w-100 fw-bold">Beküldés <i class="fas fa-paper-plane"></i></button>

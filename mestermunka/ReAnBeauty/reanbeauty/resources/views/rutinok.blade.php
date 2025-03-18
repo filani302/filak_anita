@@ -52,7 +52,7 @@
         <div class="container">
             <h1 class="fw-bold">✨ Oszd meg a véleményed a termékekről ✨</h1>
             <p class="lead">Bőrápolás. Hajápolás. Rutinok. Inspiráció.</p>
-            <a href="{{ url('/termekfeltoltesek') }}" class="btn btn-custom me-3">Megosztom a termékem</a>
+            <a href="{{ url('/rutinfeltoltesek') }}" class="btn btn-custom me-3">Megosztom a rutinom</a>
         </div>
     </section>
     <!-- Termékek listája -->
