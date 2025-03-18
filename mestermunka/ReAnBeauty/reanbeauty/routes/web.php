@@ -75,7 +75,12 @@ Route::get('/TudjmegTobbet', function () {
 Route::get('/kedvencek', function () {
     return view('kedvencek');
 });
+
+Route::get('/Kommentek', function () {
+    return view('Kommentek');
+});
  
+
  
 Route::get('/registration', [UserController::class, 'create'])->name('registration');
 Route::post('/registration', [UserController::class, 'store'])->name('registration.store');
@@ -94,3 +99,7 @@ Route::post('/termekfeltoltesek', [ProductFormController::class, 'store'])->name
 Route::get('/profil', [ProfilController::class, 'showProfile'])->middleware('auth');
 Route::put('/profil/update', [ProfilController::class, 'updateProfile'])->name('profil.update');
 Route::post('/profil/logout', [ProfilController::class, 'logout'])->name('logout');
+
+
+
+

@@ -49,13 +49,26 @@
 
     <div class="hero-section">
         <div class="hero-content">
-            <h1>Fedezd fel a szépség valódi erejét a ReAnBeauty-val!</h1>
-            <p>Szépségápolás a legújabb trendek szerint. Tudd meg, hogyan érheted el a legjobb eredményeket!</p>
         </div>
     </div>
 
-    <!-- Kép lapozgató (automatikusan vált) -->
-    <div id="termekCarousel" class="carousel slide mx-auto my-4" data-bs-ride="carousel" data-bs-interval="2000" style="width: 90%; height: auto;">
+    <br>
+    <section class="hero">
+        <img src="/img/arc.jpg" alt="Nő arcápolási krémmel">
+        <div class="text-box">
+            <h2>Hatóanyagok hatása a bőrre és a hajra</h2>
+            <p>Ez az oldal a felhasználók által feltöltött termékeket és rutinokat 
+                gyűjti össze, ahol az összetevők is megjelennek. Így könnyen megnézheted, 
+                hogy egy-egy hatóanyag milyen hatással lehet a bőrödre és a hajadra, és 
+                segíthet a legjobb termékek kiválasztásában!</p>
+            </div>
+    </section>
+
+    
+        
+
+<!-- Kép lapozgató (automatikusan vált) --->
+<div id="termekCarousel" class="carousel slide mx-auto my-4" data-bs-ride="carousel" data-bs-interval="2000" style="width: 70%; height: auto;">
         <div class="carousel-inner">
             <div class="carousel-item active">
                 <img src="/img/viragos.webp" class="d-block w-100 rounded" alt="Termék 1">
@@ -74,19 +87,40 @@
         <button class="carousel-control-next" type="button" data-bs-target="#termekCarousel" data-bs-slide="next">
             <span class="carousel-control-next-icon" aria-hidden="true"></span>
         </button>
+        
+
+        
     </div>
 
-    <div class="container custom-block mt-5 p-4 text-center">
-        <img src="img/ReAnLogoo.png" alt="ReAnBeauty Logo">
-        <h2>ReAnBeauty</h2>
-        <p>Fedezd fel a szépség valódi erejét a ReAnBeauty-val!</p>
-        <ul class="list-unstyled">
-            <li>🌟 Bőrápolás, Hajápolás, Rutinok, Ihlet</li>
-            <li>💄 Legjobb arc- és hajápolási termékek.</li>
-            <li>💡 Tanuld meg a bevált szépségápolási rutinokat.</li>
-            <li>📸 Oszd meg saját tippjeidet és inspirálj másokat!</li>
-        </ul>
-    </div>
+             <center><p class="fw-medium fs-1">ReAnBeauty</p></center>
+           <center>
+          <p>  🔎 Találd meg a tökéletes bőrápolási és hajápolási termékeket! 🔎</p> <br>
+          <p>  👩‍🔬 Tudatos szépség, egyszerűen! Böngéssz a felhasználók által feltöltött termékek és rutinok között, <br>
+            és tudd meg, milyen hatóanyagok segíthetnek a legjobban a bőröd és a hajad ápolásában!</p> <br>
+          <p> ✨ Tudj meg többet, dönts okosan, ragyogj magabiztosan! ✨</p> <br>
+          </center> 
+          <center>
+          <div class="card" style="width: 30rem;">
+  <img src="/img/ReAnLogo.png" class="card-img-top" alt="...">
+  <div class="card-body">
+  <p>  🔎 Találd meg a tökéletes bőrápolási és hajápolási termékeket! 🔎</p> <br>
+          <p>  👩‍🔬 Tudatos szépség, egyszerűen! Böngéssz a felhasználók által feltöltött termékek és rutinok között, <br>
+            és tudd meg, milyen hatóanyagok segíthetnek a legjobban a bőröd és a hajad ápolásában!</p> <br>
+          <p> ✨ Tudj meg többet, dönts okosan, ragyogj magabiztosan! ✨</p> <br>
+  </div>
+</div>
+</center>
+
+
+
+
+
+
+
+
+
+
+
 
     <footer class="bg-dark text-light text-center py-4 mt-5">
         <p>Csatlakozz hozzánk és adj tippet másoknak!</p>
