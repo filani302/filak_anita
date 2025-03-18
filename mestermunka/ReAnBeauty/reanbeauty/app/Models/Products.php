@@ -13,9 +13,10 @@ class Products extends Model
     protected $fillable = [
         'product_type',
         'title',
-        'image',
+        'p_image',
+        'a_image',
         'description',
-        'allergen'
+        
     ];
 
     protected $hidden = [
@@ -25,8 +26,5 @@ class Products extends Model
         'modified_at'
     ];
 
-    public function allergens()
-{
-    return $this->belongsToMany(Allergen::class, 'conection', 'product_id', 'allergen_id');
-}
+    
 }

@@ -18,7 +18,9 @@ class ProductFormController extends Controller
             'product_type' => 'required|integer',
             'description' => 'required|string|max:700',
             'image' => 'nullable|image|mimes:jpeg,png,jpg',
-            'allergens' => 'nullable|integer',
+           'allergens' => 'nullable|array',
+           'allergens.*' => 'integer',
+
         ]);
 
         // Kép feltöltés és mentés
@@ -39,8 +41,9 @@ class ProductFormController extends Controller
 
         // Allergének hozzárendelése
         if ($request->has('allergens')) {
-            $product->allergens()->attach($request->allergens);
+            $product->allergens()->sync($request->allergens);
         }
+        
 
         return redirect()->back()->with('success', 'Termék sikeresen feltöltve!');
     }
