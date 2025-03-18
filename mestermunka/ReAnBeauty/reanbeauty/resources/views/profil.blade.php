@@ -22,7 +22,8 @@
                     <li class="nav-item"><a class="nav-link text-light" href="{{ url('/welcome') }}">Főoldal</a></li>
                     <li class="nav-item"><a class="nav-link text-light" href="{{ url('/termekek') }}">Termékek</a></li>
                     <li class="nav-item"><a class="nav-link text-light" href="{{ url('/rutinok') }}">Rutinok</a></li>
-                    
+                    <li class="nav-item"><a class="nav-link text-light" href="{{ url('/kedvencek') }}">Kedvencek</a></li>
+
                     <form  action="{{ route('logout') }}" method="POST">
                     <li class="nav-item"><a class="nav-link text-light" href="{{ url('/') }}">Kijelentkezés</a></li>
                     </form>
@@ -41,6 +42,8 @@
                 <li class="nav-item"><a class="nav-link" href="{{ url('/termekek') }}">Termékek</a></li>
                 <li class="nav-item"><a class="nav-link" href="{{ url('/rutinok') }}">Rutinok</a></li>
                 <li class="nav-item"><a class="nav-link" href="{{ url('/profil') }}">Profil</a></li>
+                <li class="nav-item"><a class="nav-link text-light" href="{{ url('/kedvencek') }}">Kedvencek</a></li>
+
             </ul>
         </div>
     </div>
