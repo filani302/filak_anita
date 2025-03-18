@@ -13,9 +13,10 @@ class Rutin extends Model
     protected $fillable = [
         'rutin_type',
         'title',
-        'image',
+        'p_image',
+        'a_image',
         'description',
-        'allergen'
+        
     ];
 
     protected $hidden = [
@@ -26,9 +27,5 @@ class Rutin extends Model
         'modified_at'
     ];
 
-    public function allergens()
-    {
-    return $this->belongsToMany(Allergen::class, 'conection', 'rutin_id', 'allergen_id');
-    }   
     
 }
