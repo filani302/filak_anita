@@ -97,6 +97,16 @@
                 <input type="file" class="form-control" id="image" name="image">
             </div>
 
+            <?php foreach ($images as $image): ?>
+            <img src="<?= $allergen . $image ?>" alt="<?= $image ?>" width="200">
+             <?php endforeach; ?>
+
+             
+            <?php foreach ($images as $image): ?>
+            <img src="<?= $termek . $image ?>" alt="<?= $image ?>" width="200">
+             <?php endforeach; ?>
+
+
             <button type="submit" class="btn btn-custom bg-dark w-100 fw-bold">Beküldés <i class="fas fa-paper-plane"></i></button>
         </form>
         </div>

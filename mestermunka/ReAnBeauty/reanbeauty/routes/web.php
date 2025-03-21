@@ -81,6 +81,24 @@ Route::get('/Kommentek', function () {
 });
  
 
+Route::get('allergenMeghatarozasok/', function () {
+    return view('rutinfeltoltesek');
+});
+
+
+Route::get('termekMeghatarozasok/', function () {
+    return view('rutinfeltoltesek');
+});
+
+Route::get('allergenMeghatarozasok/', function () {
+    return view('termekfeltoltesek');
+});
+
+
+Route::get('termekMeghatarozasok/', function () {
+    return view('termekfeltoltesek');
+});
+
  
 Route::get('/registration', [UserController::class, 'create'])->name('registration');
 Route::post('/registration', [UserController::class, 'store'])->name('registration.store');
