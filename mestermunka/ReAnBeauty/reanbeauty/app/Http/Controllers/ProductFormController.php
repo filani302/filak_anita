@@ -18,8 +18,8 @@ class ProductFormController extends Controller
             'title' => 'required|string|max:50',
             'product_type' => 'required|integer',
             'description' => 'required|string',
-            'p_image' => 'nullable|image|mimes:jpeg,png,jpg,webp|max:700',
-            'a_image' => 'nullable|image|mimes:jpeg,png,jpg,webp|max:700',
+            'p_image' => 'nullable|image|mimes:jpeg,png,jpg,webp,jfif|max:700',
+            'a_image' => 'nullable|image|mimes:jpeg,png,jpg,webp,jfif|max:700',
         ]);
 
         $product = new Products();
