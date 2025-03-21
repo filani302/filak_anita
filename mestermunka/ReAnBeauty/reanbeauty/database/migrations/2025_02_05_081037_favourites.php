@@ -18,6 +18,7 @@ return new class extends Migration
             $table->foreignId('product_id')->constrained('products')->onDelete('cascade');
             $table->foreignId('user_id')->constrained('users')->onDelete('cascade');
             $table->timestamp('created_at')->useCurrent(); // Only created_at here, as per your code
+            $table->timestamp('updated_at')->useCurrent()->useCurrentOnUpdate();
         });
         
     }

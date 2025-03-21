@@ -18,8 +18,8 @@ return new class extends Migration
             $table->foreignId('user_id')->constrained('users')->onDelete('cascade');
             $table->string('comment', 700)->nullable();
             $table->tinyInteger('like')->unsigned()->nullable();
-            $table->timestamp('reacted_at')->useCurrent();
-            $table->timestamp('modified_at')->useCurrent()->useCurrentOnUpdate();
+            $table->timestamp('created_at')->useCurrent();
+            $table->timestamp('updated_at')->useCurrent()->useCurrentOnUpdate();
         });
         
     }

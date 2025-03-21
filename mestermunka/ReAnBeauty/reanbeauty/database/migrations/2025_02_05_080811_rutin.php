@@ -21,7 +21,7 @@ return new class extends Migration
            $table->string('a_image', 700)->nullable();
            $table->string('description', 2500)->nullable();
            $table->timestamp('created_at')->useCurrent();
-           $table->timestamp('modified_at')->useCurrent()->useCurrentOnUpdate();
+           $table->timestamp('updated_at')->useCurrent()->useCurrentOnUpdate();
         });
     }
 

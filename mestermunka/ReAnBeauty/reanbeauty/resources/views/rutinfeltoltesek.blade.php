@@ -30,21 +30,44 @@
         </div>
     </nav>
 
+    <div class="container mt-5">
+        
+
+        @if ($errors->any())
+            <div class="alert alert-danger">
+                <ul>
+                    @foreach ($errors->all() as $error)
+                        <li>{{ $error }}</li>
+                    @endforeach
+                </ul>
+            </div>
+        @endif
+
+            @csrf
+
     <div class="container d-flex justify-content-center align-items-center min-vh-100">
     <div class="form-container">
         <h2 class="text-center text-dark mb-4">Oszd meg jól bevált rutinodat!</h2>
 
-        <form action="{{ url('rutinfeltoltesek') }}" method="POST">
+        <form action="{{ route('rutin.store') }}" method="POST" enctype="multipart/form-data">
             <div class="mb-3">
                 <label class="form-label fw-bold">Termékek neve <i class="fas fa-tag"></i></label>
                 <input type="text" class="form-control shadow-sm" placeholder="Adja meg a termék nevét">
+            </div>
+            <div class="mb-3">
+                <label for="product_type" class="form-label fw-bold">Típus</label>
+                <select class="form-select" id="rutin_type" name="rutin_type" required>
+                    <option value=0>Kozmetikum</option>
+                    <option value=1>Bőrápolás</option>
+                    <option value=2>Egyéb</option>
+                </select>
             </div>
             <div class="mb-3">
                 <label for="allergen" class="form-label fw-bold">Allergén (Tölts fel egy képet a termék hátuljáról, ahol jól látható a térmék összetevői!)</label>
                 <br>
 
                 <div class="mb-3">
-                <input type="file" class="form-control" id="image" name="image">
+                <input type="file" class="form-control" id="a_image" name="a_image">
             </div>
             <div class="mb-3">
                 <label class="form-label fw-bold">Leírás <i class="fas fa-pencil-alt"></i></label>
@@ -53,7 +76,7 @@
             
             <div class="mb-3">
                 <label for="image" class="form-label">Termék képek(Töltsd fel termékeidről egy képet!)</label>
-                <input type="file" class="form-control" id="image" name="image">
+                <input type="file" class="form-control" id="p_image" name="p_image">
             </div>
 
             <?php foreach ($images as $image): ?>

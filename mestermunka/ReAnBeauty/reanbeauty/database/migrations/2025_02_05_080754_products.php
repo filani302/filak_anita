@@ -20,7 +20,7 @@ return new class extends Migration
             $table->string('description', 700)->nullable();
             $table->foreignId('user_id')->constrained('users')->onDelete('cascade');
             $table->timestamp('created_at')->useCurrent();
-            $table->timestamp('modified_at')->useCurrent()->useCurrentOnUpdate();
+            $table->timestamp('updated_at')->useCurrent()->useCurrentOnUpdate();
 
         });
     }

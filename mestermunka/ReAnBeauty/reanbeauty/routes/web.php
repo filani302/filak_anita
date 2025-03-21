@@ -8,6 +8,7 @@ use Illuminate\Support\Facades\File;
 use Illuminate\Support\Facades\Response;
 use App\Http\Controllers\ProductFormController;
 use App\Http\Controllers\ProfilController;
+use App\Http\Controllers\RutinFormController;
  
 /*
 |--------------------------------------------------------------------------
@@ -113,6 +114,10 @@ Route::post('/login', [LoginController::class, 'login'])->name('login.post');
 
 
 Route::post('/termekfeltoltesek', [ProductFormController::class, 'store'])->name('product.store');
+Route::get('/termekekfeltoltesek', [ProductFormController::class, 'index'])->name('termekek');
+
+Route::post('/rutinfeltoltesek', [RutinFormController::class, 'store'])->name('rutin.store');
+Route::get('/rutinfeltoltesek', [RutinFormController::class, 'index'])->name('rutinok');
 
 Route::get('/profil', [ProfilController::class, 'showProfile'])->middleware('auth');
 Route::put('/profil/update', [ProfilController::class, 'updateProfile'])->name('profil.update');

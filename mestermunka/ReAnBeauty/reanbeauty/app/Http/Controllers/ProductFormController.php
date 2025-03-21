@@ -3,49 +3,46 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Models\Allergen;
 use App\Models\Products;
-
-
+use Illuminate\Support\Facades\Storage;
+use Illuminate\Support\Facades\Auth;
 
 class ProductFormController extends Controller
 {
-
+    /**
+     * Store a newly created product in database.
+     */
     public function store(Request $request)
     {
         $request->validate([
             'title' => 'required|string|max:50',
             'product_type' => 'required|integer',
-            'description' => 'required|string|max:700',
-            'image' => 'nullable|image|mimes:jpeg,png,jpg',
-           'allergens' => 'nullable|array',
-           'allergens.*' => 'integer',
-
+            'description' => 'required|string',
+            'p_image' => 'nullable|image|mimes:jpeg,png,jpg,webp|max:700',
+            'a_image' => 'nullable|image|mimes:jpeg,png,jpg,webp|max:700',
         ]);
 
-        // Kép feltöltés és mentés
-        if ($request->hasFile('image')) {
-            $imagePath = $request->file('image')->store('products , public/upload');
-        } 
-        else {
-            $imagePath = null;
-        }
-
-        // Termék mentése az adatbázisba
         $product = new Products();
         $product->title = $request->title;
         $product->product_type = $request->product_type;
         $product->description = $request->description;
-        $product->image = $imagePath;
+        $product->user_id = Auth::id(); // Felhasználó hozzárendelése
+
+        // Termék kép feltöltése
+        if ($request->hasFile('p_image')) {
+            $pimagePath = $request->file('p_image')->store('products', 'public');
+            $product->p_image = $pimagePath;
+        }
+
+        // Allergén kép feltöltése
+        if ($request->hasFile('a_image')) {
+            $aimagePath = $request->file('a_image')->store('products', 'public');
+            $product->a_image = $aimagePath;
+        }
+
         $product->save();
 
-        // Allergének hozzárendelése
-        if ($request->has('allergens')) {
-            $product->allergens()->sync($request->allergens);
-        }
-        
+        return redirect('/termekek')->with('success', 'A termék sikeresen feltöltve!');
 
-        return redirect()->back()->with('success', 'Termék sikeresen feltöltve!');
     }
-
 }

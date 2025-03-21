@@ -64,7 +64,7 @@
         <div class="container d-flex justify-content-center align-items-center min-vh-100">
         <div class="form-container">
         <h2 class="text-center text-dark mb-4">Oszd meg jól bevált termékeidet!</h2>
-        <form action="{{ url('termekfeltoltesek') }}" method="POST">  
+        <form action="{{ route('product.store') }}" method="POST" enctype="multipart/form-data">  
             <div class="mb-3">
                 <label for="title" class="form-label fw-bold">Termék neve</label>
                 <input type="text"  class="form-control shadow-sm"  id="title" name="title" required>
@@ -82,7 +82,7 @@
                 <br>
 
                 <div class="mb-3">
-                <input type="file" class="form-control" id="image" name="image">
+                <input type="file" class="form-control" id="p_image" name="p_image">
             </div>
                
             </div>
@@ -94,7 +94,7 @@
 
             <div class="mb-3">
                 <label for="image" class="form-label fw-bold">Termék kép(Töltsd fel termékedről egy képet!)</label>
-                <input type="file" class="form-control" id="image" name="image">
+                <input type="file" class="form-control" id="a_image" name="a_image">
             </div>
 
             <?php foreach ($images as $image): ?>
