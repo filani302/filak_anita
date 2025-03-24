@@ -82,23 +82,7 @@ Route::get('/Kommentek', function () {
 });
  
 
-Route::get('allergenMeghatarozasok/', function () {
-    return view('rutinfeltoltesek');
-});
 
-
-Route::get('termekMeghatarozasok/', function () {
-    return view('rutinfeltoltesek');
-});
-
-Route::get('allergenMeghatarozasok/', function () {
-    return view('termekfeltoltesek');
-});
-
-
-Route::get('termekMeghatarozasok/', function () {
-    return view('termekfeltoltesek');
-});
 
  
 Route::get('/registration', [UserController::class, 'create'])->name('registration');
@@ -114,14 +98,19 @@ Route::post('/login', [LoginController::class, 'login'])->name('login.post');
 
 
 Route::post('/termekfeltoltesek', [ProductFormController::class, 'store'])->name('product.store');
-Route::get('/termekekfeltoltesek', [ProductFormController::class, 'index'])->name('termekek');
+
 
 Route::post('/rutinfeltoltesek', [RutinFormController::class, 'store'])->name('rutin.store');
-Route::get('/rutinfeltoltesek', [RutinFormController::class, 'index'])->name('rutinok');
+
 
 Route::get('/profil', [ProfilController::class, 'showProfile'])->middleware('auth');
 Route::put('/profil/update', [ProfilController::class, 'updateProfile'])->name('profil.update');
 Route::post('/profil/logout', [ProfilController::class, 'logout'])->name('logout');
+
+
+//Route::get('allergenMeghatarozasok/', function () {
+//    return view('rutinfeltoltesek');
+//});
 
 
 

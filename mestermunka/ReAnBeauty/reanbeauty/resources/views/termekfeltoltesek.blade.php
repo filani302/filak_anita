@@ -97,14 +97,7 @@
                 <input type="file" class="form-control" id="a_image" name="a_image">
             </div>
 
-            <?php foreach ($images as $image): ?>
-            <img src="<?= $allergen . $image ?>" alt="<?= $image ?>" width="200">
-             <?php endforeach; ?>
-
-             
-            <?php foreach ($images as $image): ?>
-            <img src="<?= $termek . $image ?>" alt="<?= $image ?>" width="200">
-             <?php endforeach; ?>
+         
 
 
             <button type="submit" class="btn btn-custom bg-dark w-100 fw-bold">Beküldés <i class="fas fa-paper-plane"></i></button>
@@ -114,19 +107,7 @@
     </div>
 </div>
 
-<script>
-    document.getElementById("image-url").addEventListener("input", function() {
-        const url = this.value;
-        const imgPreview = document.getElementById("image-preview");
 
-        if (url) {
-            imgPreview.src = url;
-            imgPreview.style.display = "block";
-        } else {
-            imgPreview.style.display = "none";
-        }
-    });
-</script>
 
 </body>
 </html>
