@@ -21,7 +21,6 @@ class Rutin extends Model
 
     protected $hidden = [
         'rutin_id',
-        'product_id',
         'user_id',
         'created_at',
         'modified_at'

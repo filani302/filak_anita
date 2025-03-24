@@ -12,10 +12,9 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('rutin', function (Blueprint $table) {
-         $table->id();
-         $table->foreignId('product_id')->constrained('products')->onDelete('cascade');
-         $table->foreignId('user_id')->constrained('users')->onDelete('cascade');         
-           $table->tinyInteger('rutin_type')->unsigned();
+            $table->id();
+            $table->foreignId('user_id')->constrained('users')->onDelete('cascade');         
+           $table->string('rutin_type', 50);
            $table->string('title', 50);
            $table->string('p_image', 700)->nullable();
            $table->string('a_image', 700)->nullable();

@@ -17,7 +17,7 @@ class ProductFormController extends Controller
 {
     $request->validate([
         'title' => 'required|string|max:50',
-        'product_type' => 'required|integer',
+        'product_type' => 'required|string|max:50',
         'description' => 'required|string',
         'p_image' => 'nullable|image|mimes:jpeg,png|max:700',
         'a_image' => 'nullable|image|mimes:jpeg,png|max:700',
@@ -32,8 +32,8 @@ class ProductFormController extends Controller
     $images = []; // Üres tömb a képekhez
 
     // Az új könyvtárak elérési útja az "upload" mappán belül
-    $termekKepPath = public_path('upload/termekKep');
-    $rutinKepPath = public_path('upload/rutinKep');
+    $termekKepPath = public_path('upload/termek/termekKep');
+    $rutinKepPath = public_path('upload/termek/rutinKep');
 
     // Ha a mappák nem léteznek, hozzuk létre őket
     if (!File::exists($termekKepPath)) {
@@ -48,9 +48,9 @@ class ProductFormController extends Controller
         $pImage = $request->file('p_image');
         $pImageName = time() . '_' . $pImage->getClientOriginalName();
         $pImage->move($termekKepPath, $pImageName);
-        $product->p_image = 'upload/termekKep/' . $pImageName;
+        $product->p_image = 'upload/termek/termekKep/' . $pImageName;
 
-        $images[] = 'upload/termekKep/' . $pImageName; // Hozzáadjuk a tömbhöz
+        $images[] = 'upload/termek/termekKep/' . $pImageName; // Hozzáadjuk a tömbhöz
     }
 
     // Allergén kép feltöltése
@@ -58,9 +58,9 @@ class ProductFormController extends Controller
         $aImage = $request->file('a_image');
         $aImageName = time() . '_' . $aImage->getClientOriginalName();
         $aImage->move($rutinKepPath, $aImageName);
-        $product->a_image = 'upload/rutinKep/' . $aImageName;
+        $product->a_image = 'upload/termek/rutinKep/' . $aImageName;
 
-        $images[] = 'upload/rutinKep/' . $aImageName; // Hozzáadjuk a tömbhöz
+        $images[] = 'upload/termek/rutinKep/' . $aImageName; // Hozzáadjuk a tömbhöz
     }
 
     $product->save();

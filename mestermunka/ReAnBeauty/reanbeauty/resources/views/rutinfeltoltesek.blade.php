@@ -51,15 +51,14 @@
 
         <form action="{{ route('rutin.store') }}" method="POST" enctype="multipart/form-data">
             <div class="mb-3">
-                <label class="form-label fw-bold">Termékek neve <i class="fas fa-tag"></i></label>
-                <input type="text" class="form-control shadow-sm" placeholder="Adja meg a termék nevét">
+            <label for="title" class="form-label fw-bold">Rutin neve</label>
+            <input type="text"  class="form-control shadow-sm"  id="title" name="title" required>
             </div>
             <div class="mb-3">
-                <label for="product_type" class="form-label fw-bold">Típus</label>
+                <label for="rutin_type" class="form-label fw-bold">Típus</label>
                 <select class="form-select" id="rutin_type" name="rutin_type" required>
-                    <option value=0>Kozmetikum</option>
-                    <option value=1>Bőrápolás</option>
-                    <option value=2>Egyéb</option>
+                    <option value="Hajápolás">Hajápolás</option>
+                    <option value="Bőrápolás">Bőrápolás</option>
                 </select>
             </div>
             <div class="mb-3">
@@ -70,23 +69,14 @@
                 <input type="file" class="form-control" id="a_image" name="a_image">
             </div>
             <div class="mb-3">
-                <label class="form-label fw-bold">Leírás <i class="fas fa-pencil-alt"></i></label>
-                <textarea class="form-control shadow-sm" rows="4" placeholder="Adj leírást, hogyan használod termékedet."></textarea>
+                <label for="description" class="form-label fw-bold">Leírás</label>
+                <textarea class="form-control shadow-sm" id="description" name="description" rows="4" required></textarea>
             </div>
             
             <div class="mb-3">
                 <label for="image" class="form-label">Termék képek(Töltsd fel termékeidről egy képet!)</label>
                 <input type="file" class="form-control" id="p_image" name="p_image">
             </div>
-
-            <?php foreach ($images as $image): ?>
-            <img src="<?= $allergen . $image ?>" alt="<?= $image ?>" width="200">
-             <?php endforeach; ?>
-
-               
-            <?php foreach ($images as $image): ?>
-            <img src="<?= $termek . $image ?>" alt="<?= $image ?>" width="200">
-             <?php endforeach; ?>
 
 
             <button type="submit" class="btn btn-custom bg-dark w-100 fw-bold">Beküldés <i class="fas fa-paper-plane"></i></button>
