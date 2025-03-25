@@ -81,8 +81,8 @@
         });
     </script>
 
-<footer class="bg-dark text-light text-center py-4 mt-5">
-        <p>Csatlakozz hozzánk és adj tippet másoknak!</p>
+<footer id="lablec" class=" lablec text-center py-4 mt-5">
+<p>Csatlakozz hozzánk és adj tippet másoknak!</p>
         <p><a href="{{ url('/login') }}" class="text-light">Bejelentkezés</a> | <a href="{{ url('/registration') }}" class="text-light">Regisztráció</a></p>
         <p>Kövess minket itt is!</p>
         <p><a href="#" class="text-light">Facebook</a> | <a href="#" class="text-light">Instagram</a> | <a href="#" class="text-light">TikTok</a></p>

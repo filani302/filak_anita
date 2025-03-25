@@ -29,7 +29,7 @@ body {
   z-index: 2;
   font-size: 32px; /* Betűméret */
     font-weight: bold; /* Félkövér szöveg */
-    color: rgb(27, 26, 26); /* Fekete szöveg */
+    color: rgb(0, 0, 0); /* Fekete szöveg */
 }
 @keyframes fadeIn {
   from { opacity: 0; transform: translateY(-20px); }
@@ -109,7 +109,7 @@ body {
   background: #fff;
   padding: 25px;
   border-radius: 15px;
-  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.15);
+  box-shadow: 0 6px 18px rgb(0, 0, 0);
   margin: auto;
   animation: fadeInUp 1s ease-out;
 }
@@ -355,8 +355,7 @@ body {
 .comment-box {
   background-color: #ffe4e1; /* Világos rózsaszín */
   border-radius: 25px;
-  padding: 20px;
-  max-width: 600px;
+
   margin: 50px auto;
   box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.2);
 }
@@ -369,6 +368,8 @@ body {
 .comment-form-control {
   background-color: #ffe4e1; /* Világos rózsaszín */
   border: 1px solid #000;
+  width: 400px;
+  
 }
 .comment-form-control:focus {
   box-shadow: none;
@@ -392,17 +393,48 @@ body {
   justify-content: center;
   padding: 50px;
   background-color:rgb(247, 245, 240);
-  color: rgb(17, 17, 17);
+  color: rgb(0, 0, 0);
 }
 
 .hero img {
   width: 300px;
-  border-radius: 10px;
+  border-radius: 1px;
 }
 
 .text-box {
   max-width: 500px;
-  margin-left: 20px;
+  margin-left: 30px;
 }
 
+.hero1 {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 50px;
+  background-color:rgb(247, 245, 240);
+  color: rgb(0, 0, 0);
+}
 
+.hero1 img {
+  width: 500px;
+  height: 300px;
+  border-radius: 1px;
+}
+
+.text1-box {
+  max-width: 500px;
+  margin-right: 30px;
+}
+
+.kozepszoveg{
+  background-color: #000000;
+  color: white;
+  
+}
+
+/*lablec*/
+
+#lablec{
+  background-color: #000;
+  color: white;
+}

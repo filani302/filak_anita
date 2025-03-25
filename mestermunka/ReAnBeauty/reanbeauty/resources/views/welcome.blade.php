@@ -64,20 +64,24 @@
             </div>
     </section>
 
-    
+    <div class="kozepszoveg">
+                <hr>
+             <center><p class="fw-medium fs-1">ReAnBeauty</p></center>
+           <hr>
+          </div>
         
 
 <!-- Kép lapozgató (automatikusan vált) --->
 <div id="termekCarousel" class="carousel slide mx-auto my-4" data-bs-ride="carousel" data-bs-interval="2000" style="width: 70%; height: auto;">
         <div class="carousel-inner">
             <div class="carousel-item active">
-                <img src="/img/viragos.webp" class="d-block w-100 rounded" alt="Termék 1">
+                <img src="/kellekKepek/hajapolas1.webp" class="d-block w-100 rounded" alt="Termék 1">
             </div>
             <div class="carousel-item">
-                <img src="/img/skinFokep.jpeg" class="d-block w-100 rounded" alt="Termék 2">
+                <img src="/kellekKepek/hajapolas.webp" class="d-block w-100 rounded" alt="Termék 2">
             </div>
             <div class="carousel-item">
-                <img src="/img/skinFokep.jpeg" class="d-block w-100 rounded" alt="Termék 3">
+                <img src="/kellekKepek/arcapolas.webp" class="d-block w-100 rounded" alt="Termék 3">
             </div>
         </div>
         <!-- Navigációs gombok -->
@@ -91,25 +95,20 @@
 
         
     </div>
+      
 
-             <center><p class="fw-medium fs-1">ReAnBeauty</p></center>
-           <center>
-          <p>  🔎 Találd meg a tökéletes bőrápolási és hajápolási termékeket! 🔎</p> <br>
-          <p>  👩‍🔬 Tudatos szépség, egyszerűen! Böngéssz a felhasználók által feltöltött termékek és rutinok között, <br>
-            és tudd meg, milyen hatóanyagok segíthetnek a legjobban a bőröd és a hajad ápolásában!</p> <br>
-          <p> ✨ Tudj meg többet, dönts okosan, ragyogj magabiztosan! ✨</p> <br>
-          </center> 
-          <center>
-          <div class="card" style="width: 30rem;">
-  <img src="/img/ReAnLogo.png" class="card-img-top" alt="...">
-  <div class="card-body">
-  <p>  🔎 Találd meg a tökéletes bőrápolási és hajápolási termékeket! 🔎</p> <br>
-          <p>  👩‍🔬 Tudatos szépség, egyszerűen! Böngéssz a felhasználók által feltöltött termékek és rutinok között, <br>
-            és tudd meg, milyen hatóanyagok segíthetnek a legjobban a bőröd és a hajad ápolásában!</p> <br>
-          <p> ✨ Tudj meg többet, dönts okosan, ragyogj magabiztosan! ✨</p> <br>
-  </div>
-</div>
-</center>
+
+          <section class="hero1">
+        <div class="text1-box">
+            <h2>Találd meg kedvenc termékeidet</h2>
+            <p>Fedezd fel a gondosan válogatott szépségápolási termékeket, 
+                amelyeket a közösség tölt fel! Kifinomult formulák, prémium 
+                minőség és elegancia egy helyen. Válogass a legjobb termékek közül, 
+                és találd meg a kedvenceidet!</p>
+            </div>
+            <img src="/kellekKepek/termek1.webp" alt="Nő arcápolási krémmel">
+
+    </section>
 
 
 
@@ -121,8 +120,7 @@
 
 
 
-
-    <footer class="bg-dark text-light text-center py-4 mt-5">
+    <footer id="lablec" class=" lablec text-center py-4 mt-5">
         <p>Csatlakozz hozzánk és adj tippet másoknak!</p>
         <p><a href="{{ url('/login') }}" class="text-light">Bejelentkezés</a> | <a href="{{ url('/registration') }}" class="text-light">Regisztráció</a></p>
         <p>Kövess minket itt is!</p>

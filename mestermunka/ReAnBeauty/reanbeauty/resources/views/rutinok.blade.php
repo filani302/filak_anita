@@ -81,37 +81,8 @@
                 </div>
             </div>
         </div>
-        <!-- Allergének -->
-        <div class="accordion-item border border-pink mt-2 ">
-            <h2 class="accordion-header" id="headingTwo">
-                <button class="accordion-button text-white " style="background-color: #ff85a2;" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo">
-                    Allergének
-                </button>
-            </h2>
-            <div id="collapseTwo" class="accordion-collapse collapse show">
-                <div class="accordion-body bg-light">
-                    <div class="form-check">
-                        <input class="form-check-input" type="checkbox" name="allergen[]" value="illatanyagok">
-                        <label class="form-check-label text-pink">Illatanyagok</label>
-                    </div>
-                    <div class="form-check">
-                        <input class="form-check-input" type="checkbox" name="allergen[]" value="tartositoszerek">
-                        <label class="form-check-label text-pink">Tartósítószerek</label>
-                    </div>
-                    <div class="form-check">
-                        <input class="form-check-input" type="checkbox" name="allergen[]" value="emulgealoszerek">
-                        <label class="form-check-label text-pink">Emulgeálószerek</label>
-                    </div>
-                    <div class="form-check">
-                        <input class="form-check-input" type="checkbox" name="allergen[]" value="novenyi_kivonatok">
-                        <label class="form-check-label text-pink">Növényi kivonatok és illóolajok</label>
-                    </div>
-                    <br>
-                    <button type="button" class=" btn btn-outline-dark">Szűrés</button>
-                    </div>
-            </div>
-        </div>
-    </div>
+        
+        
 </form>
         <!-- Termék 1 -->
         <div class="content-box p-4 shadow-sm rounded bg-light mb-4">
