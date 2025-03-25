@@ -66,6 +66,13 @@
                     <p class="mb-2">Termékleírás</p>
                     <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Maiores placeat quam neque hic impedit distinctio beatae.</p>
                 </div>
+            </div>
+            <div class="mt-3 d-flex justify-content-start gap-3">
+                <i class="fas fa-heart"> ❤️ Like</i>
+                <i class="fas fa-star"> ⭐ Kedvencek</i>
+                <i class="fas fa-comment"> 💬 Komment</i>
+            </div>
+        </div>
 
                 
 
