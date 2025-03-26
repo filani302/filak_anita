@@ -27,4 +27,9 @@ class Products extends Model
     ];
 
     
+    public function user()
+    {
+        return $this->belongsTo(User::class, 'user_id'); // Kapcsolat a User modellel a 'user_id' alapján
+    }
+
 }

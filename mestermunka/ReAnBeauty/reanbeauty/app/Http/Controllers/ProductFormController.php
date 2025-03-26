@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Products;
+use App\Models\User;
 use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\File;
@@ -19,8 +20,8 @@ class ProductFormController extends Controller
         'title' => 'required|string|max:50',
         'product_type' => 'required|string|max:50',
         'description' => 'required|string',
-        'p_image' => 'nullable|image|mimes:jpeg,png|max:700',
-        'a_image' => 'nullable|image|mimes:jpeg,png|max:700',
+        'p_image' => 'nullable|image|mimes:jpeg,png,jpg,webp,bmp,jfif|max:700',  
+        'a_image' => 'nullable|image|mimes:jpeg,png,jpg,webp,bmp,jfif|max:700',
     ]);
 
     $product = new Products();
@@ -67,6 +68,13 @@ class ProductFormController extends Controller
 
     return redirect('/termekek')->with(['success' => 'A termék sikeresen feltöltve!', 'images' => $images]);
 }
+
+public function index()
+{
+    $products = Products::with('user')->get(); // Lekéri az összes terméket
+    return view('termekek', compact('products')); // Átadja őket a nézetnek
+}
+
 
     
 }

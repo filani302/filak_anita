@@ -1,440 +1,614 @@
 /*fofooldal*/
+/* Az alapértelmezett betűtípus és háttérszín beállítása az egész oldalra */
 body {
-  font-family: 'Arial', sans-serif;
-  background-color: #f8f9fa;
+  font-family: 'Arial', sans-serif; /* Betűtípus Arial, sans-serif tartalékkal */
+  background-color: #f8f9fa; /* Világos szürke háttérszín */
 }
+ 
+/* A hero szekció stílusa, amely általában a fő rész az oldalon */
 .hero-section {
-  background: url('/img/ReAnLogo.png') center/cover no-repeat, linear-gradient(to bottom, rgba(0,0,0,0.7), rgba(255,255,255,0.1));
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-  color: white;
-  padding: 2rem;
-  position: relative;
-  overflow: hidden;
+  background: url('/img/ReAnLogo.png') center/cover no-repeat, /* Háttérkép középre igazítva, teljes lefedéssel */
+              linear-gradient(to bottom, rgba(0,0,0,0.7), rgba(255,255,255,0.1)); /* Sötétből világosba átmenő átlátszó réteg */
+  min-height: 100vh; /* Teljes képernyőmagasság */
+  display: flex; /* Flexbox használata elrendezéshez */
+  flex-direction: column; /* Elemek oszlopos elrendezése */
+  justify-content: center; /* Középre igazítás függőlegesen */
+  align-items: center; /* Középre igazítás vízszintesen */
+  text-align: center; /* Szöveg középre igazítása */
+  color: white; /* Szöveg fehér színe */
+  padding: 2rem; /* Belső margó */
+  position: relative; /* Pozícionáláshoz viszonyítás */
+  overflow: hidden; /* Kifolyó tartalom elrejtése */
 }
+ 
+/* Pseudoelem a sötét átfedéshez */
 .hero-section::before {
-  content: "";
-  position: absolute;
-  top: 0; left: 0;
-  width: 100%; height: 100%;
-  z-index: 1;
+  content: ""; /* Üres tartalom a vizuális effekt miatt */
+  position: absolute; /* Pozíció a szülőhöz képest */
+  top: 0; left: 0; /* Kezdő pozíció a bal felső sarok */
+  width: 100%; height: 100%; /* Teljes lefedés */
+  z-index: 1; /* Rétegzési sorrend */
 }
+ 
+/* A hero szekció tartalma */
 .hero-content {
-  position: relative;
-  animation: fadeIn 1.5s ease-in-out;
-  z-index: 2;
+  position: relative; /* Pozícionálás a szülőhöz képest */
+  animation: fadeIn 1.5s ease-in-out; /* Belépő animáció */
+  z-index: 2; /* Az előtérbe helyezés */
   font-size: 32px; /* Betűméret */
-    font-weight: bold; /* Félkövér szöveg */
-    color: rgb(0, 0, 0); /* Fekete szöveg */
+  font-weight: bold; /* Félkövér szöveg */
+  color: rgb(0, 0, 0); /* Fekete szöveg */
 }
+ 
+/* Belépő animáció létrehozása */
 @keyframes fadeIn {
-  from { opacity: 0; transform: translateY(-20px); }
-  to { opacity: 1; transform: translateY(0); }
+  from { opacity: 0; transform: translateY(-20px); } /* Kezdő állapot: áttetsző, felfelé eltolva */
+  to { opacity: 1; transform: translateY(0); } /* Végállapot: teljesen látható */
 }
+ 
+/* Egyedi gombstílus létrehozása */
 .btn-custom {
-  border: 2px solid white;
-  color: white;
-  transition: all 0.3s;
+  border: 2px solid white; /* Fehér szegély */
+  color: white; /* Fehér szöveg */
+  transition: all 0.3s; /* Áttűnés animáció */
 }
+ 
+/* Hover effektus a gombra */
 .btn-custom:hover {
-  background-color: white;
-  color: black;
+  background-color: white; /* Háttér fehérré válik */
+  color: black; /* Szöveg feketévé válik */
 }
+ 
+/* Média lekérdezés: nagyobb képernyőkön */
 @media (min-width: 992px) {
   .offcanvas {
-      display: none !important;
+      display: none !important; /* Offcanvas elem elrejtése nagy képernyőn */
   }
 }
  
- 
+/* Logó stílusa */
 .ReAnLogoo {
-  width: 80px;
-  height: 80px;
-  border-radius: 50%;
+  width: 80px; /* Szélesség */
+  height: 80px; /* Magasság */
+  border-radius: 50%; /* Kör alak létrehozása */
 }
  
+/* Alternatív hero szekció stílusa */
 .hero-section {
-  background: url('/img/atetszoFokep.webp') center/cover no-repeat, linear-gradient(to bottom, rgba(0,0,0,0.6), rgba(255,255,255,0.1));
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-  color: white;
-  padding: 3rem 1rem;
-  position: relative;
-  overflow: hidden;
+  background: url('/img/atetszoFokep.webp') center/cover no-repeat, /* Új háttérkép */
+              linear-gradient(to bottom, rgba(0,0,0,0.6), rgba(255,255,255,0.1)); /* Kisebb sötétítés */
+  min-height: 100vh; /* Teljes képernyőmagasság */
+  display: flex; /* Flexbox elrendezés */
+  flex-direction: column; /* Oszlopos elrendezés */
+  justify-content: center; /* Középre igazítás függőlegesen */
+  align-items: center; /* Középre igazítás vízszintesen */
+  text-align: center; /* Szöveg középre */
+  color: white; /* Fehér szöveg */
+  padding: 3rem 1rem; /* Belső margó */
+  position: relative; /* Pozícionálás */
+  overflow: hidden; /* Kifolyó tartalom elrejtése */
 }
  
-/* Animációk */
+/* Animáció létrehozása, amely alulról felfelé tűnik elő */
 @keyframes fadeInUp {
-  0% { opacity: 0; transform: translateY(30px); }
-  100% { opacity: 1; transform: translateY(0); }
+  0% { opacity: 0; transform: translateY(30px); } /* Kezdő állapot: áttetsző, lefelé tolva */
+  100% { opacity: 1; transform: translateY(0); } /* Végállapot: teljesen látható */
 }
  
+/* A hero szekció tartalmának pozícionálása és animálása */
 .hero-content {
-  position: relative;
-  animation: fadeInUp 1.2s ease-out;
-  z-index: 2;
+  position: relative; /* Pozícionálás a szülőhöz képest */
+  animation: fadeInUp 1.2s ease-out; /* Alulról felfelé mozgó animáció */
+  z-index: 2; /* Az előtérbe helyezés */
 }
  
-/* Hover hatások a képekhez */
+/* Hover effektus a képekre */
 .ReAnFokep:hover {
-  transform: scale(1.05);
-  transition: transform 0.4s ease;
+  transform: scale(1.05); /* Kép nagyítása hover alatt */
+  transition: transform 0.4s ease; /* Átmenet simítása */
 }
  
-/* Gomb animáció */
+/* Egyedi gomb stílus létrehozása */
 .btn-custom {
-  border: 2px solid #fff;
-  color: #fff;
-  background-color: transparent;
-  transition: all 0.4s;
+  border: 2px solid #fff; /* Fehér szegély */
+  color: #fff; /* Fehér szöveg */
+  background-color: transparent; /* Átlátszó háttér */
+  transition: all 0.4s; /* Átmenet minden tulajdonságra */
 }
  
+/* Hover effektus a gombra */
 .btn-custom:hover {
-  background-color: #fff;
-  color: #333;
-  transform: scale(1.1);
+  background-color: #fff; /* Háttér fehérré válik hover alatt */
+  color: #333; /* Szöveg sötétszürkére vált */
+  transform: scale(1.1); /* Gomb nagyítása hover alatt */
 }
  
-/* Testreszabott stílusok */
+/* Testreszabott stílusok egyedi blokkokhoz */
 .custom-block {
-  max-width: 750px;
-  background: #fff;
-  padding: 25px;
-  border-radius: 15px;
-  box-shadow: 0 6px 18px rgb(0, 0, 0);
-  margin: auto;
-  animation: fadeInUp 1s ease-out;
+  max-width: 750px; /* Maximális szélesség */
+  background: #fff; /* Fehér háttér */
+  padding: 25px; /* Belső margó */
+  border-radius: 15px; /* Lekerekített sarkok */
+  box-shadow: 0 6px 18px rgb(0, 0, 0); /* Dobozárnyék */
+  margin: auto; /* Középre igazítás */
+  animation: fadeInUp 1s ease-out; /* Belépő animáció */
 }
  
-
- 
- 
-
- 
-/* Reszponzív módosítások */
+/* Reszponzív módosítások kisebb képernyőkre */
 @media (max-width: 767px) {
   .hero-section {
-      padding: 2rem;
+      padding: 2rem; /* Kisebb belső margó */
   }
  
   .custom-block {
-      padding: 15px;
+      padding: 15px; /* Kisebb belső margó mobilon */
   }
 }
  
 /*Rutinfeltoltesek*/
  
+/* Háttér stílus a feltöltések oldalához */
 .feltoltesek-body {
-  background: linear-gradient(to right, #f6ebed, #ffbdd8);
-  font-family: 'Arial', sans-serif;
+  background: linear-gradient(to right, #f6ebed, #ffbdd8); /* Jobbra tartó színátmenet */
+  font-family: 'Arial', sans-serif; /* Arial betűtípus */
 }
-.form-container {
-  max-width: 600px;
-  background: white;
-  padding: 30px;
-  border-radius: 15px;
-  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
-}
-.form-control {
-  border-radius: 10px;
-  transition: all 0.3s ease-in-out;
-}
-.form-control:focus {
-  box-shadow: 0 0 10px rgba(253, 125, 249, 0.3);
-  border-color: #e899e8;
-}
-.btn-custom {
-  background-color: #000000;
-  color: white;
-  border-radius: 10px;
-  font-size: 18px;
-  transition: 0.3s;
-}
-.btn-custom:hover {
-  background-color: #df8bbd;
-}
-.upload-box {
-  border: 2px dashed #f0efef;
-  padding: 20px;
-  text-align: center;
-  border-radius: 10px;
-  cursor: pointer;
-}
-.upload-box:hover {
-  background-color: #f8f9fa;
-}
-
-
-/*termekek*/
-
-.termekek-body{
-  background: linear-gradient(to right, #f6ebed, #ffbdd8);
-}
-
-.termek-card{
-  
-  position: absolute;
-  top: 170%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  height: auto;
-  background-color: #007bff;
-  
-    
-  
-  
  
-
+/* Form container stílus */
+.form-container {
+  max-width: 600px; /* Maximális szélesség */
+  background: white; /* Fehér háttér */
+  padding: 30px; /* Belső margó */
+  border-radius: 15px; /* Lekerekített sarkok */
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1); /* Dobozárnyék */
 }
-
-
+ 
+/* Form elemek stílusa */
+.form-control {
+  border-radius: 10px; /* Lekerekített sarkok */
+  transition: all 0.3s ease-in-out; /* Átmenet simítása */
+}
+ 
+/* Form elemek fókusz effektusa */
+.form-control:focus {
+  box-shadow: 0 0 10px rgba(253, 125, 249, 0.3); /* Rózsaszínes árnyék */
+  border-color: #e899e8; /* Halvány rózsaszín szegély */
+}
+ 
+/* Egyedi gomb stílus */
+.btn-custom {
+  background-color: #000000; /* Fekete háttér */
+  color: white; /* Fehér szöveg */
+  border-radius: 10px; /* Lekerekített sarkok */
+  font-size: 18px; /* Betűméret */
+  transition: 0.3s; /* Átmenet simítása */
+}
+ 
+/* Hover effektus a gombra */
+.btn-custom:hover {
+  background-color: #df8bbd; /* Rózsaszínes háttér hover alatt */
+}
+ 
+/* Feltöltő doboz stílus */
+.upload-box {
+  border: 2px dashed #f0efef; /* Szaggatott szegély */
+  padding: 20px; /* Belső margó */
+  text-align: center; /* Középre igazított szöveg */
+  border-radius: 10px; /* Lekerekített sarkok */
+  cursor: pointer; /* Kézkurzor hover alatt */
+}
+ 
+/* Hover effektus a feltöltő dobozra */
+.upload-box:hover {
+  background-color: #f8f9fa; /* Világosabb háttér hover alatt */
+}
+ 
+ 
+/*termekek*/
+ 
+/* Termékek oldalának háttérstílusa */
+.termekek-body {
+  background: linear-gradient(to right, #f6ebed, #ffbdd8); /* Jobbra tartó színátmenet */
+}
+ 
+/* Termékkártya stílus */
+.termek-card {
+  position: absolute; /* Abszolút pozícionálás */
+  top: 170%; /* Függőleges elhelyezés */
+  left: 50%; /* Vízszintes elhelyezés középen */
+  transform: translate(-50%, -50%); /* Pontos középre helyezés */
+  height: auto; /* Automatikus magasság */
+  background-color: #007bff; /* Kék háttérszín */
+}
+ 
+/* Második hero szekció stílus */
 .hero-section2 {
-  background: url('/img/viragos.webp') center/cover no-repeat, linear-gradient(to bottom, rgba(0,0,0,0.6), rgba(255,255,255,0.1));
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-  color: white;
-  padding: 3rem 1rem;
-  position: relative;
-  overflow: hidden;
+  background: url('/img/viragos.webp') center/cover no-repeat, linear-gradient(to bottom, rgba(0,0,0,0.6), rgba(255,255,255,0.1)); /* Háttérkép és színátmenet */
+  min-height: 100vh; /* Minimum magasság, teljes képernyő */
+  display: flex; /* Flexbox használata */
+  flex-direction: column; /* Oszlop irányú elrendezés */
+  justify-content: center; /* Középre igazítás függőlegesen */
+  align-items: center; /* Középre igazítás vízszintesen */
+  text-align: center; /* Szövegközépre igazítás */
+  color: white; /* Fehér szöveg */
+  padding: 3rem 1rem; /* Külső margó */
+  position: relative; /* Relatív pozícionálás */
+  overflow: hidden; /* Tartalom túlcsordulás elrejtése */
 }
-
-
+ 
         /*like*/
-        
-
-
-
-
-
+ 
+ 
         /*profiloldal*/
-
-        .card p-3 mb-3 shadow-sm{
-          width: 400px;
-         
-          
+ 
+        .card p-3 mb-3 shadow-sm {
+          width: 400px; /* Kártya szélessége */
         }
-        .profil-body{
-          background: linear-gradient(to right, #f6ebed, #ffbdd8);
-          background: url('/img/profilHatter.webp') center/cover no-repeat, linear-gradient(to bottom, rgba(0,0,0,0.6), rgba(255,255,255,0.1));
-        
+       
+        /* Profil oldal háttérstílusa */
+        .profil-body {
+          background: linear-gradient(to right, #f6ebed, #ffbdd8); /* Jobbra tartó színátmenet */
+          background: url('/img/profilHatter.webp') center/cover no-repeat, linear-gradient(to bottom, rgba(0,0,0,0.6), rgba(255,255,255,0.1)); /* Háttérkép színátmenettel */
         }
-
-        .form-control{
-          width: 60%;
-          border-color:rgba(230, 64, 114, 0.225);
-          border-width: 4px;
-          color: #333;
+       
+        /* Űrlap vezérlőelemek stílusa */
+        .form-control {
+          width: 60%; /* Szélesség */
+          border-color: rgba(230, 64, 114, 0.225); /* Szegély színe halvány pirosas */
+          border-width: 4px; /* Szegély vastagsága */
+          color: #333; /* Szöveg sötétszürke */
         }
-
-
-
-
+ 
+ 
+ 
         /*bejelentkezes*/
-
-        .login-body {
-          background: linear-gradient(to right, #f6ebed, #ffbdd8);
-          height: 100vh;
-      }
-      .login-kartya {
-          border-radius: 20px;
-          box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
-          padding: 30px;
-      }
-      .login-input {
-          border-radius: 10px;
-      }
-      .login-gomb {
-          width: 100%;
-          border-radius: 10px;
-          background-color: #ffd8d8;
-          border: none;
-          color: rgb(1, 1, 1);
-      }
-      .login-gomb:hover {
-          background-color: #000000;
-          color: white;
-      }
-      .login-icon {
-          background: #161616;
-          color: white;
-          border-radius: 10px 0 0 10px;
-      }
-
+ 
+       /* Bejelentkezés oldal háttérstílusa */
+.login-body {
+  background: linear-gradient(to right, #f6ebed, #ffbdd8); /* Jobbra tartó színátmenet */
+  height: 100vh; /* Teljes képernyő magasság */
+}
+ 
+/* Bejelentkezési kártya stílusa */
+.login-kartya {
+  border-radius: 20px; /* Lekerekített sarkok */
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2); /* Árnyék */
+  padding: 30px; /* Belső margó */
+}
+ 
+/* Bejelentkezési mező stílusa */
+.login-input {
+  border-radius: 10px; /* Lekerekített sarkok */
+}
+ 
+/* Bejelentkezési gomb stílusa */
+.login-gomb {
+  width: 100%; /* Teljes szélesség */
+  border-radius: 10px; /* Lekerekített sarkok */
+  background-color: #ffd8d8; /* Világos rózsaszín háttér */
+  border: none; /* Szegély nélküli */
+  color: rgb(1, 1, 1); /* Fekete szöveg */
+}
+ 
+/* Hover effektus a bejelentkezési gombra */
+.login-gomb:hover {
+  background-color: #000000; /* Fekete háttér */
+  color: white; /* Fehér szöveg */
+}
+ 
+/* Bejelentkezési ikon stílusa */
+.login-icon {
+  background: #161616; /* Sötét háttér */
+  color: white; /* Fehér szöveg */
+  border-radius: 10px 0 0 10px; /* Lekerekített bal oldali sarkok */
+}
+ 
       /*elfelejtettem a jelszavam*/
-
+ 
       .elfelejtettem-body {
+        /* Beállítja a háttérszínt egy színátmenetre (gradient) balról jobbra (#f6ebed-től #ffbdd8-ig) */
         background: linear-gradient(to right, #f6ebed, #ffbdd8);
-          height: 100vh;
+       
+        /* A teljes képernyőt kitöltő magasságot ad be (100% a viewport magasság) */
+        height: 100vh;
     }
+   
     .elfelejtettem-kartya {
-      border-radius: 20px;
-      box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
-      padding: 30px;
+        /* Lekerekíti a sarokokat 20px sugárral */
+        border-radius: 20px;
+       
+        /* Árnyékot ad a kártyának: 0px eltolás, 4px elmosódás, 10px elmosódási távolság, 20% átlátszóságú fekete */
+        box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+       
+        /* A kártya belső terét 30px-es párnázással növeli */
+        padding: 30px;
     }
+   
     .elfelejtettem-input {
-      border-radius: 10px;
+        /* A bemeneti mezőt lekerekíti 10px sugárral */
+        border-radius: 10px;
     }
+   
     .elfelejtettem-gomb {
-      width: 100%;
-      border-radius: 10px;
-      background-color: #ffd8d8;
-      border: none;
-      color: rgb(1, 1, 1);
+        /* A gomb szélességét 100%-ra állítja, hogy kitöltse a szülő elemét */
+        width: 100%;
+       
+        /* Lekerekíti a gomb sarkait 10px sugárral */
+        border-radius: 10px;
+       
+        /* A gomb háttérszínét halvány rózsaszínre (#ffd8d8) állítja */
+        background-color: #ffd8d8;
+       
+        /* Nincs keret a gomb körül */
+        border: none;
+       
+        /* A gomb szövege fehér színű */
+        color: rgb(1, 1, 1);
     }
+   
     .elfelejtettem-gomb:hover {
-      background-color: #000000;
-      color: white;
+        /* A gomb háttérszínét feketévé változtatja, amikor az egérrel fölé viszik */
+        background-color: #000000;
+       
+        /* A gomb szövege fehérre változik, amikor az egérrel fölé viszik */
+        color: white;
     }
+   
     .elfelejtettem-icon {
-      background: #161616;
-      color: white;
-      border-radius: 10px 0 0 10px;
+        /* A háttérszín sötét szürke (#161616) */
+        background: #161616;
+       
+        /* A szöveg fehér színű */
+        color: white;
+       
+        /* A bal felső sarkot és a jobb alsó sarkot lekerekíti 10px-re, míg a jobb felső és a bal alsó sarkokat nem */
+        border-radius: 10px 0 0 10px;
     }
-
+   
+ 
     /*Rutin*/
-
+ 
     .rutin-body {
+      /* Beállítja a háttérszínt egy színátmenetre (gradient) balról jobbra, a #f6ebed-től a #ffbdd8-ig */
       background: linear-gradient(to right, #f6ebed, #ffbdd8);
+     
+      /* A betűtípus Arial vagy ha az nincs, akkor sans-serif */
       font-family: Arial, sans-serif;
   }
+ 
   .rutin-container {
-    max-width: 1000px;
-    margin: auto;
-    padding-top: 30px;
-}
-.rutin-card {
-    border-radius: 15px;
-    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
-    overflow: hidden;
-}
-.rutin-card img {
-    width: 100%;
-    height: 200px;
-    object-fit: cover;
-}
-.rutin-title {
-    font-size: 20px;
-    font-weight: bold;
-    color: #007bff;
-}
-
-.TudjmegTobbet-body{
-  background: linear-gradient(to right, #f6ebed, #ffbdd8);
-}
-
-#oszd-meg{
-  text-shadow: 3px 3px 6px rgba(59, 17, 213, 0.93);
-
-}
-
+      /* A maximális szélesség 1000px-re van állítva */
+      max-width: 1000px;
+     
+      /* Középre igazítja a tartalmat */
+      margin: auto;
+     
+      /* Felül 30px-es távolságot ad */
+      padding-top: 30px;
+  }
+ 
+  .rutin-card {
+      /* A kártya sarkait lekerekíti 15px sugárral */
+      border-radius: 15px;
+     
+      /* Árnyékot ad a kártyának: 0px eltolás, 4px elmosódás, 10px elmosódási távolság, 10% átlátszóságú fekete */
+      box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+     
+      /* Ha a kártyának van túllépő tartalma, azt elrejti */
+      overflow: hidden;
+  }
+ 
+  .rutin-card img {
+      /* A képet 100%-os szélességgel jeleníti meg, hogy kitöltse a kártyát */
+      width: 100%;
+     
+      /* A képet 200px magasra állítja */
+      height: 200px;
+     
+      /* A kép kitöltéséhez a területet alkalmazza, hogy ne torzuljon (de középre vágja) */
+      object-fit: cover;
+  }
+ 
+  .rutin-title {
+      /* A cím betűmérete 20px */
+      font-size: 20px;
+     
+      /* A cím félkövér betűvel jelenik meg */
+      font-weight: bold;
+     
+      /* A cím színe kék (#007bff) */
+      color: #007bff;
+  }
+ 
+  .TudjmegTobbet-body {
+      /* Ugyanaz a színátmenet, mint az előző body-ban */
+      background: linear-gradient(to right, #f6ebed, #ffbdd8);
+  }
+ 
+  #oszd-meg {
+      /* A szövegre árnyékot ad: 3px eltolás jobbra, 3px lefele, 6px elmosódás, szín: #3b11d5 (világos lila) */
+      text-shadow: 3px 3px 6px rgba(59, 17, 213, 0.93);
+  }
+ 
 /*kedvencek*/
-
+ 
 #kuka{
   float: right;
-  
+ 
 }
-
-
+ 
+ 
 /*hozzaszólás*/
-
+ 
 .komment-body {
+  /* Rózsaszín háttér beállítása az egész komment szekció számára */
   background-color: #ffb6c1; /* Rózsaszín háttér */
 }
+ 
 .comment-box {
+  /* Világos rózsaszín háttér a kommentek dobozához */
   background-color: #ffe4e1; /* Világos rózsaszín */
+ 
+  /* A kommentek doboza lekerekített sarkakkal (25px) */
   border-radius: 25px;
-
+ 
+  /* 50px margó fölül és alul, hogy a doboz ne érjen közvetlenül a képernyő széléhez */
   margin: 50px auto;
+ 
+  /* Árnyékot ad a doboznak, 2px eltolással és 10px-es elmosódással, hogy emelkedett hatást keltsen */
   box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.2);
 }
+ 
 .comment-box h3 {
+  /* Középre igazítja a cím szöveget */
   text-align: center;
+ 
+  /* A cím félkövér betűtípust kap */
   font-weight: bold;
+ 
+  /* 10px távolságot ad az alsó oldalon a cím és az alatta lévő tartalom között */
   padding-bottom: 10px;
+ 
+  /* Alul fekete színű 2px vastag vonalat ad a cím alá */
   border-bottom: 2px solid #000;
 }
+ 
 .comment-form-control {
+  /* Világos rózsaszín háttér a bemeneti mezőknek (input mezőknek) */
   background-color: #ffe4e1; /* Világos rózsaszín */
+ 
+  /* Fekete színű 1px-es keret */
   border: 1px solid #000;
+ 
+  /* A bemeneti mezők szélessége 400px */
   width: 400px;
-  
 }
+ 
 .comment-form-control:focus {
+  /* Ha a mező fókuszba kerül (pl. amikor rákattintunk), eltávolítja az alapértelmezett fókusz árnyékot */
   box-shadow: none;
+ 
+  /* A keret színét élénk rózsaszínre (#ff69b4) változtatja, amikor a mező aktív (fókuszált) */
   border-color: #ff69b4;
 }
-
-
+ 
+ 
 /*szepsegapolas*/
-
+ 
 body {
+  /* Az alapértelmezett betűtípus Arial, vagy ha nem elérhető, akkor sans-serif lesz */
   font-family: Arial, sans-serif;
+ 
+  /* A háttér színét egy világos bézs árnyalatra (#f7f1e6) állítja */
   background-color: #f7f1e6;
+ 
+  /* Eltávolítja a margót és a belső párnázást az oldalról */
   margin: 0;
   padding: 0;
-
 }
-
+ 
 .hero {
+  /* Flexbox-ot használ, hogy a tartalom középre legyen igazítva (mind vízszintesen, mind függőlegesen) */
   display: flex;
-  align-items: center;
-  justify-content: center;
+  align-items: center; /* Függőlegesen középre igazítja */
+  justify-content: center; /* Vízszintesen középre igazítja */
+ 
+  /* 50px-es párnázás a tartalom körül */
   padding: 50px;
-  background-color:rgb(247, 245, 240);
+ 
+  /* A háttér színe a hero szekción belül */
+  background-color: rgb(247, 245, 240);
+ 
+  /* A szöveg színe fekete */
   color: rgb(0, 0, 0);
 }
-
+ 
 .hero img {
+  /* A kép szélessége 300px */
   width: 300px;
+ 
+  /* A kép sarkai lekerekítve 1px-tel */
   border-radius: 1px;
 }
-
+ 
 .text-box {
+  /* A szövegdoboz maximális szélessége 500px */
   max-width: 500px;
+ 
+  /* A szövegdoboz bal oldali margója 30px */
   margin-left: 30px;
 }
-
+ 
 .hero1 {
+  /* Az .hero szekcióhoz hasonlóan a hero1 szekció is középre igazítja a tartalmat */
   display: flex;
-  align-items: center;
-  justify-content: center;
+  align-items: center; /* Függőlegesen középre igazítja */
+  justify-content: center; /* Vízszintesen középre igazítja */
+ 
+  /* 50px-es párnázás a tartalom körül */
   padding: 50px;
-  background-color:rgb(247, 245, 240);
+ 
+  /* A háttér színe a hero1 szekción belül */
+  background-color: rgb(247, 245, 240);
+ 
+  /* A szöveg színe fekete */
   color: rgb(0, 0, 0);
 }
-
+ 
 .hero1 img {
+  /* A kép szélessége 500px, magassága 300px */
   width: 500px;
   height: 300px;
-  border-radius: 1px;
+  border-radius: 1px; /* A kép sarkai lekerekítve 1px-tel */
 }
-
+ 
 .text1-box {
-  max-width: 500px;
-  margin-right: 30px;
+  max-width: 500px; /* A szövegdoboz maximális szélessége 500px */
+  margin-right: 30px;  /* A szövegdoboz jobb oldali margója 30px */
 }
-
-.kozepszoveg{
-  background-color: #000000;
-  color: white;
-  
+ 
+.kozepszoveg {
+ 
+  background-color: #000000;  /* A háttér színe fekete */
+ 
+ 
+  color: white;/* A szöveg színe fehér */
 }
-
+ 
+ 
 /*lablec*/
-
+ 
 #lablec{
-  background-color: #000;
-  color: white;
+  background-color: #000;/* A háttér színe fekete */
+  color: white;/* A szöveg színe fehér */
 }
+
+
+/*termék poszt kép nézegető*/
+
+.product-image {
+  display: none;
+}
+.product-image.active {
+  display: block;
+}
+.hidden {
+  display: none;
+}
+.image-slider {
+  position: relative;
+  display: inline-block;
+}
+.prev-btn, .next-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: rgba(0, 0, 0, 0.5);
+  color: white;
+  border: none;
+  padding: 8px 12px;
+  cursor: pointer;
+  font-size: 18px;
+  border-radius: 50%;
+}
+.prev-btn { left: 5px; }
+.next-btn { right: 5px; }

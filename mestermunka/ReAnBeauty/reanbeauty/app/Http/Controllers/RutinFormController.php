@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Rutin;
+use App\Models\User;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Facades\File;
@@ -16,8 +17,8 @@ class RutinFormController extends Controller
         'title' => 'required|string|max:50',
         'rutin_type' => 'required|string|max:50',
         'description' => 'required|string',
-        'p_image' => 'nullable|image|mimes:jpeg,png|max:700',
-        'a_image' => 'nullable|image|mimes:jpeg,png|max:700',
+        'p_image' => 'nullable|image|mimes:jpeg,png,jpg,webp,bmp,jfif|max:700',
+        'a_image' => 'nullable|image|mimes:jpeg,png,jpg,webp,bmp,jfif|max:700',
     ]);
 
     $rutin = new Rutin();
@@ -65,7 +66,11 @@ class RutinFormController extends Controller
     return redirect('/rutinok')->with(['success' => 'A termék sikeresen feltöltve!', 'images' => $images]);
 }
 
-
+public function index()
+{
+    $rutins = Rutin::with('user')->get(); // Lekéri az összes terméket
+    return view('rutinok', compact('rutins')); // Átadja őket a nézetnek
+}
    
     
 }

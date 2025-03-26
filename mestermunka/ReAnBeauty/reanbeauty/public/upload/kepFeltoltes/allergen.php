@@ -3,7 +3,7 @@ $allergen = 'allergenMeghatarozasok/';
 $maxFiles = 1;
 $maxWidth = 800;
 $maxHeight = 800;
-$allowedTypes = ['image/jpeg', 'image/png'];
+$allowedTypes = ['image/jpeg', 'image/png', 'image/jpg', 'image/webp', 'image/bmp', 'image/jfif'];
 
 if (!is_dir($allergen)) {
     mkdir($allergen, 0777, true);

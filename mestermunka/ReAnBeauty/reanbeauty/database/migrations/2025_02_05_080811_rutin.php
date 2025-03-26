@@ -1,9 +1,9 @@
 <?php
-
+ 
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
-
+ 
 return new class extends Migration
 {
     /**
@@ -13,7 +13,7 @@ return new class extends Migration
     {
         Schema::create('rutin', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('user_id')->constrained('users')->onDelete('cascade');         
+            $table->foreignId('user_id')->constrained('users')->onDelete('cascade');        
            $table->string('rutin_type', 50);
            $table->string('title', 50);
            $table->string('p_image', 700)->nullable();
@@ -23,7 +23,7 @@ return new class extends Migration
            $table->timestamp('updated_at')->useCurrent()->useCurrentOnUpdate();
         });
     }
-
+ 
     /**
      * Reverse the migrations.
      */
