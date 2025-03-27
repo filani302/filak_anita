@@ -91,7 +91,9 @@
                         <input class="form-check-input" type="checkbox" name="type[]" value="arcapolas">
                         <label class="form-check-label text-pink">Arcápolási termék</label>
                     </div>
-                </div>
+                    <br>
+                    <button type="button" class="btn btn-light">Szűrés</button>
+                    </div>
             </div>
         </div>
 
@@ -134,8 +136,7 @@
                 <i class="fas fa-heart"> ❤️ Like</i>
                 <a href="{{ url('/kedvencek') }}" class="text-primary fw-bold text-dark" style="cursor: pointer; text-decoration: none;"> <i class="fas fa-star"> ⭐ Kedvencek</i></a>
                 <a href="{{ url('/Kommentek') }}" class="text-primary fw-bold text-dark" style="cursor: pointer; text-decoration: none;">
-    <i class="fas fa-comment"></i> 💬 Komment
-</a>
+    <i class="fas fa-comment"></i> 💬 Komment</a>
                
             </div>
                 </div>

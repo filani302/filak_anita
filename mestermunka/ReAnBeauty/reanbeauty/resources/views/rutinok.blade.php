@@ -78,6 +78,8 @@
                         <input class="form-check-input" type="checkbox" name="type[]" value="arcapolas">
                         <label class="form-check-label text-pink">Arcápolási rutinok</label>
                     </div>
+                    <br>
+                    <button type="button" class="btn btn-light">Szűrés</button>
                 </div>
             </div>
         </div>
@@ -110,10 +112,13 @@
                         <p class="text-muted">Feltöltötte: <strong>{{ $rutin->user->username ?? 'Ismeretlen' }}</strong></p>
                     </div>
                     <div class="mt-3 d-flex justify-content-start gap-3">
-                    <i class="fas fa-heart"> ❤️ Like</i>
-                    <i class="fas fa-star"> ⭐ Kedvencek</i>
-                    <i class="fas fa-comment"> 💬 Komment</i>
-                </div>
+                <i class="fas fa-heart"> ❤️ Like</i>
+                <a href="{{ url('/kedvencek') }}" class="text-primary fw-bold text-dark" style="cursor: pointer; text-decoration: none;"> <i class="fas fa-star"> ⭐ Kedvencek</i></a>
+                <a href="{{ url('/Kommentek') }}" class="text-primary fw-bold text-dark" style="cursor: pointer; text-decoration: none;">
+    <i class="fas fa-comment"></i> 💬 Komment
+</a>
+               
+            </div>
                 </div>
              
             </div>

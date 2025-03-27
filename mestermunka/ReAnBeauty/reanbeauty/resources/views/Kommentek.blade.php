@@ -4,8 +4,12 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Hozzászólás</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Alpine.js -->
     <script src="https://cdn.jsdelivr.net/npm/alpinejs@2.8.2/dist/alpine.min.js" defer></script>
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js"></script>
 
     <link rel="stylesheet" href="{{ asset('css/app.css') }}">
 </head>
@@ -57,10 +61,27 @@
 
 
 <div class="content-box p-4 shadow-sm rounded bg-light mb-4">
-            <div class="row align-items-center">
-                <div class="col-12 col-md-4 text-center">
-                    <img src="/img/ReAnLogoo.png" alt="Termék kép" class="img-fluid rounded">
-                </div>
+  <div class="row align-items-center">
+    <div class="col-12 col-md-4 text-center">
+      <div id="productImageCarousel" class="carousel slide" data-bs-ride="carousel">
+        <div class="carousel-inner">
+          <div class="carousel-item active">
+            <img src="/img/ReAnLogoo.png" alt="Termék kép 1" class="img-fluid rounded">
+          </div>
+          <div class="carousel-item">
+            <img src="/img/rutin-fo.webp" alt="Termék kép 2" class="img-fluid rounded">
+          </div>
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#productImageCarousel" data-bs-slide="prev">
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Előző</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#productImageCarousel" data-bs-slide="next">
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Következő</span>
+        </button>
+      </div>
+    </div>
                 <div class="col-12 col-md-8">
                     <h5><strong>Termék neve</strong></h5>
                     <p class="mb-2">Termékleírás</p>
@@ -68,9 +89,11 @@
                 </div>
             </div>
             <div class="mt-3 d-flex justify-content-start gap-3">
-                <i class="fas fa-heart"> ❤️ Like</i>
-                <i class="fas fa-star"> ⭐ Kedvencek</i>
-                <i class="fas fa-comment"> 💬 Komment</i>
+                <i class="fas fa-heart text-dark"> ❤️ Like</i>
+                <a href="{{ url('/kedvencek') }}" class="text-primary fw-bold text-dark" style="cursor: pointer; text-decoration: none;"> <i class="fas fa-star"> ⭐ Kedvencek</i></a>
+                <a href="{{ url('/Kommentek') }}" class="text-primary fw-bold text-dark" style="cursor: pointer; text-decoration: none;">
+    <i class="fas fa-comment"></i> 💬 Komment</a>
+               
             </div>
         </div>
 
@@ -92,9 +115,9 @@
                 <input type="text" class="form-control" placeholder="Felhasználó neve" required>
             </div>
             <div class="mb-3">
-                <textarea class="form-control" rows="5" placeholder="Megjegyzést teszek" required></textarea>
+                <textarea class="form-control" rows="5" placeholder="Ide írhatja az üzenetét!" required></textarea>
             </div>
-            <button type="submit" class="btn btn-dark w-100">Küldés</button>
+            <button type="submit" class="btn btn-dark w-100">Közzététel</button>
         </form>
     </div>
 </div>

@@ -88,6 +88,23 @@ body {
   position: relative; /* Pozícionálás */
   overflow: hidden; /* Kifolyó tartalom elrejtése */
 }
+
+
+.hero-section-welcome {
+  background: url('/img/viragos.webp') center/cover no-repeat, /* Új háttérkép */
+              linear-gradient(to bottom, rgba(0,0,0,0.6), rgba(255,255,255,0.1)); /* Kisebb sötétítés */
+  min-height: 100vh; /* Teljes képernyőmagasság */
+  display: flex; /* Flexbox elrendezés */
+  flex-direction: column; /* Oszlopos elrendezés */
+  justify-content: center; /* Középre igazítás függőlegesen */
+  align-items: center; /* Középre igazítás vízszintesen */
+  color: white; /* Fehér szöveg */
+  padding: 3rem 1rem; /* Belső margó */
+  position: relative; /* Pozícionálás */
+  overflow: hidden; /* Kifolyó tartalom elrejtése */
+  
+}
+
  
 /* Animáció létrehozása, amely alulról felfelé tűnik elő */
 @keyframes fadeInUp {
@@ -217,24 +234,26 @@ body {
   left: 50%; /* Vízszintes elhelyezés középen */
   transform: translate(-50%, -50%); /* Pontos középre helyezés */
   height: auto; /* Automatikus magasság */
-  background-color: #007bff; /* Kék háttérszín */
 }
  
 /* Második hero szekció stílus */
 .hero-section2 {
-  background: url('/img/viragos.webp') center/cover no-repeat, linear-gradient(to bottom, rgba(0,0,0,0.6), rgba(255,255,255,0.1)); /* Háttérkép és színátmenet */
+  background: url('/img/rutin-fo.webp') center/cover no-repeat, linear-gradient(to bottom, rgba(0,0,0,0.6), rgba(255,255,255,0.1)); /* Háttérkép és színátmenet */
+  position: relative; /* Pozícionálás a szülőhöz képest */
+  animation: fadeInUp 1.2s ease-out; /* Alulról felfelé mozgó animáció */
   min-height: 100vh; /* Minimum magasság, teljes képernyő */
   display: flex; /* Flexbox használata */
   flex-direction: column; /* Oszlop irányú elrendezés */
   justify-content: center; /* Középre igazítás függőlegesen */
   align-items: center; /* Középre igazítás vízszintesen */
   text-align: center; /* Szövegközépre igazítás */
-  color: white; /* Fehér szöveg */
+  color: rgb(0, 0, 0); /* Fehér szöveg */
   padding: 3rem 1rem; /* Külső margó */
   position: relative; /* Relatív pozícionálás */
   overflow: hidden; /* Tartalom túlcsordulás elrejtése */
 }
- 
+
+
         /*like*/
  
  
