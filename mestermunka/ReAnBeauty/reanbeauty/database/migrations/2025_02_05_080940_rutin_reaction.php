@@ -16,8 +16,8 @@ return new class extends Migration
             $table->foreignId('rutin_id')->constrained('rutin')->onDelete('cascade'); // Fix here: use 'constrained'
             $table->foreignId('product_id')->constrained('products')->onDelete('cascade'); // Fix here: use 'constrained'
             $table->foreignId('user_id')->constrained('users')->onDelete('cascade');
-            $table->string('comment', 700)->nullable();
-            $table->tinyInteger('like')->unsigned()->nullable();
+            $table->foreignId('comment_id')->constrained('comments')->onDelete('cascade');
+            $table->foreignId('like_id')->constrained('likes')->onDelete('cascade');
             $table->timestamp('created_at')->useCurrent();
             $table->timestamp('updated_at')->useCurrent()->useCurrentOnUpdate();
         });

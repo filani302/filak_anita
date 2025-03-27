@@ -9,6 +9,7 @@ use Illuminate\Support\Facades\Response;
 use App\Http\Controllers\ProductFormController;
 use App\Http\Controllers\ProfilController;
 use App\Http\Controllers\RutinFormController;
+use App\Http\Controllers\ProductReactionController;
  
 /*
 |--------------------------------------------------------------------------
@@ -110,6 +111,9 @@ Route::post('/profil/logout', [ProfilController::class, 'logout'])->name('logout
 Route::get('/termekek', [ProductFormController::class, 'index']);
 
 Route::get('/rutinok', [RutinFormController::class, 'index']);
+
+
+Route::post('/product/like', [ProductReactionController::class, 'likeProduct'])->name('product.like');
 
 
 

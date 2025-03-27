@@ -131,7 +131,19 @@
                     </div>
                     </div>
                     <div class="mt-3 d-flex justify-content-start gap-3">
-                <i class="fas fa-heart"> ❤️ Like</i>
+
+                    <form action="{{ route('product.like') }}" method="POST">
+                    @csrf
+                    <input type="hidden" name="product_id" value="{{ $product->id }}">
+                    <button type="submit" class="btn btn-light">
+                    @if($product->isLikedByUser(Auth::id())) 
+                    ❤️ Like
+                    @else 
+                    🤍 Like
+                    @endif
+                    </button>
+                    </form>
+                    
                 <a href="{{ url('/kedvencek') }}" class="text-primary fw-bold text-dark" style="cursor: pointer; text-decoration: none;"> <i class="fas fa-star"> ⭐ Kedvencek</i></a>
                 <a href="{{ url('/Kommentek') }}" class="text-primary fw-bold text-dark" style="cursor: pointer; text-decoration: none;">
     <i class="fas fa-comment"></i> 💬 Komment
