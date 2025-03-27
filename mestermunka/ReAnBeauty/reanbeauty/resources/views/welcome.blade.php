@@ -47,7 +47,7 @@
         </div>
     </div>
 
-    <div class="hero-section">
+    <div class="hero-section-welcome">
         <div class="hero-content">
         </div>
     </div>
@@ -64,11 +64,7 @@
             </div>
     </section>
 
-    <div class="kozepszoveg">
-                <hr>
-             <center><p class="fw-medium fs-1">ReAnBeauty</p></center>
-           <hr>
-          </div>
+    <hr>
         
 
 <!-- Kép lapozgató (automatikusan vált) --->
@@ -109,17 +105,6 @@
             <img src="/kellekKepek/termek1.webp" alt="Nő arcápolási krémmel">
 
     </section>
-
-
-
-
-
-
-
-
-
-
-
     <footer id="lablec" class=" lablec text-center py-4 mt-5">
         <p>Csatlakozz hozzánk és adj tippet másoknak!</p>
         <p><a href="{{ url('/login') }}" class="text-light">Bejelentkezés</a> | <a href="{{ url('/registration') }}" class="text-light">Regisztráció</a></p>
