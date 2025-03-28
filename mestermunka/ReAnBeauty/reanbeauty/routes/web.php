@@ -9,8 +9,10 @@ use Illuminate\Support\Facades\Response;
 use App\Http\Controllers\ProductFormController;
 use App\Http\Controllers\ProfilController;
 use App\Http\Controllers\RutinFormController;
-use App\Http\Controllers\ProductReactionController;
- 
+use App\Http\Controllers\LikeController;
+use App\Http\Controllers\FavoriteController;
+
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -113,8 +115,14 @@ Route::get('/termekek', [ProductFormController::class, 'index']);
 Route::get('/rutinok', [RutinFormController::class, 'index']);
 
 
-Route::post('/product/like', [ProductReactionController::class, 'likeProduct'])->name('product.like');
 
+
+Route::post('/like', [LikeController::class, 'toggleLike'])->name('like.toggle')->middleware('auth');
+
+
+
+Route::post('/kedvencek', [FavoriteController::class, 'store'])->name('favourite.store');
+Route::get('/kedvencek', [FavoriteController::class, 'index']);
 
 
 

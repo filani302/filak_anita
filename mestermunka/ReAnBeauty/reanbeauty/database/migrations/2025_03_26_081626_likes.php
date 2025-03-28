@@ -13,11 +13,17 @@ return new class extends Migration
     {
         Schema::create('likes', function (Blueprint $table) {
             $table->id();
+            $table->foreignId('user_id')->constrained('users')->onDelete('cascade');
+            $table->unsignedBigInteger('product_id')->nullable()->constrained('products')->onDelete('cascade');
+            $table->unsignedBigInteger('rutin_id')->nullable()->constrained('rutin')->onDelete('cascade');
             $table->boolean('like');
             $table->timestamp('created_at')->useCurrent(); 
             $table->timestamp('updated_at')->useCurrent()->useCurrentOnUpdate();
+           
+            
         });
     }
+
     /**
      * Reverse the migrations.
      */

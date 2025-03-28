@@ -4,31 +4,33 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Support\Facades\Auth;
 
 class Likes extends Model
 {
     use HasFactory;
-    
-    protected $table = 'likes';
-    protected $fillable = ['like'];
 
-    public function users()
+    protected $table = 'likes';
+
+    protected $fillable = [
+        'user_id',
+        'product_id',
+        'rutin_id',
+        'like'
+    ];
+
+    public function user()
     {
         return $this->belongsTo(User::class);
     }
 
-    public function products()
+    public function product()
     {
         return $this->belongsTo(Products::class);
     }
 
-    public function rutins()
+    public function rutin()
     {
         return $this->belongsTo(Rutin::class);
-    }
-
-    public function comments()
-    {
-        return $this->belongsTo(Comments::class);
     }
 }
