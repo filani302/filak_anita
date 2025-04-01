@@ -12,7 +12,7 @@
     <nav class="navbar navbar-expand-lg bg-dark shadow-sm">
         <div class="container">
             <a class="navbar-brand text-light fs-4" href="{{ url('/welcome') }}">
-                <img src="/img/ReAnLogoo.png" class="ReAnLogoo" alt="Logo" width="50"> ReAnBeauty
+                <img src="/img/ReAnLogoo.jpg"class="ReAnLogoo" alt="Logo" width="50"> ReAnBeauty
             </a>
             <button class="navbar-toggler d-lg-none" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNav">
                 <span class="navbar-toggler-icon bg-light"></span>
