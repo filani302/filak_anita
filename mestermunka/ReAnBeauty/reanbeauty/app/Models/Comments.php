@@ -9,28 +9,27 @@ class Comments extends Model
 {
     use HasFactory;
 
-    use HasFactory;
-
     protected $table = 'comments';
-    protected $fillable = ['description'];
 
-    public function users()
+    protected $fillable = [
+        'user_id',
+        'product_id',
+        'rutin_id',
+        'description'
+    ];
+
+    public function user()
     {
         return $this->belongsTo(User::class);
     }
 
-    public function products()
+    public function product()
     {
         return $this->belongsTo(Products::class);
     }
 
-    public function rutins()
+    public function rutin()
     {
         return $this->belongsTo(Rutin::class);
-    }
-
-    public function likes()
-    {
-        return $this->hasMany(Likes::class);
     }
 }

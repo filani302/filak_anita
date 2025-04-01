@@ -14,8 +14,8 @@ return new class extends Migration
 
         Schema::create('favourites', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('rutin_id')->constrained('rutin')->onDelete('cascade');
-            $table->foreignId('product_id')->constrained('products')->onDelete('cascade');
+            $table->unsignedBigInteger('product_id')->nullable()->constrained('products')->onDelete('cascade');
+            $table->unsignedBigInteger('rutin_id')->nullable()->constrained('rutin')->onDelete('cascade');
             $table->foreignId('user_id')->constrained('users')->onDelete('cascade');
             $table->timestamp('created_at')->useCurrent(); // Only created_at here, as per your code
             $table->timestamp('updated_at')->useCurrent()->useCurrentOnUpdate();

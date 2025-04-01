@@ -134,21 +134,54 @@
                     </div>
                     <div class="mt-3 d-flex justify-content-start gap-3">
 
-                    <form action="{{ route('product.like') }}" method="POST">
-                    @csrf
-                    <input type="hidden" name="product_id" value="{{ $product->id }}">
-                    <button type="submit" class="btn btn-light">
-                    @if($product->isLikedByUser(Auth::id())) 
-                    ❤️ Like
-                    @else 
-                    🤍 Like
-                    @endif
-                    </button>
-                    </form>
+  
+                    @php
+    $userLiked = App\Models\Likes::where('user_id', auth()->id())
+        ->where('product_id', $product->id ?? null)
+        ->where('rutin_id', $rutin->id ?? null)
+        ->exists();
+    $likeCount = App\Models\Likes::where('product_id', $product->id ?? null)->count();
+@endphp
+
+<form action="{{ route('like.toggle') }}" method="POST" class="d-flex flex-column align-items-center">
+    @csrf
+    <input type="hidden" name="product_id" value="{{ $product->id ?? null }}">
+    <input type="hidden" name="rutin_id" value="{{ $rutin->id ?? null }}">
+
+    <!-- Like gomb és ikona -->
+    <button type="submit" class="btn d-flex align-items-center justify-content-center px-4 py-2 
+        {{ $userLiked ? 'btn-danger' : 'btn-outline-danger' }} 
+        rounded-pill transition-all duration-200">
+        <span class="me-2">
+            {!! $userLiked ? '💔 Unlike' : '❤️ Like' !!}
+        </span>
+        <span class="ms-2">{{ $likeCount }}</span> <!-- Like szám megjelenítése -->
+    </button>
+</form>
+
+
+
                     
-                <a href="{{ url('/kedvencek') }}" class="text-primary fw-bold text-dark" style="cursor: pointer; text-decoration: none;"> <i class="fas fa-star"> ⭐ Kedvencek</i></a>
-                <a href="{{ url('/Kommentek') }}" class="text-primary fw-bold text-dark" style="cursor: pointer; text-decoration: none;">
-    <i class="fas fa-comment"></i> 💬 Komment</a>
+            
+<!-- Kedvencek gomb -->
+<form action="{{ route('favourite.store') }}" method="POST">
+    @csrf
+    <input type="hidden" name="product_id" value="{{ $product->id ?? null }}">
+    <input type="hidden" name="rutin_id" value="{{ $rutin->id ?? null }}">
+    <button type="submit" class="btn d-flex align-items-center justify-content-center px-4 py-2 
+        {{ $userLiked ? 'btn-danger' : 'btn-outline-danger' }} 
+        rounded-pill transition-all duration-200 text-white bg-gradient shadow-lg hover:shadow-xl">
+        <i class="fas fa-star me-2"></i> ⭐ Kedvencek
+    </button>
+</form>
+
+<!-- Kommentek gomb -->
+<button onclick="window.location.href='{{ url('/Kommentek') }}'" class="btn d-flex align-items-center justify-content-center px-4 py-2 
+    {{ $userLiked ? 'btn-danger' : 'btn-outline-danger' }} rounded-pill transition-all duration-200">
+    <i class="fas fa-comment me-2"></i> 💬 Komment
+</button>
+
+
                
             </div>
                 </div>
@@ -201,139 +234,9 @@
     });
 </script>
 
+<!-- JavaScript a like -->
 
-
-
- <!-- 
-
- <!DOCTYPE html>
-<html lang="hu">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Hozzászólás</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
-    <script src="https://cdn.jsdelivr.net/npm/alpinejs@2.8.2/dist/alpine.min.js" defer></script>
-
-
-    <link rel="stylesheet" href="{{ asset('css/app.css') }}">
-</head>
-<body class="komment-body">
-
-
- 
-  <nav class="navbar navbar-expand-lg bg-dark shadow-sm">
-        <div class="container">
-            <a class="navbar-brand text-light fs-4" href="{{ url('/welcome') }}">
-                <img src="/img/ReAnLogoo.png" class="ReAnLogoo" alt="Logo" width="50"> ReAnBeauty
-            </a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNav">
-                <span class="navbar-toggler-icon bg-light"></span>
-            </button>
-            <div class="collapse navbar-collapse d-none d-lg-block">
-                <ul class="navbar-nav ms-auto">
-                    <li class="nav-item"><a class="nav-link text-light" href="{{ url('/welcome') }}">Főoldal</a></li>
-                    <li class="nav-item"><a class="nav-link text-light" href="{{ url('/termekek') }}">Termékek</a></li>
-                    <li class="nav-item"><a class="nav-link text-light" href="{{ url('/rutinok') }}">Rutinok</a></li>
-                    <li class="nav-item"><a class="nav-link text-light" href="{{ url('/profil') }}">Profil</a></li>
-                    <li class="nav-item"><a class="nav-link text-light" href="{{ url('/kedvencek') }}">Kedvencek</a></li>
-
-
-                </ul>
-            </div>
-        </div>
-    </nav>
-
-
-    
-    <div class="offcanvas offcanvas-end d-lg-none" tabindex="-1" id="offcanvasNav">
-        <div class="offcanvas-header">
-            <h5 class="offcanvas-title">Menü</h5>
-            <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas"></button>
-        </div>
-        <div class="offcanvas-body">
-            <ul class="navbar-nav">
-                <li class="nav-item"><a class="nav-link" href="{{ url('/welcome') }}">Főoldal</a></li>
-                <li class="nav-item"><a class="nav-link" href="{{ url('/termekek') }}">Termékek</a></li>
-                <li class="nav-item"><a class="nav-link" href="{{ url('/rutinok') }}">Rutinok</a></li>
-                <li class="nav-item"><a class="nav-link" href="{{ url('/profil') }}">Profil</a></li>
-                <li class="nav-item"><a class="nav-link text-light" href="{{ url('/kedvencek') }}">Kedvencek</a></li>
-
-
-            </ul>
-        </div>
-    </div>
-   
-<br>
-<br>
-
-
-<div class="content-box p-4 shadow-sm rounded bg-light mb-4">
-            <div class="row align-items-center">
-                <div class="col-12 col-md-4 text-center">
-                    <img src="/img/ReAnLogoo.png" alt="Termék kép" class="img-fluid rounded">
-                </div>
-                <div class="col-12 col-md-8">
-                    <h5><strong>Termék neve</strong></h5>
-                    <p class="mb-2">Termékleírás</p>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Maiores placeat quam neque hic impedit distinctio beatae.</p>
-                </div>
-            </div>
-            <div class="mt-3 d-flex justify-content-start gap-3">
-                <i class="fas fa-heart"> ❤️ Like</i>
-                <a href="{{ url('/kedvencek') }}" class="text-primary fw-bold text-dark" style="cursor: pointer; text-decoration: none;"> <i class="fas fa-star"> ⭐ Kedvencek</i></a>
-                <a href="{{ url('/Kommentek') }}" class="text-primary fw-bold text-dark" style="cursor: pointer; text-decoration: none;">
-    <i class="fas fa-comment"></i> 💬 Komment
-</a>
-               
-            </div>
-        </div>
-
-
-               
-
-
-               
-                <div class="container mt-5" x-data="{ hozzaszolasLathato: false }">
-    
-    <button class="btn btn-primary bg-dark" @click="hozzaszolasLathato = !hozzaszolasLathato">
-        Hozzászólás írása
-    </button>
-
-
-    
-    <div x-show="hozzaszolasLathato" class="mt-3 hozzaszolas-doboz p-4 border rounded shadow">
-        <h3>Hozzászólás</h3>
-        <form>
-            <div class="mb-3">
-                <input type="text" class="form-control" placeholder="Felhasználó neve" required>
-            </div>
-            <div class="mb-3">
-                <textarea class="form-control" rows="5" placeholder="Megjegyzést teszek" required></textarea>
-            </div>
-            <button type="submit" class="btn btn-dark w-100">Küldés</button>
-        </form>
-    </div>
-</div>
-
-
-                <div class="hozzaszolasok-div">
-                    <h1>Hozzászólások</h1>
-                    <p>Itt jelennek meg a tartalomhoz kapcsolodó hozzászólások amit a felhasznalók adnak</p>
-               
-                    <div class="marMeglevoKomment">
-                    <h3>Felhasználó neve</h3>
-                    <p>Felhasználó hozzászólása</p>
-                    </div>
-                </div>
-
-
-
-</body>
-</html>
-
- -->
-   
+<!-- Bootstrap Icons (ha nem használod a Bootstrap csomagot) -->
 
 
 

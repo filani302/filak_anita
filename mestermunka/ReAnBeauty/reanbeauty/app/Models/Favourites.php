@@ -8,17 +8,32 @@ use Illuminate\Database\Eloquent\Model;
 class Favourites extends Model
 {
     use HasFactory;
-    protected $table = 'favourite';
 
+    // A táblázat neve (nem kötelező, ha nem követi a Laravel konvencióját)
+    protected $table = 'favourites';
+
+    // Engedélyezett mezők tömbje
     protected $fillable = [
-        
+        'product_id',
+        'rutin_id',
+        'user_id',
     ];
 
-    protected $hidden = [
-        'fav_id',
-        'rutin_id',
-        'product_id',
-        'user_id',
-        'created_at',
-    ];
+    // Kapcsolat a User modellel
+    public function user()
+    {
+        return $this->belongsTo(User::class);
+    }
+
+    // Kapcsolat a Product modellel
+    public function product()
+    {
+        return $this->belongsTo(Products::class);
+    }
+
+    // Kapcsolat a Rutin modellel
+    public function rutin()
+    {
+        return $this->belongsTo(Rutin::class);
+    }
 }
