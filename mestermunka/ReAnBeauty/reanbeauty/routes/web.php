@@ -11,6 +11,9 @@ use App\Http\Controllers\ProfilController;
 use App\Http\Controllers\RutinFormController;
 use App\Http\Controllers\LikeController;
 use App\Http\Controllers\FavoriteController;
+use App\Http\Controllers\ProductsFilterController;
+use App\Http\Controllers\RutinFilterController;
+
 
 
 /*
@@ -68,10 +71,6 @@ Route::get('/profil', function () {
     return view('profil');
 });
 
-Route::get('/elfelejtettem', function () {
-    return view('elfelejtettem');
-});
-
 Route::get('/TudjmegTobbet', function () {
     return view('TudjmegTobbet');
 });
@@ -123,6 +122,9 @@ Route::post('/like', [LikeController::class, 'toggleLike'])->name('like.toggle')
 
 Route::post('/kedvencek', [FavoriteController::class, 'store'])->name('favourite.store');
 Route::get('/kedvencek', [FavoriteController::class, 'index']);
+
+Route::get('/termekek', [ProductsFilterController::class, 'index'])->name('products.index');
+Route::get('/rutinok', [RutinFilterController::class, 'index'])->name('rutins.index');
 
 
 

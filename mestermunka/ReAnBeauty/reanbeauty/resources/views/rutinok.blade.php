@@ -55,52 +55,63 @@
             <a href="{{ url('/rutinfeltoltesek') }}" class="btn btn-custom me-3">Megosztom a rutinom</a>
         </div>
     </section>
-    <!-- Termékek listája -->
+
+    <!-- Rutinok listája -->
     <div class="container my-5">
         <h1 class="text-center mb-4">Rutinok</h1>
-        <hr>
-        <form class="mb-4">
-    <div class="accordion" id="filterAccordion">
-        <!-- Rutin Típus -->
-        <div class="accordion-item border border-pink">
-            <h2 class="accordion-header" id="headingOne">
-                <button class="accordion-button text-white " style="background-color: #ff85a2;" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne">
-                    Rutin Típus
-                </button>
-            </h2>
-            <div id="collapseOne" class="accordion-collapse collapse show">
-                <div class="accordion-body bg-light">
-                    <div class="form-check">
-                        <input class="form-check-input" type="checkbox" name="type[]" value="hajapolas">
-                        <label class="form-check-label text-pink">Hajápolási rutinok</label>
-                    </div>
-                    <div class="form-check">
-                        <input class="form-check-input" type="checkbox" name="type[]" value="arcapolas">
-                        <label class="form-check-label text-pink">Arcápolási rutinok</label>
-                    </div>
-                    <br>
-                    <button type="button" class="btn btn-light">Szűrés</button>
-                </div>
-            </div>
+
+            <hr>
+            <!-- Rutin típus -->
+
+            <form action="{{ route('rutins.index') }}" method="GET" class="mb-4">
+
+<div class="accordion" id="filterAccordion">
+    <div class="accordion-item border border-pink">
+
+        <h2 class="accordion-header" id="headingOne">
+        <button class="accordion-button text-white" style="background-color: #ff85a2;" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne">
+            Rutin Típus
+        </button>
+        </h2>
+
+    <div id="collapseOne" class="accordion-collapse collapse show">
+    <div class="accordion-body bg-light">
+        <div class="form-check">
+            <input class="form-check-input" type="checkbox" name="type[]" value="Hajapolás" {{ in_array('Hajápolás', request()->get('type', [])) ? 'checked' : '' }}>
+            <label class="form-check-label text-pink">Hajápolási rutinok</label>
         </div>
-        
-        
+        <div class="form-check">
+            <input class="form-check-input" type="checkbox" name="type[]" value="Bőrápolás" {{ in_array('Bőrápolás', request()->get('type', [])) ? 'checked' : '' }}>
+            <label class="form-check-label text-pink">Arcápolási rutinok</label>
+        </div>
+
+        <br>
+
+        <button type="submit" class="btn btn-light">Szűrés</button>
+    </div>
+    </div>
+</div>
+</div>
 </form>
+
+
+
+
         <!-- Rutin -->
-        
+       
         <div class="container my-5">
     <hr>
     @if($rutins->isEmpty())
-        <p class="text-center text-muted">Jelenleg még nem töltöttek fel terméket.</p>
+        <p class="text-center text-muted">Jelenleg még nem töltöttek fel rutint.</p>
     @else
         @foreach($rutins as $rutin)
             <div class="content-box p-4 shadow-sm rounded bg-light mb-4">
                 <div class="row align-items-center">
                     <div class="col-12 col-md-4 text-center">
-                        <div class="image-slider" data-product-id="{{ $rutin->id }}">
-                            <img src="{{ asset($rutin->p_image) }}" alt="Termék kép" class="img-fluid rounded product-image active">
+                        <div class="image-slider" data-rutin-id="{{ $rutin->id }}">
+                            <img src="{{ asset($rutin->p_image) }}" alt="Rutin kép" class="img-fluid rounded rutin-image active">
                             @if($rutin->a_image)
-                                <img src="{{ asset($rutin->a_image) }}" alt="Alternatív kép" class="img-fluid rounded product-image hidden">
+                                <img src="{{ asset($rutin->a_image) }}" alt="Alternatív kép" class="img-fluid rounded rutin-image hidden">
                                 <button class="prev-btn">❮</button>
                                 <button class="next-btn">❯</button>
                             @endif
@@ -111,25 +122,65 @@
                         <p class="mb-2">{{ $rutin->description }}</p>
                         <p class="text-muted">Feltöltötte: <strong>{{ $rutin->user->username ?? 'Ismeretlen' }}</strong></p>
                     </div>
-                    <div class="mt-3 d-flex justify-content-start gap-3">
-                <i class="fas fa-heart"> ❤️ Like</i>
-                <a href="{{ url('/kedvencek') }}" class="text-primary fw-bold text-dark" style="cursor: pointer; text-decoration: none;"> <i class="fas fa-star"> ⭐ Kedvencek</i></a>
-                <a href="{{ url('/Kommentek') }}" class="text-primary fw-bold text-dark" style="cursor: pointer; text-decoration: none;">
-    <i class="fas fa-comment"></i> 💬 Komment
-</a>
-               
-            </div>
                 </div>
-             
+                <div class="mt-3 d-flex justify-content-start gap-3">
+
+                    @php
+                        // A like és rutin lekérdezése
+                        $userLiked = App\Models\Likes::where('user_id', auth()->id())
+                            ->where('rutin_id', $rutin->id)
+                            ->exists();
+
+                        // Like szám lekérdezése
+                        $likeCount = App\Models\Likes::where('rutin_id', $rutin->id)
+                            ->count();
+                    @endphp
+
+                    <!-- Like form -->
+                    <form action="{{ route('like.toggle') }}" method="POST" class="d-flex flex-column align-items-center">
+                        @csrf
+                        <input type="hidden" name="rutin_id" value="{{ $rutin->id }}">
+
+                        <button type="submit" class="btn d-flex align-items-center justify-content-center px-4 py-2 
+                            {{ $userLiked ? 'btn-danger' : 'btn-outline-danger' }} 
+                            rounded-pill transition-all duration-200">
+                            <span class="me-2">
+                                {!! $userLiked ? '💔 Unlike' : '❤️ Like' !!}
+                            </span>
+                            <span class="ms-2">{{ $likeCount }}</span> <!-- Like szám megjelenítése -->
+                        </button>
+                    </form>
+
+                    <!-- Kedvencek form -->
+                    <form action="{{ route('favourite.store') }}" method="POST">
+                        @csrf
+                        <input type="hidden" name="rutin_id" value="{{ $rutin->id }}">
+                        <button type="submit" class="btn d-flex align-items-center justify-content-center px-4 py-2 
+                            {{ $userLiked ? 'btn-danger' : 'btn-outline-danger' }} 
+                            rounded-pill transition-all duration-200 text-white bg-gradient shadow-lg hover:shadow-xl">
+                            <i class="fas fa-star me-2"></i> ⭐ Kedvencek
+                        </button>
+                    </form>
+
+                    <!-- Kommentek gomb -->
+                    <button onclick="window.location.href='{{ url('/Kommentek') }}'" class="btn d-flex align-items-center justify-content-center px-4 py-2 
+                        {{ $userLiked ? 'btn-danger' : 'btn-outline-danger' }} rounded-pill transition-all duration-200">
+                        <i class="fas fa-comment me-2"></i> 💬 Komment
+                    </button>
+
+                </div>
             </div>
         @endforeach
     @endif
+</div>
 </div>
 
 
 
 
-    </div>
+
+
+   
     <!-- FontAwesome ikonokhoz -->
     <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
 
@@ -137,7 +188,7 @@
     <script>
     document.addEventListener("DOMContentLoaded", function () {
         document.querySelectorAll(".image-slider").forEach(function (slider) {
-            let images = slider.querySelectorAll(".product-image");
+            let images = slider.querySelectorAll(".rutin-image");
             let prevBtn = slider.querySelector(".prev-btn");
             let nextBtn = slider.querySelector(".next-btn");
             let currentIndex = 0;
@@ -166,6 +217,12 @@
     });
 </script>
 
+    <footer class="bg-dark text-light text-center py-4 mt-5">
+        <p>Csatlakozz hozzánk és adj tippet másoknak!</p>
+        <p><a href="{{ url('/login') }}" class="text-light">Bejelentkezés</a> | <a href="{{ url('/registration') }}" class="text-light">Regisztráció</a></p>
+        <p>Kövess minket itt is!</p>
+        <p><a href="#" class="text-light">Facebook</a> | <a href="#" class="text-light">Instagram</a> | <a href="#" class="text-light">TikTok</a></p>
+    </footer>
 
 </body>
 </html>

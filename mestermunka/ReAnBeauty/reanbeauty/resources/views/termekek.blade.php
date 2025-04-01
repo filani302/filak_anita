@@ -68,44 +68,44 @@
     <!-- Termékek listája -->
     <div class="container my-5">
         <h1 class="text-center mb-4">Termékek</h1>
-        <hr>
+            <hr>
+            <!-- Termék típus -->
 
+        <form action="{{ route('products.index') }}" method="GET" class="mb-4">
 
-        <form class="mb-4">
-    <div class="accordion" id="filterAccordion">
+            <div class="accordion" id="filterAccordion">
+                <div class="accordion-item border border-pink">
 
-        <!-- Rutin Típus -->
-        <div class="accordion-item border border-pink">
-            <h2 class="accordion-header" id="headingOne">
-                <button class="accordion-button text-white " style="background-color: #ff85a2;" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne">
-                    Termék Típus
-                </button>
-            </h2>
-            <div id="collapseOne" class="accordion-collapse collapse show">
+                    <h2 class="accordion-header" id="headingOne">
+                    <button class="accordion-button text-white" style="background-color: #ff85a2;" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne">
+                        Termék Típus
+                    </button>
+                    </h2>
+
+                <div id="collapseOne" class="accordion-collapse collapse show">
                 <div class="accordion-body bg-light">
                     <div class="form-check">
-                        <input class="form-check-input" type="checkbox" name="type[]" value="hajapolas">
+                        <input class="form-check-input" type="checkbox" name="type[]" value="Hajapolás" {{ in_array('Hajápolás', request()->get('type', [])) ? 'checked' : '' }}>
                         <label class="form-check-label text-pink">Hajápolási termék</label>
                     </div>
                     <div class="form-check">
-                        <input class="form-check-input" type="checkbox" name="type[]" value="arcapolas">
+                        <input class="form-check-input" type="checkbox" name="type[]" value="Bőrápolás" {{ in_array('Bőrápolás', request()->get('type', [])) ? 'checked' : '' }}>
                         <label class="form-check-label text-pink">Arcápolási termék</label>
                     </div>
+
                     <br>
-                    <button type="button" class="btn btn-light">Szűrés</button>
-                    </div>
+
+                    <button type="submit" class="btn btn-light">Szűrés</button>
+                </div>
+                </div>
             </div>
         </div>
-
-        
-
-    </div>
-</form>
+        </form>
 
 
 
-        <!-- Termék  -->
-       
+
+        <!-- Termék  -->   
 
 
         <div class="container my-5">
@@ -136,17 +136,17 @@
 
   
                     @php
-    $userLiked = App\Models\Likes::where('user_id', auth()->id())
-        ->where('product_id', $product->id ?? null)
-        ->where('rutin_id', $rutin->id ?? null)
-        ->exists();
-    $likeCount = App\Models\Likes::where('product_id', $product->id ?? null)->count();
-@endphp
+                    $userLiked = App\Models\Likes::where('user_id', auth()->id())
+                        ->where('product_id', $product->id ?? null)
+                        ->where('rutin_id', $rutin->id ?? null)
+                        ->exists();
+                    $likeCount = App\Models\Likes::where('product_id', $product->id ?? null)->count();
+                    @endphp
 
-<form action="{{ route('like.toggle') }}" method="POST" class="d-flex flex-column align-items-center">
-    @csrf
-    <input type="hidden" name="product_id" value="{{ $product->id ?? null }}">
-    <input type="hidden" name="rutin_id" value="{{ $rutin->id ?? null }}">
+                <form action="{{ route('like.toggle') }}" method="POST" class="d-flex flex-column align-items-center">
+                    @csrf
+                <input type="hidden" name="product_id" value="{{ $product->id ?? null }}">
+                <input type="hidden" name="rutin_id" value="{{ $rutin->id ?? null }}">
 
     <!-- Like gomb és ikona -->
     <button type="submit" class="btn d-flex align-items-center justify-content-center px-4 py-2 
@@ -158,10 +158,7 @@
         <span class="ms-2">{{ $likeCount }}</span> <!-- Like szám megjelenítése -->
     </button>
 </form>
-
-
-
-                    
+                   
             
 <!-- Kedvencek gomb -->
 <form action="{{ route('favourite.store') }}" method="POST">

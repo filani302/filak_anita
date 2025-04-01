@@ -47,7 +47,7 @@
     </div>
 </div>
 
-<h1>Kedvenc Termékek</h1>
+
 
 @forelse($favorites as $favourite)
     <div class="card mb-3" style="max-width: 540px;">
