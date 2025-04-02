@@ -91,7 +91,7 @@ body {
 
 /*fofo*/
 .hero-section-welcome {
-  background: url('/kellekKepek/fooldal-kep.jpg') center/cover no-repeat, /* Új háttérkép */
+  background: url('/kellekKepek/fooldalfejlec.jfif') center/cover no-repeat, /* Új háttérkép */
               linear-gradient(to bottom, rgba(0,0,0,0.6), rgba(255,255,255,0.1)); /* Kisebb sötétítés */
   min-height: 80vh; /* Teljes képernyőmagasság */
   display: flex; /* Flexbox elrendezés */
@@ -275,8 +275,8 @@ body {
        
         /* Profil oldal háttérstílusa */
         .profil-body {
-          background: linear-gradient(to right, #f6ebed, #ffbdd8); /* Jobbra tartó színátmenet */
-          background: url('/img/profilHatter.webp') center/cover no-repeat, linear-gradient(to bottom, rgba(0,0,0,0.6), rgba(255,255,255,0.1)); /* Háttérkép színátmenettel */
+          background: linear-gradient(to right, #d2adb4, #e78eb3); /* Jobbra tartó színátmenet */
+          background: url('/img/profilOldalHatterkep.jfif') center/cover no-repeat, linear-gradient(to bottom, rgba(0,0,0,0.6), #ffffff89); /* Háttérkép színátmenettel */
         }
        
         /* Űrlap vezérlőelemek stílusa */

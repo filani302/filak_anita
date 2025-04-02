@@ -59,7 +59,6 @@
                 </form>
                 
                 <div class="text-center mt-3">
-                    <a href="{{ url('/elfelejtettem') }}" class="text-dark">Elfelejtetted a jelszavadat?</a> |
                     <a href="{{ url('/registration') }}" class="text-dark">Regisztráció</a>
                 </div>
             </div>

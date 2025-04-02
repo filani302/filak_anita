@@ -76,5 +76,14 @@ public function index()
 }
 
 
+public function show($id)
+    {
+        // Lekérjük a terméket és annak hozzászólásait
+        $product = Products::with('comments.user')->findOrFail($id);
+
+        // Visszaküldjük a terméket a nézetnek
+        return view('Kommentek', compact('product'));
+    }
+
     
 }

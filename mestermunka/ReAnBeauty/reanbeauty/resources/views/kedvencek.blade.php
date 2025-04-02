@@ -24,7 +24,6 @@
                     <li class="nav-item"><a class="nav-link text-light" href="{{ url('/termekek') }}">Termékek</a></li>
                     <li class="nav-item"><a class="nav-link text-light" href="{{ url('/rutinok') }}">Rutinok</a></li>
                     <li class="nav-item"><a class="nav-link text-light" href="{{ url('/profil') }}">Profil</a></li>
-                    <li class="nav-item"><a class="nav-link text-light" href="{{ url('/kedvencek') }}">Kedvencek</a></li>
 
 <div class="offcanvas offcanvas-end d-lg-none" tabindex="-1" id="offcanvasNav">
     <div class="offcanvas-header">
@@ -42,10 +41,10 @@
         </ul>
     </div>
 </div>
+</nav>
 
 
-
-@forelse($favorites as $favourite)
+@forelse($favourites as $favourite)
     <div class="card mb-3" style="max-width: 540px;">
         <div class="row g-0">
             <div class="col-md-4 text-center">
@@ -120,10 +119,7 @@
     .prev-btn { left: 10px; }
     .next-btn { right: 10px; }
 </style>
-
-
-
-
+</div>
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 </body>

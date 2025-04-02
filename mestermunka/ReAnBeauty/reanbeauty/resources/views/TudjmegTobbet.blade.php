@@ -56,9 +56,7 @@
                     <li><strong>Interakció a közösséggel</strong> – Likeold a posztokat, kommentelj, és beszélgess másokkal a kedvenc termékeitekről.</li>
                     <li><strong>Egyszerű és átlátható felület</strong> – Gyors és könnyen kezelhető platform mindenki számára.</li>
                 </ul>
-                <div class="text-center mt-4 fade-in">
-            <a href="{{ url('/registration') }}" class="btn btn-primary btn-lg bg-dark">Csatlakozz most!</a>
-        </div>
+                
 
             </div>
             <div class="col-md-6 text-center fade-in">
@@ -82,8 +80,6 @@
     </script>
 
 <footer id="lablec" class=" lablec text-center py-4 mt-5">
-<p>Csatlakozz hozzánk és adj tippet másoknak!</p>
-        <p><a href="{{ url('/login') }}" class="text-light">Bejelentkezés</a> | <a href="{{ url('/registration') }}" class="text-light">Regisztráció</a></p>
         <p>Kövess minket itt is!</p>
         <p><a href="#" class="text-light">Facebook</a> | <a href="#" class="text-light">Instagram</a> | <a href="#" class="text-light">TikTok</a></p>
     </footer>

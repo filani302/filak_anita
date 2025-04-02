@@ -22,10 +22,10 @@
             <div class="collapse navbar-collapse d-none d-lg-block">
                 <ul class="navbar-nav ms-auto">
                     <li class="nav-item"><a class="nav-link text-light" href="{{ url('/welcome') }}">Főoldal</a></li>
-                    <li class="nav-item"><a class="nav-link text-light" href="{{ url('/termekek') }}">Termékek</a></li>
                     <li class="nav-item"><a class="nav-link text-light" href="{{ url('/rutinok') }}">Rutinok</a></li>
-                    <li class="nav-item"><a class="nav-link text-light" href="{{ url('/profil') }}">Profil</a></li>
                     <li class="nav-item"><a class="nav-link text-light" href="{{ url('/kedvencek') }}">Kedvencek</a></li>
+                    <li class="nav-item"><a class="nav-link text-light" href="{{ url('/profil') }}">Profil</a></li>
+                    
 
                 </ul>
             </div>
@@ -41,10 +41,10 @@
         <div class="offcanvas-body">
             <ul class="navbar-nav">
                 <li class="nav-item"><a class="nav-link" href="{{ url('/welcome') }}">Főoldal</a></li>
-                <li class="nav-item"><a class="nav-link" href="{{ url('/termekek') }}">Termékek</a></li>
                 <li class="nav-item"><a class="nav-link" href="{{ url('/rutinok') }}">Rutinok</a></li>
-                <li class="nav-item"><a class="nav-link" href="{{ url('/profil') }}">Profil</a></li>
                 <li class="nav-item"><a class="nav-link text-light" href="{{ url('/kedvencek') }}">Kedvencek</a></li>
+                <li class="nav-item"><a class="nav-link" href="{{ url('/profil') }}">Profil</a></li>
+                
 
             </ul>
         </div>
@@ -161,7 +161,7 @@
                    
             
 <!-- Kedvencek gomb -->
-<form action="{{ route('favourite.store') }}" method="POST">
+<form action="{{ route('favourites.store') }}" method="POST">
     @csrf
     <input type="hidden" name="product_id" value="{{ $product->id ?? null }}">
     <input type="hidden" name="rutin_id" value="{{ $rutin->id ?? null }}">
@@ -172,11 +172,15 @@
     </button>
 </form>
 
+
 <!-- Kommentek gomb -->
-<button onclick="window.location.href='{{ url('/Kommentek') }}'" class="btn d-flex align-items-center justify-content-center px-4 py-2 
-    {{ $userLiked ? 'btn-danger' : 'btn-outline-danger' }} rounded-pill transition-all duration-200">
+<a href="{{ route('kommentektermek.show', $product) }}" class="btn d-flex align-items-center justify-content-center px-4 py-2">
     <i class="fas fa-comment me-2"></i> 💬 Komment
-</button>
+</a>
+
+
+
+
 
 
                
@@ -238,8 +242,6 @@
 
 
     <footer class="bg-dark text-light text-center py-4 mt-5">
-        <p>Csatlakozz hozzánk és adj tippet másoknak!</p>
-        <p><a href="{{ url('/login') }}" class="text-light">Bejelentkezés</a> | <a href="{{ url('/registration') }}" class="text-light">Regisztráció</a></p>
         <p>Kövess minket itt is!</p>
         <p><a href="#" class="text-light">Facebook</a> | <a href="#" class="text-light">Instagram</a> | <a href="#" class="text-light">TikTok</a></p>
     </footer>

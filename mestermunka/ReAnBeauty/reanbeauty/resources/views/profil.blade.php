@@ -47,43 +47,41 @@
             </ul>
         </div>
     </div>
+ 
 
-    <div class="container mt-5">
-    <h2 class="text-center mb-4">Felhasználói profil</h2>
-    <hr>
-    <div class="row">
-        <div class="card p-2 mb-3 shadow-sm text-dark  bg-transparent">
-            <form  action="{{ route('profil.update') }}" method="POST">
-                @csrf
-                @method('PUT')
+    <div class="container-lg mt-5">
+    <h2 class="text-center mb-5">Felhasználói profil</h2>
+    <br>
+    <div class="row justify-content-center align-items-center" style="height: 100%;">
+        <div class="col-md-8 col-lg-6">
+            <div class="card p-3 mb-3 shadow-sm text-dark">
+                <form action="{{ route('profil.update') }}" method="POST">
+                    @csrf
+                    @method('PUT')
 
-                <div class="mb-3">
-                    <label for="name" class="form-label"><strong>Név:</strong></label>
-                    <input type="text" class="form-control  bg-transparent" id="name" name="name" value="{{ old('name', $user->username) }}">
-                </div>
+                    <div class="mb-5" >
+                        <label for="name" class="form-label"><strong>Név:</strong></label>
+                        <input type="text" class="form-control bg-transparent" id="name" name="name" value="{{ old('name', $user->username) }}">
+                    </div>
 
-                <div class="mb-3">
-                    <label for="email" class="form-label"><strong>Email:</strong></label>
-                    <input type="email" class="form-control  bg-transparent" id="email" name="email" value="{{ old('email', $user->email) }}">
-                </div>
+                    <div class="mb-5" >
+                        <label for="email" class="form-label"><strong>Email:</strong></label>
+                        <input type="email" class="form-control bg-transparent" id="email" name="email" value="{{ old('email', $user->email) }}">
+                    </div>
 
-                <div class="mb-3">
-                    <label for="phone" class="form-label"><strong>Telefon:</strong></label>
-                    <input type="text" class="form-control  bg-transparent" id="phone" name="phone" value="{{ old('phone', $user->phone_number) }}">
-                </div>
+                    <div class="mb-5">
+                        <label for="phone" class="form-label"><strong>Telefon:</strong></label>
+                        <input type="text" class="form-control bg-transparent" id="phone" name="phone" value="{{ old('phone', $user->phone_number) }}">
+                    </div>
 
-                <button type="submit" class="btn btn-primary bg-dark">Mentés</button>
-            </form>
+                    <button type="submit" class="btn btn-primary bg-dark w-100">Mentés</button>
+                </form>
+            </div>
         </div>
     </div>
 </div>
 
-<form  action="{{ route('logout') }}" method="POST">
-    @csrf
-    <button type="submit" class="btn btn-outline-light bg-danger text-light mt-3">Kijelentkezés</button>
-</form>
 
-      
 
 
 </body>

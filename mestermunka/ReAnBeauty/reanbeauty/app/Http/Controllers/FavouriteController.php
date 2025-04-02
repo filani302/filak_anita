@@ -8,7 +8,7 @@ use App\Models\Rutin;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
-class FavoriteController extends Controller
+class FavouriteController extends Controller
 {
     public function store(Request $request)
     {
@@ -40,11 +40,11 @@ class FavoriteController extends Controller
 
     public function index()
 {
-    $favorites = Favourites::where('user_id', Auth::id())
+    $favourites = Favourites::where('user_id', Auth::id())
         ->with(['product', 'rutin'])
         ->get();
 
-    return view('kedvencek', compact('favorites'));
+    return view('kedvencek', compact('favourites'));
 }
 
 }

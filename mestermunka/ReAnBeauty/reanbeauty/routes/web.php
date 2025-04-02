@@ -10,9 +10,10 @@ use App\Http\Controllers\ProductFormController;
 use App\Http\Controllers\ProfilController;
 use App\Http\Controllers\RutinFormController;
 use App\Http\Controllers\LikeController;
-use App\Http\Controllers\FavoriteController;
+use App\Http\Controllers\FavouriteController;
 use App\Http\Controllers\ProductsFilterController;
 use App\Http\Controllers\RutinFilterController;
+use App\Http\Controllers\CommentProductController;
 
 
 
@@ -79,11 +80,6 @@ Route::get('/kedvencek', function () {
     return view('kedvencek');
 });
 
-Route::get('/Kommentek', function () {
-    return view('Kommentek');
-});
- 
-
 
 
  
@@ -120,11 +116,18 @@ Route::post('/like', [LikeController::class, 'toggleLike'])->name('like.toggle')
 
 
 
-Route::post('/kedvencek', [FavoriteController::class, 'store'])->name('favourite.store');
-Route::get('/kedvencek', [FavoriteController::class, 'index']);
+Route::post('/kedvencek', [FavouriteController::class, 'store'])->name('favourites.store');
+Route::get('/kedvencek', [FavouriteController::class, 'index']);
 
 Route::get('/termekek', [ProductsFilterController::class, 'index'])->name('products.index');
 Route::get('/rutinok', [RutinFilterController::class, 'index'])->name('rutins.index');
+
+
+
+Route::get('/kommentektermek/{product}', [CommentProductController::class, 'show'])->name('kommentektermek.show');
+Route::post('/comments', [CommentProductController::class, 'store'])->name('comments.store');
+
+
 
 
 
