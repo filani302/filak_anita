@@ -126,6 +126,44 @@
        </div>
 
 
+       <div class="container my-5">
+    <h2 class="text-center mb-4 text-danger">Érdekes olvasnivalók a bőrápolás világából</h2>
+    <div class="row">
+        <div class="col-md-4">
+            <div class="kartya shadow-sm mb-4">
+                <div class="kartya-torzs">
+                <h5 class="kartya-cim">Hogyan alakíts ki hatékony bőrápolási rutint?</h5>
+                <p class="kartya-szoveg">
+                    Egy jó bőrápolási rutin három alappillérre épül: tisztítás, hidratálás és védelem.  
+                    Kezdd egy gyengéd arctisztítóval, majd használj bőrtípusodnak megfelelő hidratálót.  
+                    Napközben mindig alkalmazz fényvédőt, hogy megelőzd a bőr idő előtti öregedését és a károsodást.  
+                </p>
+                </div>
+                <img src="/kellekKepek/rutin.jpg" alt="Bőrápolási rutin" class="img-fluid w-100">
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="kartya shadow-sm mb-4">
+                <div class="kartya-torzs">
+                <h5 class="kartya-cim">5 gyakori hiba a bőrápolásban</h5>
+                <p class="kartya-szoveg">Sokan hajlamosak hibázni a bőrápolás során anélkül, hogy tudnák. Ilyenek lehetnek a nem megfelelő termékek használata vagy a rutin elhanyagolása. Ismerd meg a leggyakoribb hibákat, hogy elkerüld őket és hatékonyabb
+
+                </div>
+                <img src="/kellekKepek/rutin1.jpg" alt="Bőrápolási hibák" class="img-fluid w-100">
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="kartya shadow-sm mb-4">
+                <div class="kartya-torzs">
+                <h5 class="kartya-cim">Milyen összetevőket kerülj a bőrápolásban?</h5>
+                <p class="kartya-szoveg">Bizonyos bőrápoló összetevők többet ártanak, mint használnak. Érdemes tisztában lenni ezekkel, hogy elkerüld őket, és tudatosan válassz olyan termékeket, amelyek valóban segítenek a bőröd egészségének megőrzésében.</p>
+
+                </div>
+                <img src="/kellekKepek/rutin2.jpg" alt="Káros összetevők" class="img-fluid w-100">
+            </div>
+        </div>
+    </div>
+</div>
 
        
 
