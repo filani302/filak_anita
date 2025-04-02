@@ -193,7 +193,10 @@ body {
 .form-control {
   border-radius: 10px; /* Lekerekített sarkok */
   transition: all 0.3s ease-in-out; /* Átmenet simítása */
+ 
 }
+
+
  
 /* Form elemek fókusz effektusa */
 .form-control:focus {

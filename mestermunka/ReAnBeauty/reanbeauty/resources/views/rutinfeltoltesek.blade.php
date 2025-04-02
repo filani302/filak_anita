@@ -52,7 +52,7 @@
         <form action="{{ route('rutin.store') }}" method="POST" enctype="multipart/form-data">
             <div class="mb-3">
             <label for="title" class="form-label fw-bold">Rutin neve</label>
-            <input type="text"  class="form-control shadow-sm"  id="title" name="title" required>
+            <input type="text"  class="form-control shadow-sm w-100"  id="title" name="title" required>
             </div>
             <div class="mb-3">
                 <label for="rutin_type" class="form-label fw-bold">Típus</label>
@@ -66,16 +66,16 @@
                 <br>
 
                 <div class="mb-3">
-                <input type="file" class="form-control" id="a_image" name="a_image">
+                <input type="file" class="form-control w-100" id="a_image" name="a_image">
             </div>
-            <div class="mb-3">
+            <div class="mb-6">
                 <label for="description" class="form-label fw-bold">Leírás</label>
-                <textarea class="form-control shadow-sm" id="description" name="description" rows="4" required></textarea>
+                <textarea class="form-control shadow-sm w-100" id="description" name="description" rows="4" required></textarea>
             </div>
             
             <div class="mb-3">
                 <label for="image" class="form-label">Termék képek(Töltsd fel termékeidről egy képet!)</label>
-                <input type="file" class="form-control" id="p_image" name="p_image">
+                <input type="file" class="form-control w-100" id="p_image" name="p_image">
             </div>
 
 

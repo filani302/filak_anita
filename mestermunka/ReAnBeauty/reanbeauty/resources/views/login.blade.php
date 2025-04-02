@@ -14,9 +14,9 @@
 
     <nav class="navbar navbar-expand-lg bg-dark shadow-sm">
         <div class="container">
-            <a class="navbar-brand text-light fs-4" href="{{ url('/welcome') }}">
+            <p class="navbar-brand text-light fs-4">
                 <img src="/img/ReAnLogoo.jpg" class="ReAnLogoo" alt="Logo" width="50"> ReAnBeauty
-            </a>
+</p>
             
         </div>
     </nav>

@@ -61,17 +61,17 @@
 
                     <div class="mb-5" >
                         <label for="name" class="form-label"><strong>Név:</strong></label>
-                        <input type="text" class="form-control bg-transparent" id="name" name="name" value="{{ old('name', $user->username) }}">
+                        <input type="text" class="form-control bg-transparent w-100" id="name" name="name" value="{{ old('name', $user->username) }}">
                     </div>
 
                     <div class="mb-5" >
                         <label for="email" class="form-label"><strong>Email:</strong></label>
-                        <input type="email" class="form-control bg-transparent" id="email" name="email" value="{{ old('email', $user->email) }}">
+                        <input type="email" class="form-control bg-transparent w-100" id="email" name="email" value="{{ old('email', $user->email) }}">
                     </div>
 
                     <div class="mb-5">
                         <label for="phone" class="form-label"><strong>Telefon:</strong></label>
-                        <input type="text" class="form-control bg-transparent" id="phone" name="phone" value="{{ old('phone', $user->phone_number) }}">
+                        <input type="text" class="form-control bg-transparent w-100" id="phone" name="phone" value="{{ old('phone', $user->phone_number) }}">
                     </div>
 
                     <button type="submit" class="btn btn-primary bg-dark w-100">Mentés</button>

@@ -24,7 +24,7 @@
                     <li class="nav-item"><a class="nav-link text-light" href="{{ url('/termekek') }}">Termékek</a></li>
                     <li class="nav-item"><a class="nav-link text-light" href="{{ url('/rutinok') }}">Rutinok</a></li>
                     <li class="nav-item"><a class="nav-link text-light" href="{{ url('/profil') }}">Profil</a></li>
-
+                    </nav>
 <div class="offcanvas offcanvas-end d-lg-none" tabindex="-1" id="offcanvasNav">
     <div class="offcanvas-header">
         <h5 class="offcanvas-title">Menü</h5>
@@ -36,12 +36,11 @@
             <li class="nav-item"><a class="nav-link" href="{{ url('/termekek') }}">Termékek</a></li>
             <li class="nav-item"><a class="nav-link" href="{{ url('/rutinok') }}">Rutinok</a></li>
             <li class="nav-item"><a class="nav-link" href="{{ url('/profil') }}">Profil</a></li>
-            <li class="nav-item"><a class="btn btn-dark w-100 mt-2" href="{{ url('/registration') }}">Csatlakozz most</a></li>
             <li class="nav-item"><a class="nav-link text-light" href="{{ url('/kedvencek') }}">Kedvencek</a></li>
         </ul>
     </div>
 </div>
-</nav>
+
 
 
 @forelse($favourites as $favourite)
