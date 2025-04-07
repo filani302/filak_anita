@@ -25,7 +25,8 @@
                     <li class="nav-item"><a class="nav-link text-light" href="{{ url('/rutinok') }}">Rutinok</a></li>
                     <li class="nav-item"><a class="nav-link text-light" href="{{ url('/kedvencek') }}">Kedvencek</a></li>
                     <li class="nav-item"><a class="nav-link text-light" href="{{ url('/profil') }}">Profil</a></li>
-                    
+                    <li class="nav-item"><a class="nav-link text-light" href="{{ url('http://127.0.0.1:8000/') }}">Kijelentkezés</a></li>
+
 
                 </ul>
             </div>
@@ -44,7 +45,8 @@
                 <li class="nav-item"><a class="nav-link" href="{{ url('/rutinok') }}">Rutinok</a></li>
                 <li class="nav-item"><a class="nav-link" href="{{ url('/kedvencek') }}">Kedvencek</a></li>
                 <li class="nav-item"><a class="nav-link" href="{{ url('/profil') }}">Profil</a></li>
-                
+                <li class="nav-item"><a class="nav-link text-dark" href="{{ url('http://127.0.0.1:8000/') }}">Kijelentkezés</a></li>
+
 
             </ul>
         </div>
@@ -168,7 +170,7 @@
     <button type="submit" class="btn d-flex align-items-center justify-content-center px-4 py-2 
         {{ $userLiked ? 'btn-danger' : 'btn-outline-danger' }} 
         rounded-pill transition-all duration-200 text-white bg-gradient shadow-lg hover:shadow-xl">
-        <i class="fas fa-star me-2"></i> ⭐ Kedvencek
+        <i class="fas fa-star me-2 "></i> ⭐ Kedvencek
     </button>
 </form>
 
