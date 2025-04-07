@@ -33,11 +33,10 @@
         </div>
         <div class="offcanvas-body">
             <ul class="navbar-nav">
-            <li class="nav-item"><a class="nav-link text-light" href="{{ url('/termekek') }}">Termékek</a></li>
-                    <li class="nav-item"><a class="nav-link text-light" href="{{ url('/rutinok') }}">Rutinok</a></li>
-                    <li class="nav-item"><a class="nav-link text-light" href="{{ url('/profil') }}">Profil</a></li>
-                    <li class="nav-item"><a class="nav-link text-light" href="{{ url('/kedvencek') }}">Kedvencek</a></li>
-                    <li class="nav-item"><a class="btn btn-dark w-100 mt-2" href="{{ url('/registration') }}">Csatlakozz most</a></li>
+            <li class="nav-item"><a class="nav-link text-dark" href="{{ url('/termekek') }}">Termékek</a></li>
+                    <li class="nav-item"><a class="nav-link text-dark" href="{{ url('/rutinok') }}">Rutinok</a></li>
+                    <li class="nav-item"><a class="nav-link text-dark" href="{{ url('/profil') }}">Profil</a></li>
+                    <li class="nav-item"><a class="nav-link text-dark" href="{{ url('/kedvencek') }}">Kedvencek</a></li>
 
             </ul>
         </div>
@@ -45,7 +44,8 @@
 
     <div class="container mt-5">
         <h2 class="text-center fade-in">Tudj meg többet a ReAnBeauty-ról</h2>
-        <p class="text-center fade-in">A <strong>ReAnBeauty</strong> egy közösségi platform azok számára, akik szeretik az arc- és hajápolást, és szívesen megosztják tapasztalataikat másokkal.</p>
+        <hr>
+        <h2 class="text-center fade-in">A <strong>ReAnBeauty</strong> egy közösségi platform azok számára, akik szeretik az arc- és hajápolást, és szívesen megosztják tapasztalataikat másokkal.</h2>
         <div class="row mt-4">
             <div class="col-md-6 fade-in">
                 <h4>Mit kínálunk?</h4>

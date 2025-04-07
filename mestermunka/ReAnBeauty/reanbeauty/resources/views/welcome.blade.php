@@ -36,7 +36,6 @@
         </div>
         <div class="offcanvas-body">
             <ul class="navbar-nav">
-                <li class="nav-item"><a class="nav-link" href="{{ url('/welcome') }}">Főoldal</a></li>
                 <li class="nav-item"><a class="nav-link" href="{{ url('/termekek') }}">Termékek</a></li>
                 <li class="nav-item"><a class="nav-link" href="{{ url('/rutinok') }}">Rutinok</a></li>
                 <li class="nav-item"><a class="nav-link" href="{{ url('/profil') }}">Profil</a></li>
@@ -94,36 +93,22 @@
 <div id="termekCarousel" class="carousel slide mx-auto my-4" data-bs-ride="carousel" data-bs-interval="2000" style="width: 50%; height: auto;">
         <div class="carousel-inner">
             <div class="carousel-item active">
-                <img src="/kellekKepek/cosmos.jpg" class="d-block w-100 rounded" alt="Termék 1">
+                <img src="/kellekKepek/cosmos1.jpg" class="d-block w-100 rounded" alt="Termék 1">
             </div>
-            <div class="carousel-item">
-                <img src="/kellekKepek/cosmos1.jpg" class="d-block w-100 rounded" alt="Termék 2">
-            </div>
+          
             <div class="carousel-item">
                 <img src="/kellekKepek/cosmos2.jpg" class="d-block w-100 rounded" alt="Termék 3">
             </div>
             <div class="carousel-item">
                 <img src="/kellekKepek/cosmos3.jpg" class="d-block w-100 rounded" alt="Termék 3">
             </div>
-            <div class="carousel-item">
-                <img src="/kellekKepek/cosmos-haj.jpg" class="d-block w-100 rounded" alt="Termék 3">
-            </div>
-            <div class="carousel-item">
-                <img src="/kellekKepek/cosmos-haj1.jpg" class="d-block w-100 rounded" alt="Termék 3">
-            </div>
+            
+           
         </div>
 
 
 
-
-        <!-- Navigációs gombok -->
-        <button class="carousel-control-prev" type="button" data-bs-target="#termekCarousel" data-bs-slide="prev">
-            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-        </button>
-        <button class="carousel-control-next" type="button" data-bs-target="#termekCarousel" data-bs-slide="next">
-            <span class="carousel-control-next-icon" aria-hidden="true"></span>
-        </button>
-       </div>
+</div>
 
 
        <div class="container my-5">
