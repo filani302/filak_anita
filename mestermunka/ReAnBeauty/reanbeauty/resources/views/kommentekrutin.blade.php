@@ -59,10 +59,41 @@
 <br>
 <br>
 
- <!-- Komment szekció -->
+<!-- Komment szekció -->
+<div class="container mt-5">
+    <div class="mb-4">
+        <h1>{{ $rutin->title }}</h1>
+        <img src="{{ asset($rutin->p_image) }}" alt="Termék kép" class="img-fluid">
+        <p>{{ $rutin->description }}</p>
+        <hr>
+        <h3>Hozzászólások:</h3>
+
+        <!-- Kommentek megjelenítése -->
+        @foreach ($comments as $comment)
+            <div class="border p-3 my-2">
+                <strong><p>{{ $comment->user->username }}</p></strong> 
+                <br>
+                <p>{{ $comment->description }}</p>
+            </div>
+        @endforeach
+
+        <!-- Hozzászólás hozzáadása -->
+        @if (!$rutin->hasCommentByUser(auth()->id())) <!-- Ha még nincs hozzászólás a felhasználótól -->
+            <form action="{{ route('comments.store') }}" method="POST">
+                @csrf
+                <input type="hidden" name="rutin_id" value="{{ $rutin->id }}">
+                <textarea name="comment" class="form-control" placeholder="Írj egy hozzászólást..." required></textarea>
+                <button type="submit" class="btn btn-primary mt-2">Küldés</button>
+            </form>
+        @else
+            <p>Jelenleg már írtál egy hozzászólást ehhez a termékhez.</p>
+        @endif
+    </div>
+</div>
 
 
- 
+
+
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 
 </div>

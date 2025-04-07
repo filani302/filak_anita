@@ -14,6 +14,7 @@ use App\Http\Controllers\FavouriteController;
 use App\Http\Controllers\ProductsFilterController;
 use App\Http\Controllers\RutinFilterController;
 use App\Http\Controllers\CommentProductController;
+use App\Http\Controllers\CommentRutinController;
 
 
 
@@ -126,6 +127,9 @@ Route::get('/rutinok', [RutinFilterController::class, 'index'])->name('rutins.in
 
 Route::get('/kommentektermek/{product}', [CommentProductController::class, 'show'])->name('kommentektermek.show');
 Route::post('/comments', [CommentProductController::class, 'store'])->name('comments.store');
+
+Route::get('/kommentektermek/{rutin}', [CommentRutinController::class, 'show'])->name('kommentekrutin.show');
+Route::post('/comments', [CommentRutinController::class, 'store'])->name('comments.store');
 
 
 

@@ -162,11 +162,11 @@
                         </button>
                     </form>
 
-                   <!-- Kommentek gomb rutinhoz -->
-<a href="{{ route('kommentekrutin.show', ['rutin_id' => $rutin->id]) }}" class="btn d-flex align-items-center justify-content-center px-4 py-2 
-    {{ $userLiked ? 'btn-danger' : 'btn-outline-danger' }} rounded-pill transition-all duration-200">
-    <i class="fas fa-comment me-2"></i> 💬 Komment
-</a>
+                   
+                <!-- Kommentek gomb -->
+                <a href="{{ route('kommentekrutin.show', $rutin) }}" class="btn d-flex align-items-center justify-content-center px-4 py-2">
+                    <i class="fas fa-comment me-2"></i> 💬 Komment
+                </a>
 
 
                 </div>

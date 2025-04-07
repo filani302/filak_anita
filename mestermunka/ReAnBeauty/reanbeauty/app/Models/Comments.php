@@ -18,18 +18,21 @@ class Comments extends Model
         'description'
     ];
 
-    public function user()
-    {
-        return $this->belongsTo(User::class);
-    }
+    
 
     public function product()
     {
-        return $this->belongsTo(Products::class);
+        return $this->belongsTo(Products::class, 'product_id');
     }
+    
+    public function user()
+    {
+        return $this->belongsTo(User::class, 'user_id');
+    }
+    
 
     public function rutin()
     {
-        return $this->belongsTo(Rutin::class);
+        return $this->belongsTo(Rutin::class,  'rutin_id');
     }
 }

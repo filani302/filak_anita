@@ -30,5 +30,29 @@ class Rutin extends Model
     {
         return $this->belongsTo(User::class, 'user_id'); // Kapcsolat a User modellel a 'user_id' alapján
     }
+
+    public function isLikedByUser($userId)
+    {
+        // Ellenőrizzük, hogy létezik-e like a megadott felhasználótól a termékhez
+        return $this->likes()->where('user_id', $userId)->exists();
+    }
+
+    /**
+     * A termékhez tartozó likes kapcsolat.
+     */
+    public function likes()
+    {
+        return $this->hasMany(Likes::class, 'rutin_id');
+    }
+
+    public function comments()
+    {
+    return $this->hasMany(Comments::class, 'rutin_id');
+    }
+
+    public function hasCommentByUser($userId)
+    {
+    return $this->comments()->where('user_id', $userId)->exists();
+    }
     
 }

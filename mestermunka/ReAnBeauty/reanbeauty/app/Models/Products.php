@@ -46,4 +46,17 @@ class Products extends Model
         return $this->hasMany(Likes::class, 'product_id');
     }
 
+    public function comments()
+{
+    return $this->hasMany(Comments::class, 'product_id');
+}
+
+public function hasCommentByUser($userId)
+{
+    return $this->comments()->where('user_id', $userId)->exists();
+}
+
+
+
+
 }
