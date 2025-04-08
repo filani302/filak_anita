@@ -125,11 +125,14 @@ Route::get('/rutinok', [RutinFilterController::class, 'index'])->name('rutins.in
 
 
 
+// Termék komment route-ok
 Route::get('/kommentektermek/{product}', [CommentProductController::class, 'show'])->name('kommentektermek.show');
-Route::post('/comments', [CommentProductController::class, 'store'])->name('comments.store');
+Route::post('/comments/product', [CommentProductController::class, 'store'])->name('comments.product.store');
 
-Route::get('/kommentektermek/{rutin}', [CommentRutinController::class, 'show'])->name('kommentekrutin.show');
-Route::post('/comments', [CommentRutinController::class, 'store'])->name('comments.store');
+// Rutin komment route-ok
+Route::get('/kommentekrutin/{rutin}', [CommentRutinController::class, 'show'])->name('kommentekrutin.show');
+Route::post('/comments/rutin', [CommentRutinController::class, 'store'])->name('comments.rutin.store');
+
 
 
 

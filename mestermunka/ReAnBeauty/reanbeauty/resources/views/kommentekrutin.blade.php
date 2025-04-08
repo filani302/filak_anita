@@ -3,21 +3,87 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Hozzászólás</title>
+    <title>Hozzászólás - ReAnBeauty</title>
     <!-- Bootstrap CSS -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
     <!-- Alpine.js -->
     <script src="https://cdn.jsdelivr.net/npm/alpinejs@2.8.2/dist/alpine.min.js" defer></script>
     <!-- Bootstrap JS -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js"></script>
-
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Saját CSS -->
     <link rel="stylesheet" href="{{ asset('css/app.css') }}">
+
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f8f9fa;
+        }
+
+        .komment-body {
+            background-color: #fafafa;
+        }
+
+        .container {
+            max-width: 900px;
+            margin-top: 50px;
+        }
+
+        .border {
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            background-color: #fff;
+        }
+
+        .border p {
+            font-size: 1.1rem;
+        }
+
+        .comment-section {
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 8px;
+        }
+
+        .comment-box {
+            padding: 10px;
+            border-radius: 5px;
+            margin-top: 20px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+
+        .btn-submit {
+            background-color: #ff85a2;
+            color: #fff;
+            border-radius: 30px;
+            padding: 10px 20px;
+            border: none;
+        }
+
+        .btn-submit:hover {
+            background-color: #e74c3c;
+        }
+
+        .comment-author {
+            font-weight: bold;
+            color: #ff85a2;
+        }
+
+        .comment-text {
+            font-size: 1rem;
+            color: #555;
+        }
+
+        .no-comments {
+            font-size: 1.2rem;
+            text-align: center;
+            color: #888;
+        }
+    </style>
 </head>
 <body class="komment-body">
 
-
-  <!-- Navbar -->
-  <nav class="navbar navbar-expand-lg bg-dark shadow-sm">
+    <!-- Navbar (nem változott) -->
+    <nav class="navbar navbar-expand-lg bg-dark shadow-sm">
         <div class="container">
             <a class="navbar-brand text-light fs-4" href="{{ url('/welcome') }}">
                 <img src="/img/ReAnLogoo.jpg" class="ReAnLogoo" alt="Logo" width="50"> ReAnBeauty
@@ -32,7 +98,6 @@
                     <li class="nav-item"><a class="nav-link text-light" href="{{ url('/rutinok') }}">Rutinok</a></li>
                     <li class="nav-item"><a class="nav-link text-light" href="{{ url('/profil') }}">Profil</a></li>
                     <li class="nav-item"><a class="nav-link text-light" href="{{ url('/kedvencek') }}">Kedvencek</a></li>
-
                 </ul>
             </div>
         </div>
@@ -51,51 +116,48 @@
                 <li class="nav-item"><a class="nav-link" href="{{ url('/rutinok') }}">Rutinok</a></li>
                 <li class="nav-item"><a class="nav-link" href="{{ url('/profil') }}">Profil</a></li>
                 <li class="nav-item"><a class="nav-link text-light" href="{{ url('/kedvencek') }}">Kedvencek</a></li>
-
             </ul>
         </div>
     </div>
     
-<br>
-<br>
+    <!-- Kommentek szekció -->
+    <div class="container mt-5">
+        <div class="comment-section">
+            <h1 class="text-center">{{ $rutin->title }}</h1>
+            <img src="{{ asset($rutin->p_image) }}" alt="Termék kép" class="img-fluid mb-4">
+            <p class="text-center">{{ $rutin->description }}</p>
+            <hr>
 
-<!-- Komment szekció -->
-<div class="container mt-5">
-    <div class="mb-4">
-        <h1>{{ $rutin->title }}</h1>
-        <img src="{{ asset($rutin->p_image) }}" alt="Termék kép" class="img-fluid">
-        <p>{{ $rutin->description }}</p>
-        <hr>
-        <h3>Hozzászólások:</h3>
+            <h3 class="text-center">Hozzászólások:</h3>
 
-        <!-- Kommentek megjelenítése -->
-        @foreach ($comments as $comment)
-            <div class="border p-3 my-2">
-                <strong><p>{{ $comment->user->username }}</p></strong> 
-                <br>
-                <p>{{ $comment->description }}</p>
-            </div>
-        @endforeach
+            <!-- Kommentek -->
+            @foreach ($comments as $comment)
+                <div class="comment-box">
+                    <p class="comment-author">{{ $comment->user->username }}</p>
+                    <p class="comment-text">{{ $comment->description }}</p>
+                </div>
+            @endforeach
 
-        <!-- Hozzászólás hozzáadása -->
-        @if (!$rutin->hasCommentByUser(auth()->id())) <!-- Ha még nincs hozzászólás a felhasználótól -->
-            <form action="{{ route('comments.store') }}" method="POST">
-                @csrf
-                <input type="hidden" name="rutin_id" value="{{ $rutin->id }}">
-                <textarea name="comment" class="form-control" placeholder="Írj egy hozzászólást..." required></textarea>
-                <button type="submit" class="btn btn-primary mt-2">Küldés</button>
-            </form>
-        @else
-            <p>Jelenleg már írtál egy hozzászólást ehhez a termékhez.</p>
-        @endif
+            @if ($comments->isEmpty())
+                <p class="no-comments">Még nincs egy hozzászólás sem ehhez a rutinhoz.</p>
+            @endif
+
+            <!-- Hozzászólás hozzáadása -->
+            @if (!$rutin->hasCommentByUser(auth()->id())) <!-- Ha nincs hozzászólás -->
+                <form action="{{ route('comments.rutin.store') }}" method="POST">
+                    @csrf
+                    <input type="hidden" name="rutin_id" value="{{ $rutin->id }}">
+                    <textarea name="comment" class="form-control" placeholder="Írj egy hozzászólást..." required></textarea>
+                    <button type="submit" class="btn btn-submit mt-3">Küldés</button>
+                </form>
+            @else
+                <p class="text-center text-muted mt-3">Már írtál hozzászólást ehhez a rutinhoz.</p>
+            @endif
+        </div>
     </div>
-</div>
 
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 
-
-
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
-
-</div>
 </body>
 </html>

@@ -79,7 +79,7 @@
 
         <!-- Hozzászólás hozzáadása -->
         @if (!$product->hasCommentByUser(auth()->id())) <!-- Ha még nincs hozzászólás a felhasználótól -->
-            <form action="{{ route('comments.store') }}" method="POST">
+            <form action="{{ route('comments.product.store') }}" method="POST">
                 @csrf
                 <input type="hidden" name="product_id" value="{{ $product->id }}">
                 <textarea name="comment" class="form-control" placeholder="Írj egy hozzászólást..." required></textarea>

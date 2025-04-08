@@ -35,7 +35,7 @@ class FavouriteController extends Controller
         ]);
 
         // Visszairányítás a kedvencek oldalra
-        return redirect()->route('favourites.index')->with('success', 'Termék hozzáadva a kedvenceidhez!');
+        return redirect()->route('favourites.index');
     }
 
     public function index()
