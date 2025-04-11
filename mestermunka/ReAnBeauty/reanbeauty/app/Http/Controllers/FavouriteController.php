@@ -24,7 +24,7 @@ class FavouriteController extends Controller
                     ->where('product_id', $productId)
                     ->where('rutin_id', $rutinId)
                     ->exists()) {
-            return redirect()->back()->with('info', 'Ez a termék már a kedvenceid között van!');
+            return redirect()->back()
         }
 
         // Új kedvenc hozzáadása
