@@ -33,14 +33,14 @@ class ProductFormController extends Controller
 
     // Az új könyvtárak elérési útja az "upload" mappán belül
     $termekKepPath = public_path('upload/termek/termekKep');
-    $rutinKepPath = public_path('upload/termek/rutinKep');
+    $allergenKepPath = public_path('upload/termek/allergenKep');
 
     // Ha a mappák nem léteznek, hozzuk létre őket
     if (!File::exists($termekKepPath)) {
         File::makeDirectory($termekKepPath, 0777, true);
     }
-    if (!File::exists($rutinKepPath)) {
-        File::makeDirectory($rutinKepPath, 0777, true);
+    if (!File::exists($allergenKepPath)) {
+        File::makeDirectory($allergenKepPath, 0777, true);
     }
 
     // Termék kép feltöltése
@@ -57,10 +57,10 @@ class ProductFormController extends Controller
     if ($request->hasFile('a_image')) {
         $aImage = $request->file('a_image');
         $aImageName = time() . '_' . $aImage->getClientOriginalName();
-        $aImage->move($rutinKepPath, $aImageName);
-        $product->a_image = 'upload/termek/rutinKep/' . $aImageName;
+        $aImage->move($allergenKepPath, $aImageName);
+        $product->a_image = 'upload/termek/allergenKep/' . $aImageName;
 
-        $images[] = 'upload/termek/rutinKep/' . $aImageName; // Hozzáadjuk a tömbhöz
+        $images[] = 'upload/termek/allergenKep/' . $aImageName; // Hozzáadjuk a tömbhöz
     }
 
     $product->save();

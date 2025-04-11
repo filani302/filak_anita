@@ -12,39 +12,34 @@ class FavouriteController extends Controller
 {
     public function store(Request $request)
     {
-        // Ellenőrizzük, hogy a felhasználó be van-e jelentkezve
         $user = auth()->user();
-
-        // A termék/rutin ID lekérése a kérésből
         $productId = $request->input('product_id');
         $rutinId = $request->input('rutin_id');
 
-        // Ha már létezik a kedvenc, nem csinálunk semmit
         if (Favourites::where('user_id', $user->id)
-                    ->where('product_id', $productId)
-                    ->where('rutin_id', $rutinId)
-                    ->exists()) {
-            return redirect()->back()
+                    ->where(function ($query) use ($productId, $rutinId) {
+                        $query->where('product_id', $productId)
+                              ->orWhere('rutin_id', $rutinId);
+                    })->exists()) {
+            return response()->json(['message' => 'Ez a tétel már a kedvenceid között van!'], 400);
         }
 
-        // Új kedvenc hozzáadása
         Favourites::create([
             'user_id' => $user->id,
             'product_id' => $productId,
             'rutin_id' => $rutinId,
         ]);
 
-        // Visszairányítás a kedvencek oldalra
-        return redirect()->route('favourites.index');
+        return response()->json(['message' => 'Sikeresen hozzáadva a kedvencekhez!'], 200);
     }
 
     public function index()
-{
-    $favourites = Favourites::where('user_id', Auth::id())
-        ->with(['product', 'rutin'])
-        ->get();
+    {
+        $favourites = Favourites::where('user_id', Auth::id())
+            ->with(['product', 'rutin'])
+            ->get();
 
-    return view('kedvencek', compact('favourites'));
-}
+        return view('kedvencek', compact('favourites'));
+    }
 
 }

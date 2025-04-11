@@ -49,28 +49,29 @@
     <div class="card mb-3" style="max-width: 540px;">
         <div class="row g-0">
             <div class="col-md-4 text-center">
-                <div class="image-slider" data-product-id="{{ $favourite->product->id }}">
-                    <img src="{{ asset($favourite->product->p_image) }}" class="img-fluid rounded-start product-image active" alt="Product Image">
-
-                    @if ($favourite->product->a_image)
-                        <img src="{{ asset($favourite->product->a_image) }}" class="img-fluid rounded-start product-image hidden" alt="Alternative Image">
-
-                        <button class="prev-btn btn btn-light">❮</button>
-                        <button class="next-btn btn btn-light">❯</button>
-                    @endif
-                </div>
+                @if ($favourite->product)
+                    <img src="{{ asset($favourite->product->p_image) }}" class="img-fluid rounded-start" alt="Product Image">
+                @elseif ($favourite->rutin)
+                    <img src="{{ asset($favourite->rutin->p_image) }}" class="img-fluid rounded-start" alt="Rutin Image">
+                @endif
             </div>
             <div class="col-md-8">
                 <div class="card-body">
-                    <h5 class="card-title">{{ $favourite->product->title }}</h5>
-                    <p class="card-text">{{ $favourite->product->description }}</p>
+                    @if ($favourite->product)
+                        <h5 class="card-title">{{ $favourite->product->title }}</h5>
+                        <p class="card-text">{{ $favourite->product->description }}</p>
+                    @elseif ($favourite->rutin)
+                        <h5 class="card-title">{{ $favourite->rutin->title }}</h5>
+                        <p class="card-text">{{ $favourite->rutin->description }}</p>
+                    @endif
                 </div>
             </div>
         </div>
     </div>
 @empty
-    <p>Nincsenek kedvenc termékeid.</p>
+    <p>Nincsenek kedvenc termékeid vagy rutinjaid.</p>
 @endforelse
+
 
 <script>
     document.addEventListener("DOMContentLoaded", function () {
@@ -103,6 +104,37 @@
         });
     });
 </script>
+
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script>
+    $(document).ready(function () {
+        $(".add-to-favourites").click(function (e) {
+            e.preventDefault();
+
+            let productId = $(this).data("product-id");
+            let rutinId = $(this).data("rutin-id");
+
+            $.ajax({
+                url: "{{ route('favourites.store') }}",
+                type: "POST",
+                data: {
+                    _token: "{{ csrf_token() }}",
+                    product_id: productId,
+                    rutin_id: rutinId
+                },
+                success: function (response) {
+                    alert(response.message); // Visszajelzés a felhasználónak
+                    location.reload(); // Az oldal frissítése a változások megjelenítéséhez
+                },
+                error: function (xhr) {
+                    alert(xhr.responseJSON.message); // Ha már kedvenc, akkor hibaüzenet
+                }
+            });
+        });
+    });
+</script>
+
+
 
 <style>
     .hidden { display: none; }
