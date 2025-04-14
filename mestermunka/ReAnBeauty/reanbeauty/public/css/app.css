@@ -267,7 +267,6 @@ body {
 }
 
 
-        /*like*/
  
  
         /*profiloldal*/
@@ -470,21 +469,12 @@ body {
  
 .komment-body {
   /* Rózsaszín háttér beállítása az egész komment szekció számára */
-  background-color: #ffb6c1; /* Rózsaszín háttér */
+  background-color: #ffffff; /* Rózsaszín háttér */
 }
 
 .comment-box {
   /* Világos rózsaszín háttér a kommentek dobozához */
-  background-color: #ffe4e1; /* Világos rózsaszín */
-  
-  /* A kommentek doboza lekerekített sarkakkal (25px) */
-  border-radius: 25px;
-  
-  /* 50px margó fölül és alul, hogy a doboz ne érjen közvetlenül a képernyő széléhez */
-  margin: 50px auto;
-  
-  /* Árnyékot ad a doboznak, 2px eltolással és 10px-es elmosódással, hogy emelkedett hatást keltsen */
-  box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.2);
+  background-color: #ffffff; /* Világos rózsaszín */
 }
 
 .comment-box h3 {
@@ -520,6 +510,81 @@ body {
   border-color: #ff69b4;
 }
  
+/*komment-rutin*/
+body {
+  font-family: 'Arial', sans-serif;
+  background-color: #f8f9fa;
+}
+
+.komment-body {
+  background-color: #fafafa;
+}
+
+.container {
+  max-width: 900px;
+  
+}
+
+.border {
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  background-color: #fff;
+}
+
+.border p {
+  font-size: 1.1rem;
+}
+
+.comment-section {
+  padding: 20px;
+  background-color: #fff;
+  border-radius: 8px;
+}
+
+.comment-box {
+  padding: 10px;
+  border-radius: 5px;
+  margin-top: 20px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.btn-submit {
+  background-color: #ff85a2;
+  color: #fff;
+  border-radius: 30px;
+  padding: 10px 20px;
+  border: none;
+}
+
+.btn-submit:hover {
+  background-color: #e74c3c;
+}
+
+.comment-author {
+  font-weight: bold;
+  color: #ff85a2;
+}
+
+.comment-text {
+  font-size: 1rem;
+  color: #555;
+}
+
+.no-comments {
+  font-size: 1.2rem;
+  text-align: center;
+  color: #888;
+}
+
+
+
+
+
+
+
+
+
+
  
 /*szepsegapolas*/
  
@@ -647,7 +712,7 @@ body {
 .bemutatkozo-doboz {
   position: absolute;
   top: 50%;
-  left: 70%;
+  left: 80%;
   transform: translate(-50%, -50%);
   background: #fff;
   padding: 40px;

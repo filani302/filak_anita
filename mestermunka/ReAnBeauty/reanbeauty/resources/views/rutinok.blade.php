@@ -106,7 +106,7 @@
                                 @endif
                             </div>
                         </div>
-                        <div class="col-12 col-md-8">
+                        <div class="comment-box col-12 col-md-8">
                             <h5><strong>{{ $rutin->title }}</strong></h5>
                             <p class="mb-2">{{ $rutin->description }}</p>
                             <p class="text-muted">Feltöltötte: <strong>{{ $rutin->user->username ?? 'Ismeretlen' }}</strong></p>
@@ -131,7 +131,8 @@
         @csrf
         <input type="hidden" name="rutin_id" value="{{ $rutin->id }}">
         <button type="submit" class="btn btn-outline-warning d-flex align-items-center gap-2 rounded-pill" style="border-radius: 50px;">
-            ⭐ Kedvencek
+        <a class="nav-link" href="{{ url('/kedvencek') }}"> ⭐ Kedvencek</a>
+
         </button>
     </form>
 

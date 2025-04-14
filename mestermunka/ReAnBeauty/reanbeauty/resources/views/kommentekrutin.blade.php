@@ -13,72 +13,7 @@
     <!-- Saját CSS -->
     <link rel="stylesheet" href="{{ asset('css/app.css') }}">
 
-    <style>
-        body {
-            font-family: 'Arial', sans-serif;
-            background-color: #f8f9fa;
-        }
-
-        .komment-body {
-            background-color: #fafafa;
-        }
-
-        .container {
-            max-width: 900px;
-            margin-top: 50px;
-        }
-
-        .border {
-            border: 1px solid #ddd;
-            border-radius: 8px;
-            background-color: #fff;
-        }
-
-        .border p {
-            font-size: 1.1rem;
-        }
-
-        .comment-section {
-            padding: 20px;
-            background-color: #fff;
-            border-radius: 8px;
-        }
-
-        .comment-box {
-            padding: 10px;
-            border-radius: 5px;
-            margin-top: 20px;
-            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-        }
-
-        .btn-submit {
-            background-color: #ff85a2;
-            color: #fff;
-            border-radius: 30px;
-            padding: 10px 20px;
-            border: none;
-        }
-
-        .btn-submit:hover {
-            background-color: #e74c3c;
-        }
-
-        .comment-author {
-            font-weight: bold;
-            color: #ff85a2;
-        }
-
-        .comment-text {
-            font-size: 1rem;
-            color: #555;
-        }
-
-        .no-comments {
-            font-size: 1.2rem;
-            text-align: center;
-            color: #888;
-        }
-    </style>
+    
 </head>
 <body class="komment-body">
 
@@ -98,6 +33,8 @@
                     <li class="nav-item"><a class="nav-link text-light" href="{{ url('/rutinok') }}">Rutinok</a></li>
                     <li class="nav-item"><a class="nav-link text-light" href="{{ url('/profil') }}">Profil</a></li>
                     <li class="nav-item"><a class="nav-link text-light" href="{{ url('/kedvencek') }}">Kedvencek</a></li>
+                    <li class="nav-item"><a class="nav-link text-dark" href="{{ url('http://127.0.0.1:8000/') }}">Kijelentkezés</a></li>
+
                 </ul>
             </div>
         </div>
