@@ -46,7 +46,7 @@
 
 
 @forelse($favourites as $favourite)
-    <div class="card mb-3" style="max-width: 540px;">
+    <div class="card mb-3 " style="max-width: 540px; height:300px " >
         <div class="row g-0">
             <div class="col-md-4 text-center">
                 @if ($favourite->product)
