@@ -44,7 +44,7 @@
                 <li class="nav-item"><a class="nav-link" href="{{ url('/termekek') }}">Termékek</a></li>
                 <li class="nav-item"><a class="nav-link" href="{{ url('/rutinok') }}">Rutinok</a></li>
                 <li class="nav-item"><a class="nav-link" href="{{ url('/profil') }}">Profil</a></li>
-                <li class="nav-item"><a class="nav-link text-light" href="{{ url('/kedvencek') }}">Kedvencek</a></li>
+                <li class="nav-item"><a class="nav-link text-dark" href="{{ url('/kedvencek') }}">Kedvencek</a></li>
                 <li class="nav-item"><a class="nav-link text-dark" href="{{ url('http://127.0.0.1:8000/') }}">Kijelentkezés</a></li>
 
             </ul>
@@ -106,7 +106,7 @@
                                 @endif
                             </div>
                         </div>
-                        <div class="col-12 col-md-8">
+                        <div class="comment-box col-12 col-md-8">
                             <h5><strong>{{ $rutin->title }}</strong></h5>
                             <p class="mb-2">{{ $rutin->description }}</p>
                             <p class="text-muted">Feltöltötte: <strong>{{ $rutin->user->username ?? 'Ismeretlen' }}</strong></p>
@@ -131,7 +131,8 @@
         @csrf
         <input type="hidden" name="rutin_id" value="{{ $rutin->id }}">
         <button type="submit" class="btn btn-outline-warning d-flex align-items-center gap-2 rounded-pill" style="border-radius: 50px;">
-            ⭐ Kedvencek
+        <a class="nav-link" href="{{ url('/kedvencek') }}"> ⭐ Kedvencek</a>
+
         </button>
     </form>
 
