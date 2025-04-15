@@ -1,8 +1,8 @@
 <?php
 $termek = 'termekMeghatarozasok/';
 $maxFiles = 1;
-$maxWidth = 800;
-$maxHeight = 800;
+$maxWidth = 1000;
+$maxHeight = 1000;
 $allowedTypes = ['image/jpeg', 'image/png', 'image/jpg', 'image/webp', 'image/bmp', 'image/jfif'];
 
 if (!is_dir($termek)) {

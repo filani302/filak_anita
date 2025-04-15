@@ -17,8 +17,8 @@ class RutinFormController extends Controller
         'title' => 'required|string|max:50',
         'rutin_type' => 'required|string|max:50',
         'description' => 'required|string',
-        'p_image' => 'nullable|image|mimes:jpeg,png,jpg,webp,bmp,jfif|max:700',
-        'a_image' => 'nullable|image|mimes:jpeg,png,jpg,webp,bmp,jfif|max:700',
+        'p_image' => 'nullable|image|mimes:jpeg,png,jpg,webp,bmp,jfif|max:1000',
+        'a_image' => 'nullable|image|mimes:jpeg,png,jpg,webp,bmp,jfif|max:1000',
     ]);
 
     $rutin = new Rutin();
