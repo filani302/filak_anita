@@ -81,6 +81,9 @@ Route::get('/kedvencek', function () {
     return view('kedvencek');
 });
 
+Route::get('/feltoltott', function () {
+    return view('feltoltott');
+});
 
 
  

@@ -24,6 +24,7 @@
                     <li class="nav-item"><a class="nav-link text-light" href="{{ url('/rutinok') }}">Rutinok</a></li>
                     <li class="nav-item"><a class="nav-link text-light" href="{{ url('/profil') }}">Profil</a></li>
                     <li class="nav-item"><a class="nav-link text-light" href="{{ url('/kedvencek') }}">Kedvencek</a></li>
+                    <li class="nav-item"><a class="nav-link text-light" href="{{ url('/feltoltott') }}">Posztjaim</a></li>
 
                 </ul>
             </div>
@@ -43,6 +44,7 @@
                     <li class="nav-item"><a class="nav-link text-light" href="{{ url('/profil') }}">Profil</a></li>
                     <li class="nav-item"><a class="nav-link text-light" href="{{ url('/kedvencek') }}">Kedvencek</a></li>
                     <li class="nav-item"><a class="nav-link text-dark" href="{{ url('http://127.0.0.1:8000/') }}">Kijelentkezés</a></li>
+                    <li class="nav-item"><a class="nav-link text-dark" href="{{ url('/feltoltott') }}">Posztjaim</a></li>
 
                 </ul>
         </div>

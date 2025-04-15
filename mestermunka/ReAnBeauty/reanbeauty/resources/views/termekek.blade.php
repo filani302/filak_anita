@@ -26,6 +26,8 @@
                     <li class="nav-item"><a class="nav-link text-light" href="{{ url('/kedvencek') }}">Kedvencek</a></li>
                     <li class="nav-item"><a class="nav-link text-light" href="{{ url('/profil') }}">Profil</a></li>
                     <li class="nav-item"><a class="nav-link text-light" href="{{ url('http://127.0.0.1:8000/') }}">Kijelentkezés</a></li>
+                    <li class="nav-item"><a class="nav-link text-light" href="{{ url('/feltoltott') }}">Posztjaim</a></li>
+
                 </ul>
             </div>
         </div>
@@ -44,6 +46,8 @@
                 <li class="nav-item"><a class="nav-link" href="{{ url('/kedvencek') }}">Kedvencek</a></li>
                 <li class="nav-item"><a class="nav-link" href="{{ url('/profil') }}">Profil</a></li>
                 <li class="nav-item"><a class="nav-link text-dark" href="{{ url('http://127.0.0.1:8000/') }}">Kijelentkezés</a></li>
+                <li class="nav-item"><a class="nav-link text-dark" href="{{ url('/feltoltott') }}">Posztjaim</a></li>
+
             </ul>
         </div>
     </div>
@@ -110,6 +114,7 @@
                             @endif
                         </div>
                     </div>
+                   
                     <div class="col-12 col-md-8">
                         <h5><strong>{{ $product->title }}</strong></h5>
                         <p class="mb-2">{{ $product->description }}</p>
@@ -124,38 +129,37 @@
                     $likeCount = App\Models\Likes::where('product_id', $product->id)->count();
                 @endphp
 
-                <div class="mt-3 d-flex justify-content-start gap-3">
-                    <!-- Like gomb -->
-                    <form action="{{ route('like.toggle') }}" method="POST" class="d-flex flex-column align-items-center">
-                        @csrf
-                        <input type="hidden" name="product_id" value="{{ $product->id }}">
-                        <input type="hidden" name="rutin_id" value="">
-                        <button type="submit" class="btn d-flex align-items-center justify-content-center px-4 py-2 
-                            {{ $userLiked ? 'btn-danger' : 'btn-outline-danger' }} 
-                            rounded-pill">
-                            <span class="me-2">
-                                {!! $userLiked ? '💔 Unlike' : '❤️ Like' !!}
-                            </span>
-                            <span class="ms-2">{{ $likeCount }}</span>
-                        </button>
-                    </form>
+               <!-- Gombok -->
+<div class="mt-3 d-flex flex-wrap gap-2">
+    @php
+        $userLiked = App\Models\Likes::where('user_id', auth()->id())->where('product_id', $product->id)->exists();
+        $likeCount = App\Models\Likes::where('product_id', $product->id)->count();
+    @endphp
 
-                    <!-- Kedvencek gomb -->
-                    <form action="{{ route('favourites.store') }}" method="POST">
-                        @csrf
-                        <input type="hidden" name="product_id" value="{{ $product->id }}">
-                        <input type="hidden" name="rutin_id" value="">
-                        <button type="submit" class="btn d-flex align-items-center justify-content-center px-4 py-2 
-                            btn-outline-warning rounded-pill text-dark bg-light shadow-sm">
-                           <a class="nav-link" href="{{ url('/kedvencek') }}"> ⭐ Kedvencek</a>
-                        </button>
-                    </form>
+    <form action="{{ route('like.toggle') }}" method="POST">
+        @csrf
+        <input type="hidden" name="product_id" value="{{ $product->id }}">
+        <button type="submit" class="btn {{ $userLiked ? 'btn-danger' : 'btn-outline-danger' }} d-flex align-items-center gap-2 rounded-pill" style="border-radius: 50px;">
+            {!! $userLiked ? '💔 Unlike' : '❤️ Like' !!}
+            <span>{{ $likeCount }}</span>
+        </button>
+    </form>
 
-                    <!-- Komment gomb -->
-                    <a href="{{ route('kommentektermek.show', $product) }}" class="btn d-flex align-items-center justify-content-center px-4 py-2 btn-outline-secondary rounded-pill">
-                        💬 Komment
-                    </a>
-                </div>
+    <form action="{{ route('favourites.store') }}" method="POST">
+        @csrf
+        <input type="hidden" name="product_id" value="{{ $product->id }}">
+        <button type="submit" class="btn btn-outline-warning d-flex align-items-center gap-2 rounded-pill" style="border-radius: 50px;">
+            <a class="nav-link" href="{{ url('/favorites') }}">⭐ Kedvencek</a>
+        </button>
+    </form>
+
+    <a href="{{ route('kommentektermek.show', $product) }}" class="btn btn-outline-info d-flex align-items-center gap-2 rounded-pill" style="border-radius: 50px;">
+        💬 Komment
+    </a>
+</div>
+
+
+
             </div>
         @endforeach
     @endif

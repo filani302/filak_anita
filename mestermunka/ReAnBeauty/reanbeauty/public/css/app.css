@@ -755,3 +755,21 @@ body {
     padding: 10px;
   }
 }
+
+
+/*Kedvencek*/
+
+.hidden { display: none; }
+    .product-image { width: 100%; transition: opacity 0.3s ease-in-out; }
+    .image-slider { position: relative; display: inline-block; }
+    .prev-btn, .next-btn {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        background: rgba(255, 255, 255, 0.7);
+        border: none;
+        padding: 5px 10px;
+        cursor: pointer;
+    }
+    .prev-btn { left: 10px; }
+    .next-btn { right: 10px; }

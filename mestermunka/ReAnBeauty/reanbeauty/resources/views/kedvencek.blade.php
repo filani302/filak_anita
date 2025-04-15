@@ -25,6 +25,7 @@
                     <li class="nav-item"><a class="nav-link text-light" href="{{ url('/rutinok') }}">Rutinok</a></li>
                     <li class="nav-item"><a class="nav-link text-light" href="{{ url('/profil') }}">Profil</a></li>
                     <li class="nav-item"><a class="nav-link text-light" href="{{ url('http://127.0.0.1:8000/') }}">Kijelentkezés</a></li>
+                    <li class="nav-item"><a class="nav-link text-light" href="{{ url('/feltoltott') }}">Posztjaim</a></li>
 
                 </nav>
 <div class="offcanvas offcanvas-end d-lg-none" tabindex="-1" id="offcanvasNav">
@@ -40,6 +41,7 @@
             <li class="nav-item"><a class="nav-link" href="{{ url('/profil') }}">Profil</a></li>
             <li class="nav-item"><a class="nav-link text-dark" href="{{ url('/kedvencek') }}">Kedvencek</a></li>
             <li class="nav-item"><a class="nav-link text-dark" href="{{ url('http://127.0.0.1:8000/') }}">Kijelentkezés</a></li>
+            <li class="nav-item"><a class="nav-link text-dark" href="{{ url('/feltoltott') }}">Posztjaim</a></li>
 
         </ul>
     </div>
@@ -135,22 +137,7 @@
 
 
 
-<style>
-    .hidden { display: none; }
-    .product-image { width: 100%; transition: opacity 0.3s ease-in-out; }
-    .image-slider { position: relative; display: inline-block; }
-    .prev-btn, .next-btn {
-        position: absolute;
-        top: 50%;
-        transform: translateY(-50%);
-        background: rgba(255, 255, 255, 0.7);
-        border: none;
-        padding: 5px 10px;
-        cursor: pointer;
-    }
-    .prev-btn { left: 10px; }
-    .next-btn { right: 10px; }
-</style>
+
 </div>
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
