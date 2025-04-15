@@ -30,7 +30,7 @@ public function updateProfile(Request $request)
         'email' => $request->email,
         'phone_number' => $request->phone,
     ]);
-
+    
     
 }
 
