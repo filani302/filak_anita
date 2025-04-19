@@ -81,7 +81,7 @@
 
 <footer id="lablec" class=" lablec text-center py-4 mt-5">
         <p>Kövess minket itt is!</p>
-        <p><a href="#" class="text-light">Facebook</a> | <a href="#" class="text-light">Instagram</a> | <a href="#" class="text-light">TikTok</a></p>
+        <p><a href="https://www.facebook.com/profile.php?id=61574567735162" class="text-light">Facebook</a> | <a href="#" class="text-light">Instagram</a> | <a href="#" class="text-light">TikTok</a></p>
     </footer>
 </body>
 </html>
