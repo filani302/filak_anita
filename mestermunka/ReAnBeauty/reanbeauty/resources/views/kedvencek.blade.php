@@ -11,14 +11,45 @@
 </head>
 <body class="rutin-body">
 
-    <nav class="navbar navbar-expand-lg bg-dark shadow-sm">
-    
+<nav class="navbar navbar-expand-lg bg-dark shadow-sm">
+        <div class="container">
+            <a class="navbar-brand text-light fs-4" href="{{ url('/welcome') }}">
+                <img src="/img/ReAnLogoo.jpg" class="ReAnLogoo" alt="Logo" width="50"> ReAnBeauty
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNav">
+                <span class="navbar-toggler-icon bg-light"></span>
+            </button>
+            <div class="collapse navbar-collapse d-none d-lg-block">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link text-light" href="{{ url('/welcome') }}">Főoldal</a></li>
+                    <li class="nav-item"><a class="nav-link text-light" href="{{ url('/rutinok') }}">Rutinok</a></li>
+                    <li class="nav-item"><a class="nav-link text-light" href="{{ url('/kedvencek') }}">Kedvencek</a></li>
+                    <li class="nav-item"><a class="nav-link text-light" href="{{ url('/profil') }}">Profil</a></li>
+                    <li class="nav-item"><a class="nav-link text-light" href="{{ url('http://127.0.0.1:8000/') }}">Kijelentkezés</a></li>
+
+                </ul>
+            </div>
+        </div>
     </nav>
 
- 
+    <!-- Offcanvas Menü -->
     <div class="offcanvas offcanvas-end d-lg-none" tabindex="-1" id="offcanvasNav">
-        <!-- ... -->
+        <div class="offcanvas-header">
+            <h5 class="offcanvas-title">Menü</h5>
+            <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas"></button>
+        </div>
+        <div class="offcanvas-body">
+            <ul class="navbar-nav">
+                <li class="nav-item"><a class="nav-link" href="{{ url('/welcome') }}">Főoldal</a></li>
+                <li class="nav-item"><a class="nav-link" href="{{ url('/rutinok') }}">Rutinok</a></li>
+                <li class="nav-item"><a class="nav-link" href="{{ url('/kedvencek') }}">Kedvencek</a></li>
+                <li class="nav-item"><a class="nav-link" href="{{ url('/profil') }}">Profil</a></li>
+                <li class="nav-item"><a class="nav-link text-dark" href="{{ url('http://127.0.0.1:8000/') }}">Kijelentkezés</a></li>
+
+            </ul>
+        </div>
     </div>
+
 
     <!-- Fő tartalom középre igazítva -->
     <div class="container my-5">
