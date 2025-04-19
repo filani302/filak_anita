@@ -17,30 +17,14 @@
 <body class="TudjmegTobbet-body">
     <nav class="navbar navbar-expand-lg bg-dark shadow-sm">
         <div class="container">
-            <a class="navbar-brand text-light fs-4" href="{{ url('/welcome') }}">
+            <a class="navbar-brand text-light fs-4">
                 <img src="/img/ReAnLogoo.jpg" class="ReAnLogoo" alt="Logo" width="50"> ReAnBeauty
             </a>
-            <button class="navbar-toggler d-lg-none" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNav">
-                <span class="navbar-toggler-icon bg-light"></span>
-            </button>
+            
         </div>
     </nav>
 
-    <div class="offcanvas offcanvas-end d-lg-none" tabindex="-1" id="offcanvasNav">
-        <div class="offcanvas-header">
-            <h5 class="offcanvas-title">Menü</h5>
-            <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas"></button>
-        </div>
-        <div class="offcanvas-body">
-            <ul class="navbar-nav">
-            <li class="nav-item"><a class="nav-link text-dark" href="{{ url('/termekek') }}">Termékek</a></li>
-                    <li class="nav-item"><a class="nav-link text-dark" href="{{ url('/rutinok') }}">Rutinok</a></li>
-                    <li class="nav-item"><a class="nav-link text-dark" href="{{ url('/profil') }}">Profil</a></li>
-                    <li class="nav-item"><a class="nav-link text-dark" href="{{ url('/kedvencek') }}">Kedvencek</a></li>
-
-            </ul>
-        </div>
-    </div>
+    
 
     <div class="container mt-5">
         <h2 class="text-center fade-in">Tudj meg többet a ReAnBeauty-ról</h2>
