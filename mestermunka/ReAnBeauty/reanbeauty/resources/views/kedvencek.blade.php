@@ -9,73 +9,53 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
     <script src="https://kit.fontawesome.com/af0adec3b9.js" crossorigin="anonymous"></script>
 </head>
-<body class="rutin-body"> <!-- Itt adtuk hozzá az osztályt -->
-<nav class="navbar navbar-expand-lg bg-dark shadow-sm">
-        <div class="container">
-            <a class="navbar-brand text-light fs-4" href="{{ url('/welcome') }}">
-                <img src="/img/ReAnLogoo.jpg" class="ReAnLogoo" alt="Logo" width="50"> ReAnBeauty
-            </a>
-            <button class="navbar-toggler d-lg-none" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNav">
-                <span class="navbar-toggler-icon bg-light"></span>
-            </button>
-            <div class="collapse navbar-collapse d-none d-lg-block">
-                <ul class="navbar-nav ms-auto">
-                    <li class="nav-item"><a class="nav-link text-light" href="{{ url('/welcome') }}">Főoldal</a></li>
-                    <li class="nav-item"><a class="nav-link text-light" href="{{ url('/termekek') }}">Termékek</a></li>
-                    <li class="nav-item"><a class="nav-link text-light" href="{{ url('/rutinok') }}">Rutinok</a></li>
-                    <li class="nav-item"><a class="nav-link text-light" href="{{ url('/profil') }}">Profil</a></li>
-                    <li class="nav-item"><a class="nav-link text-light" href="{{ url('http://127.0.0.1:8000/') }}">Kijelentkezés</a></li>
-                    
+<body class="rutin-body">
 
-                </nav>
-<div class="offcanvas offcanvas-end d-lg-none" tabindex="-1" id="offcanvasNav">
-    <div class="offcanvas-header">
-        <h5 class="offcanvas-title">Menü</h5>
-        <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas"></button>
+    <nav class="navbar navbar-expand-lg bg-dark shadow-sm">
+    
+    </nav>
+
+ 
+    <div class="offcanvas offcanvas-end d-lg-none" tabindex="-1" id="offcanvasNav">
+        <!-- ... -->
     </div>
-    <div class="offcanvas-body">
-        <ul class="navbar-nav">
-            <li class="nav-item"><a class="nav-link" href="#">Főoldal</a></li>
-            <li class="nav-item"><a class="nav-link" href="{{ url('/termekek') }}">Termékek</a></li>
-            <li class="nav-item"><a class="nav-link" href="{{ url('/rutinok') }}">Rutinok</a></li>
-            <li class="nav-item"><a class="nav-link" href="{{ url('/profil') }}">Profil</a></li>
-            <li class="nav-item"><a class="nav-link text-dark" href="{{ url('/kedvencek') }}">Kedvencek</a></li>
-            <li class="nav-item"><a class="nav-link text-dark" href="{{ url('http://127.0.0.1:8000/') }}">Kijelentkezés</a></li>
 
-        </ul>
-    </div>
-</div>
+    <!-- Fő tartalom középre igazítva -->
+    <div class="container my-5">
+        <h1 class="text-center mb-4">Kedvencnek jelölt termékeim</h1>
+        <hr class="mb-5">
 
-<br>
-   <center><h1>Kedvencnek jelölt termékeim</h1></center> 
-   <hr>
-@forelse($favourites as $favourite)
-<div class="card mb-3 " style="max-width: 540px; height:300px" >
-        <div class="row g-0">
-            <div class="col-md-4 text-center">
-                @if ($favourite->product)
-                    <img src="{{ asset($favourite->product->p_image) }}" class="img-fluid rounded-start" alt="Product Image">
-                @elseif ($favourite->rutin)
-                    <img src="{{ asset($favourite->rutin->p_image) }}" class="img-fluid rounded-start" alt="Rutin Image">
-                @endif
-            </div>
-            <div class="col-md-8">
-                <div class="card-body">
-                    @if ($favourite->product)
-                        <h5 class="card-title">{{ $favourite->product->title }}</h5>
-                        <p class="card-text">{{ $favourite->product->description }}</p>
-                    @elseif ($favourite->rutin)
-                        <h5 class="card-title">{{ $favourite->rutin->title }}</h5>
-                        <p class="card-text">{{ $favourite->rutin->description }}</p>
-                    @endif
+        @forelse($favourites as $favourite)
+            <div class="row justify-content-center mb-4">
+                <div class="col-md-8 col-lg-6">
+                    <div class="card h-100">
+                        <div class="row g-0">
+                            <div class="col-md-4 text-center d-flex align-items-center p-2">
+                                @if ($favourite->product)
+                                    <img src="{{ asset($favourite->product->p_image) }}" class="img-fluid rounded-start" alt="Product Image">
+                                @elseif ($favourite->rutin)
+                                    <img src="{{ asset($favourite->rutin->p_image) }}" class="img-fluid rounded-start" alt="Rutin Image">
+                                @endif
+                            </div>
+                            <div class="col-md-8">
+                                <div class="card-body">
+                                    @if ($favourite->product)
+                                        <h5 class="card-title">{{ $favourite->product->title }}</h5>
+                                        <p class="card-text">{{ $favourite->product->description }}</p>
+                                    @elseif ($favourite->rutin)
+                                        <h5 class="card-title">{{ $favourite->rutin->title }}</h5>
+                                        <p class="card-text">{{ $favourite->rutin->description }}</p>
+                                    @endif
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
-        </div>
+        @empty
+            <p class="text-center">Nincsenek kedvenc termékeid vagy rutinjaid.</p>
+        @endforelse
     </div>
-@empty
-    <p>Nincsenek kedvenc termékeid vagy rutinjaid.</p>
-@endforelse
-
 
 <script>
     document.addEventListener("DOMContentLoaded", function () {
