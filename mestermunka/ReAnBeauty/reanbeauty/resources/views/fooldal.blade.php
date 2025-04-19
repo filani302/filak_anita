@@ -47,10 +47,12 @@
             <h1 class="fw-bold">✨ Fedezd fel a szépség igazi erejét! ✨</h1>
             <p class="lead">Bőrápolás. Hajápolás. Rutinok. Inspiráció.</p>
             <a href="{{ url('/TudjmegTobbet') }}" class="btn btn-custom me-3">Tudj meg többet</a>
+            <a href="{{ url('/adminfeluletBejelentkezes') }}" class="btn btn-custom me-3">Bejelentkezés az admin felületre</a>
+
+    
         </div>
     </section>
 
-    <a href="{{url('/adminfeluletBejelentkezes')}}">Adminfelület</a>
 </body>
 </html>
 </html>
