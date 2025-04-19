@@ -113,7 +113,7 @@
                         </div>
                     </div>
                    
-                    <div class="col-12 col-md-8">
+                    <div class="comment-box col-12 col-md-8">
                         <h5><strong>{{ $product->title }}</strong></h5>
                         <p class="mb-2">{{ $product->description }}</p>
                         <p class="text-muted">Feltöltötte: <strong>{{ $product->user->username ?? 'Ismeretlen' }}</strong></p>

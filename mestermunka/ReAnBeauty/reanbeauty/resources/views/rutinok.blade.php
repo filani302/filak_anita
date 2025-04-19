@@ -110,7 +110,7 @@
                             <h5><strong>{{ $rutin->title }}</strong></h5>
                             <p class="mb-2">{{ $rutin->description }}</p>
                             <p class="text-muted">Feltöltötte: <strong>{{ $rutin->user->username ?? 'Ismeretlen' }}</strong></p>
-
+</div>
                             <!-- Gombok -->
 <div class="mt-3 d-flex flex-wrap gap-2">
     @php
@@ -139,7 +139,7 @@
     <a href="{{ route('kommentekrutin.show', $rutin) }}" class="btn btn-outline-info d-flex align-items-center gap-2 rounded-pill" style="border-radius: 50px;">
         💬 Komment
     </a>
-</div>
+
                             
 
                         </div>
