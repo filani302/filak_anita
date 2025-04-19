@@ -23,6 +23,7 @@
                     <li class="nav-item"><a class="nav-link text-light" href="{{ url('/termekek') }}">Termékek</a></li>
                     <li class="nav-item"><a class="nav-link text-light" href="{{ url('/rutinok') }}">Rutinok</a></li>
                     <li class="nav-item"><a class="nav-link text-light" href="{{ url('/kedvencek') }}">Kedvencek</a></li>
+                    
 
                     <form  action="{{ route('logout') }}" method="POST">
                     <li class="nav-item"><a class="nav-link text-light" href="{{ url('/fooldal') }}">Kijelentkezés</a></li>

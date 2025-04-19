@@ -25,6 +25,7 @@
                     <li class="nav-item"><a class="nav-link text-light" href="{{ url('/rutinok') }}">Rutinok</a></li>
                     <li class="nav-item"><a class="nav-link text-light" href="{{ url('/profil') }}">Profil</a></li>
                     <li class="nav-item"><a class="nav-link text-light" href="{{ url('http://127.0.0.1:8000/') }}">Kijelentkezés</a></li>
+                    
 
                 </nav>
 <div class="offcanvas offcanvas-end d-lg-none" tabindex="-1" id="offcanvasNav">
