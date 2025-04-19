@@ -131,7 +131,7 @@
         @csrf
         <input type="hidden" name="rutin_id" value="{{ $rutin->id }}">
         <button type="submit" class="btn btn-outline-warning d-flex align-items-center gap-2 rounded-pill" style="border-radius: 50px;">
-        <a class="nav-link" href="{{ url('/kedvencek') }}"> ⭐ Kedvencek</a>
+        <i class="nav-link"> ⭐ Kedvencek</i>
 
         </button>
     </form>
