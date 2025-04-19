@@ -147,7 +147,7 @@
         @csrf
         <input type="hidden" name="product_id" value="{{ $product->id }}">
         <button type="submit" class="btn btn-outline-warning d-flex align-items-center gap-2 rounded-pill" style="border-radius: 50px;">
-            <a class="nav-link" href="{{ url('/favorites') }}">⭐ Kedvencek</a>
+            <i class="nav-link">⭐ Kedvencek</i>
         </button>
     </form>
 
