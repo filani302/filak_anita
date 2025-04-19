@@ -49,6 +49,8 @@
             <a href="{{ url('/TudjmegTobbet') }}" class="btn btn-custom me-3">Tudj meg többet</a>
         </div>
     </section>
+
+    <a href="{{url('/adminfeluletBejelentkezes')}}">Adminfelület</a>
 </body>
 </html>
 </html>

@@ -80,8 +80,11 @@ Route::get('/TudjmegTobbet', function () {
 Route::get('/kedvencek', function () {
     return view('kedvencek');
 });
-Route::get('/admin', function () {
-    return view('admin');
+Route::get('/adminfelulet', function () {
+    return view('adminfelulet');
+});
+Route::get('/adminfeluletBejelentkezes', function () {
+    return view('adminfeluletBejelentkezes');
 });
 
 
