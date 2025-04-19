@@ -25,7 +25,6 @@
                     <li class="nav-item"><a class="nav-link text-light" href="{{ url('/kedvencek') }}">Kedvencek</a></li>
                     <li class="nav-item"><a class="nav-link text-light" href="{{ url('/profil') }}">Profil</a></li>
                     <li class="nav-item"><a class="nav-link text-light" href="{{ url('http://127.0.0.1:8000/') }}">Kijelentkezés</a></li>
-                    <li class="nav-item"><a class="nav-link text-light" href="{{ url('/feltoltott') }}">Posztjaim</a></li>
 
 
                 </ul>
@@ -47,7 +46,6 @@
                 <li class="nav-item"><a class="nav-link" href="{{ url('/profil') }}">Profil</a></li>
                 <li class="nav-item"><a class="nav-link text-dark" href="{{ url('/kedvencek') }}">Kedvencek</a></li>
                 <li class="nav-item"><a class="nav-link text-dark" href="{{ url('http://127.0.0.1:8000/') }}">Kijelentkezés</a></li>
-                <li class="nav-item"><a class="nav-link text-dark" href="{{ url('/feltoltott') }}">Posztjaim</a></li>
 
             </ul>
         </div>
@@ -65,7 +63,7 @@
     <!-- Rutinok listája -->
     <div class="container my-5">
         <h1 class="text-center mb-4">Rutinok</h1>
-
+<hr>
         <form action="{{ route('rutins.index') }}" method="GET" class="mb-4">
             <div class="accordion" id="filterAccordion">
                 <div class="accordion-item border border-pink">

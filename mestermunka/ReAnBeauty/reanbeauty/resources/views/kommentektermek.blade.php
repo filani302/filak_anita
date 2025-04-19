@@ -50,7 +50,6 @@
                 <li class="nav-item"><a class="nav-link" href="{{ url('/termekek') }}">Termékek</a></li>
                 <li class="nav-item"><a class="nav-link" href="{{ url('/rutinok') }}">Rutinok</a></li>
                 <li class="nav-item"><a class="nav-link" href="{{ url('/profil') }}">Profil</a></li>
-                <li class="nav-item"><a class="nav-link text-dark" href="{{ url('/feltoltott') }}">Posztjaim</a></li>
 
             </ul>
         </div>
