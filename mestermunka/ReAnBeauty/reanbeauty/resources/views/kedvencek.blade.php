@@ -58,7 +58,7 @@
 
         @forelse($favourites as $favourite)
             <div class="row justify-content-center mb-4">
-                <div class="col-md-8 col-lg-6">
+                <div class="col-md-8 col-lg-10">
                     <div class="card h-100">
                         <div class="row g-0">
                             <div class="col-md-4 text-center d-flex align-items-center p-2">
