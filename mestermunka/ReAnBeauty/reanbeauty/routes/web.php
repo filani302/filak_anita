@@ -141,6 +141,27 @@ Route::get('/kommentekrutin/{rutin}', [CommentRutinController::class, 'show'])->
 Route::post('/comments/rutin', [CommentRutinController::class, 'store'])->name('comments.rutin.store');
 
 
+use App\Http\Controllers\AdminLogin;
+
+// Admin bejelentkezési oldal megjelenítése
+Route::get('/admin/login', [AdminLogin::class, 'showLoginForm'])->name('admin.login');
+
+// Admin bejelentkezés kezelése (POST)
+Route::post('/admin/login', [AdminLogin::class, 'login'])->name('admin.login.submit');
+
+// Admin felület (sikeres belépés után)
+Route::get('/admin/felulet', function () {
+    return view('adminfelulet'); // => resources/views/adminfelulet.blade.php
+})->name('adminfelulet')->middleware('auth');
+
+
+use App\Http\Controllers\AdminController;
+
+Route::get('/admin/dashboard', [AdminController::class, 'adminDashboard'])->name('adminfelulet');
+Route::delete('/admin/product/{id}', [AdminController::class, 'deleteProduct'])->name('admin.delete.product');
+Route::delete('/admin/rutin/{id}', [AdminController::class, 'deleteRutin'])->name('admin.delete.rutin');
+
+
 
 
 
